@@ -1,0 +1,253 @@
+\documentclass{article}
+
+\usepackage{amsthm}
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+
+
+\title{TITLE}
+\author{Daniel Sinderson}
+\date{May 2024}
+
+\begin{document}
+\maketitle
+
+\section*{Introduction}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{Category Theory Basics}
+\subsection*{Categories}
+Category theory provides a mathematical structure for understanding the abstract concept of composition.
+Categories themselves are fairly simple to define.
+\begin{definition}[Category]
+    A category $\mathcal{C}$ is defined by the following:
+    \begin{enumerate}
+        \item $\mathcal{C}$ contains a collection of objects $ob(\mathcal{C})$
+        \item For any two objects $a$, $b$ $\in ob(\mathcal{C})$ there is a collection of morphisms between those objects $\mathcal{C}(a,b)$ called the homset. We'll denote an element $f\in\mathcal{C}(a,b)$ using function notation $f:a\rightarrow b$.
+        \item Every object $a\in ob(\mathcal{C})$ has a morphism to itself $1_a:a\rightarrow a$.
+        \item For every two morphisms $f:a\rightarrow b$ and $g: b\rightarrow c$ there's a third morphism $g\circ f:a\rightarrow c$ that's their composition.
+    \end{enumerate}
+    These objects and morphisms are then under the following two constraints:
+    \begin{enumerate}
+        \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ 1_a=1_b\circ f=f$.
+        \item (Associativity) For any morphisms $f:a\rightarrow b$, $g:b\rightarrow c$, and $h:c\rightarrow d$, $h\circ (g\circ f)=(h\circ g)\circ f$.
+    \end{enumerate}
+\end{definition}
+It turns out that categories are a fantastically powerful abstraction.
+Since composition lies at the heart of most of mathematics and many other disciplines such as physics, engineering, and linguistics, an abstraction over composition has applications in a stunningly wide range of fields.
+Categories can even model categories.
+
+\subsection*{Functors and Categories of Categories}
+Since categories are a mathematical structure, like groups or vector spaces, it makes sense to ask if there exists a kind of structure-preserving map between them, much like a homomorphism between groups or a linear transformation between vector spaces.
+For categories, such a map would have to preserve identities, composition, unitality, and associativity.
+We call such a map a functor.
+\begin{definition}[Functor]
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is a map between categories $\mathcal{C}$ and $\mathcal{D}$ such that the following hold:
+    \begin{enumerate}
+        \item For any object $a\in ob(\mathcal{C})$ there is an object $Fa\in\ ob(\mathcal{D})$.
+        \item For any morphism $f:a\rightarrow b$ between objects $a$ and $b$ in $\mathcal{C}$ there is a morphism $Ff:Fa\rightarrow Fb$ between objects $Fa$ and  $Fb$ in $\mathcal{D}$.
+        \item For all objects $a\in ob(\mathcal{C})$ and $Fa\in ob(\mathcal{D})$, $F1_a=1_{Fa}$.
+        \item For any composition of morphisms $g\circ f$ in $\mathcal{C}$, $Fg\circ Ff=F(g\circ f)$ in $\mathcal{D}$.
+    \end{enumerate}
+\end{definition}
+With functors, it's possible to construct a category where the objects themselves are categories and the morphism between them are functors.
+There are some technicalities for such constructions involving formal notions of local and global size that are necessary to avoid the Russel-esque paradox of the category of categories containing itself, but we'll ignore these in this paper.
+
+\subsection*{Functor Categories and Natural Transformations}
+Taking one more step into the rarefied air, it's also possible to create a category whose objects are functors and whose structure-preserving maps are structures called natural transformations.
+\begin{definition}[Natural Transformation]
+    A natural transformation $\alpha :F\Rightarrow G$ is a map between functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{C}\rightarrow\mathcal{D}$ such that the following holds:
+    \begin{enumerate}
+        \item For each object $a \in Ob(\mathcal{C})$, there is a morphism $\alpha_a:Fa\rightarrow Ga$ in $\mathcal{D}$. This is called the c-component of $\alpha$.
+        \item For every morphism $f:a\rightarrow b$ in $\mathcal{C}$, $\alpha_b\circ Ff=Gf\circ\alpha_a$. This is called the naturality condition, and it preserves functoriality.
+    \end{enumerate}
+\end{definition}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Structure within Categories}
+\subsection*{Kinds of Morphisms}
+
+NOTE: Isomorphism in the category \textbf{Set} are bijective functions.
+\begin{definition}[Isomorphism]
+    We say that two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $g\circ f=1_b$ and $f\circ g=1_a$.
+    Such a morphism is called an isomorphism.
+\end{definition}
+
+NOTE: Monomorphism in the category \textbf{Set} are injective functions.
+\begin{definition}[Monomorphism]
+    A morphism $f:b\rightarrow c$ is a monomorphism if for any pair of parallel morphisms $g,h:a\rightarrow b$, $f\circ g=f\circ h$ implies that $g=h$.
+\end{definition}
+
+NOTE: Epimorphisms in the category \textbf{Set} are surjective functions.
+\begin{definition}[Epimorphism]
+    A morphism $f:b\rightarrow c$ is an epimorphism if for any pair of parallel morphisms $g,h:c\rightarrow d$, $g\circ f=h\circ f$ implies that $g=h$.
+\end{definition}
+
+\subsection*{Universal Properties}
+
+\begin{definition}[Terminal Object]
+    Let $t\in Ob(\mathcal{C})$ be given. Then $t$ is a terminal object in $\mathcal{C}$ if the following hold:
+    \begin{enumerate}
+        \item For all $x\in Ob(\mathcal{C})$, there is exactly one morphism $f:x\rightarrow t$.
+        \item For any other object $t'$ in $\mathcal{C}$ that meets condition (1), there exists an unique isomorphism $g:t\rightarrow t'$.
+    \end{enumerate}
+\end{definition}
+
+Dual to terminal objects are initial objects.
+\begin{definition}[Initial Object]
+    Let $i\in Ob(\mathcal{C})$ be given. Then $i$ is a initial object in $\mathcal{C}$ if the following hold:
+    \begin{enumerate}
+        \item For all $x\in Ob(\mathcal{C})$, there is exactly one morphism $f:i\rightarrow x$.
+        \item For any other object $i'$ in $\mathcal{C}$ that meets condition (1), there exists an unique isomorphism $g:i\rightarrow i'$.
+    \end{enumerate}
+\end{definition}
+
+In category theory there's a universal property that generalizes notions of multiplication called the product.
+\begin{definition}[Product]
+    Let $a,b,v\in Ob(\mathcal{C})$ and morphisms $f:v\rightarrow a$ and $g:v\rightarrow b$ be given.
+    The object $v$ is a product of $a$ and $b$ if the following holds:
+    \begin{enumerate}
+        \item For any other object $x$ with morphisms $f':x\rightarrow a$ and $g':x\rightarrow b$, there is a unique isomorphism $k:x\rightarrow v$ such that $f\circ k=f'$ and $g\circ k=g'$.
+    \end{enumerate}
+\end{definition}
+This conditions ensures that the object $v$ is the universal or canonical object satisfying the pattern, with the morphisms of any other such object being able to be written as a sort of embellishment of the morphisms from $v$.
+
+Dual to products are coproducts, which generalize the notion of addition.
+\begin{definition}[Coproduct]
+    Let $a,b,v\in Ob(\mathcal{C})$ and morphisms $f:a\rightarrow v$ and $g:b\rightarrow v$ be given.
+    The object $v$ is a coproduct of $a$ and $b$ if the following holds:
+    \begin{enumerate}
+        \item For any other object $x$ with morphisms $f':a\rightarrow x$ and $g':b\rightarrow x$, there is a unique isomorphism $k:v\rightarrow x$ such that $k\circ f=f'$ and $k\circ g=g'$.
+    \end{enumerate}
+\end{definition}
+
+NOTE: In \textbf{Set}, equalizers pick out the subset of a set $a$ that is the intersection of the preimages $f^{-1}:b\rightarrow a$ and $g^{-1}:b\rightarrow a$.
+\begin{definition}[Equalizer]
+    Let $a,b,v\in Ob(\mathcal{C})$ and let morphisms $f:a\rightarrow b$, $g:a\rightarrow b$, and $h:v\rightarrow a$ be given.
+    The object $v$ is an equalizer if the following hold:
+    \begin{enumerate}
+        \item $f\circ h=g\circ h$.
+        \item For any other object $x\in Ob(\mathcal{C})$ with morphism $h':x\rightarrow a$ such that $f\circ h'=g\circ h'$, there exists a unique morphism $k:x\rightarrow v$ such that $h'=h\circ k$.
+    \end{enumerate}
+\end{definition}
+
+NOTE: In \textbf{Set}, coequalizers pick out the subset of a set $b$ that is the intersection of the images $f:a\rightarrow b$ and $g:a\rightarrow b$.
+\begin{definition}[Coequalizer]
+    Let $a,b,v\in Ob(\mathcal{C})$ and let morphisms $f:a\rightarrow b$, $g:a\rightarrow b$, and $h:b\rightarrow v$ be given.
+    The object $v$ is a coequalizer if the following hold:
+    \begin{enumerate}
+        \item $h\circ f=h\circ g$.
+        \item For any other object $x\in Ob(\mathcal{C})$ with morphism $h':b\rightarrow x$ such that $h'\circ f=h'\circ g$, there exists a unique morphism $k:v\rightarrow x$ such that $h'=k\circ h$.
+    \end{enumerate}
+\end{definition}
+
+NOTE: In \textbf{Set}, pullbacks are the fiber product of two sets.
+\begin{definition}[Pullback]
+    Let $a, b, c, v\in Ob(\mathcal{C})$ and let morphisms $f:a\rightarrow c$, $g:b\rightarrow c$, $h:v\rightarrow a$, and $k:v\rightarrow b$ be given.
+    The object $v$ is a pullback if the following hold:
+    \begin{enumerate}
+        \item $f\circ h=g\circ k$.
+        \item For any other object $x\in Ob(\mathcal{C})$ with morphisms $h':x\rightarrow a$, and $k':x\rightarrow b$ such that $f'\circ h=g'\circ k$, there exists a unique morphism $j:x\rightarrow v$ such that $f'=f\circ j$ and $g'=g\circ j$.
+    \end{enumerate}
+\end{definition}
+
+NOTE: In \textbf{Set}, pushouts are...
+\begin{definition}[Pushout]
+    Let $a, b, c, v\in Ob(\mathcal{C})$ and let morphisms $f:c\rightarrow a$, $g:c\rightarrow b$, $h:a\rightarrow v$, and $k:b\rightarrow v$ be given.
+    The object $v$ is a pushout if the following hold:
+    \begin{enumerate}
+        \item $h\circ f=k\circ g$.
+        \item For any other object $x\in Ob(\mathcal{C})$ with morphisms $h':a\rightarrow x$, and $k':b\rightarrow x$ such that $h'\circ f=k'\circ g$, there exists a unique morphism $j:v\rightarrow x$ such that $h'=j\circ h$ and $k'=j\circ k$.
+    \end{enumerate}
+\end{definition}
+
+In this last part of the section we're going to discuss a generalization of all of the previous universal properties called cones and cocones.
+A cone consists of any finite collection of objects and morphisms between them, combined with an additional object $v$ called the vertex of the cone and morphisms from $v$ to all other objects in the collection.
+Such a cone is universal if for all other cones of that type in the category there is a unique morphisms from their vertex to $v$: i.e, $k:v'\rightarrow v$ exists and is unique.\\\\
+
+A cocone consists of any finite collection of objects and morphisms between them, combined with an additional object $v$ called the vertex of the cocone and morphisms from all other objects in the collection to $v$.
+Such a cocone is universal if for all other cocones of that type in the category there is a unique morphisms from $v$ to their vertex: i.e, $k:\rightarrow v'$ exists and is unique.\\\\
+
+\subsection*{Limits and Colimits}
+Given any cone, if there is an instance of that cone for which all other instances have a unique morphism to it, that cone is the limit.
+Dually for cocones and colimits.
+In fact, it's possible to construct a category whose objects are the cones and whose morphisms are these unique factorizations.
+In this category, the limit is a terminal object.
+Dually for cocones and colimits again, except the colimit is an initial object in the constructed category of cocones instead of a terminal object.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+\section*{Structure Between Categories}
+
+\subsection*{Kinds of Functors}
+
+\begin{definition}[Full Functor]
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is full if for each $x,y\in Ob(\mathcal{C})$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is surjective.
+\end{definition}
+
+\begin{definition}[Faithful Functor]
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is faithful if for each $x,y\in Ob(\mathcal{C})$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is injective.
+\end{definition}
+
+\begin{definition}[Essentially Surjective On Objects]
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is essentially surjective on objects if for each $y\in Ob(\mathcal{D})$, there is some $x\in Ob(\mathcal{C})$ such that $y$ is isomorphic to $Fc$.
+\end{definition}
+
+\begin{definition}[Injective on Objects]
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is injective on objects if for each $x\in Ob(\mathcal{C})$, there is a unique $y\in Ob(\mathcal{D})$ such that $y=Fx$.
+\end{definition}
+
+NOTE: Play a huge role in category theory: i.e in the Yoneda lemma\\
+NOTE: Representable functors require that the source category $\mathcal{C}$ be locally small so that the collections of morphisms between objects in the category are sets.
+\begin{definition}[Representable]
+    A functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in Ob(\mathcal{C})$ such that the functor $\mathcal{C}(c,-):\mathcal{C}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
+\end{definition}
+
+
+\begin{definition}[Forgetful]
+    A forgetful functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is a functor that sends objects in a category of structures-on-sets, like groups or preorders, to the underlying sets themselves.
+    They "forget" the additional structure in the source category.
+\end{definition}
+
+\begin{definition}[Free]
+    A free functor $F:\mathbf{Set}\rightarrow\mathcal{C}$ is a functor that sends sets to the free construction on that set, like the free group on the set.
+    They construct the desired structure on the set in a way that requires no choices.
+\end{definition}
+
+
+
+\subsection*{Comparing Categories}
+
+\begin{definition}[Subcategory]
+    A category $\mathcal{C}$ with a functor $F:\mathcal{C}\rightarrow\mathcal{D}$ that is both faithful and injective on objects is a subcategory of the domain $\mathcal{D}$.
+    A functor $F$ of this type is called an \textbf{embedding} of $\mathcal{C}$ into $\mathcal{D}$.
+\end{definition}
+
+
+\begin{definition}[Full Subcategory]
+    A category $\mathcal{C}$ with a functor $F:\mathcal{C}\rightarrow\mathcal{D}$ that is full, faithful, and injective on objects is a full subcategory of the domain $\mathcal{D}$.
+    A functor $F$ of this type is called a \textbf{full embedding} of $\mathcal{C}$ into $\mathcal{D}$.
+\end{definition}
+
+
+\begin{definition}[Natural Isomorphism]
+    A natural isomorphism is a natural tranformation $\alpha:F\rightarrow G$ where all of the c-components of the transformation $\alpha_{c}:Fc\rightarrow Gc$ are isomorphisms.
+    This means there exists some other natural transformation $\eta:G\rightarrow F$ such that $\eta_c\circ\alpha_c = 1_{Fc}$ and $\alpha_c\circ\eta_c = 1_{Gc}$.
+\end{definition}
+
+
+\begin{definition}[Adjunctions]
+    An adjunction is a pair of functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{D}\rightarrow\mathcal{C}$ such that for any object $c\in Ob(\mathcal{C})$ and any object $d\in Ob(\mathcal{D})$ there is an isomorphism between the sets of functions between them and their images under the functors that is natural.
+    Formally, that means that the following holds:
+    \begin{enumerate}
+        \item $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$
+        \item ...
+    \end{enumerate}
+\end{definition}
+
+\end{document}
