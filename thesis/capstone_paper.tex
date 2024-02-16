@@ -204,8 +204,11 @@ Dually for cocones and colimits again, except the colimit is an initial object i
 
 NOTE: Play a huge role in category theory: i.e in the Yoneda lemma\\
 NOTE: Representable functors require that the source category $\mathcal{C}$ be locally small so that the collections of morphisms between objects in the category are sets.
-\begin{definition}[Representable]
+\begin{definition}[Covariant Representable]
     A functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in Ob(\mathcal{C})$ such that the functor $\mathcal{C}(c,-):\mathcal{C}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
+\end{definition}
+\begin{definition}[Contravariant Representable]
+    A functor $F:\mathcal{C}^{op}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in Ob(\mathcal{C})$ such that the functor $\mathcal{C}(-,c):\mathcal{C}^{op}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
 \end{definition}
 
 

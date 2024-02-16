@@ -1,7 +1,7 @@
 # Fdb version 3
-["pdflatex"] 1707947477 "/home/daniel/Documents/School/2024 MTH_490/thesis/capstone_paper.tex" "capstone_paper.pdf" "capstone_paper" 1707947477
+["pdflatex"] 1708062419 "/home/daniel/Documents/School/2024 MTH_490/thesis/capstone_paper.tex" "capstone_paper.pdf" "capstone_paper" 1708062420
   "/etc/texmf/web2c/texmf.cnf" 1702489578 475 c0e671620eb5563b2130f56340a5fde8 ""
-  "/home/daniel/Documents/School/2024 MTH_490/thesis/capstone_paper.tex" 1707947476 15655 2834358667f2e6682c931cb6a62fceb9 ""
+  "/home/daniel/Documents/School/2024 MTH_490/thesis/capstone_paper.tex" 1708062419 15964 4b52093d16c3fb30c8d16535f34054a6 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1136768653 1324 c910af8c371558dc20f2d7822f66fe64 ""
@@ -35,8 +35,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1702489613 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1702489644 2800909 c9f22752154ec1b513bda336c4994636 ""
-  "capstone_paper.aux" 1707947477 32 77e0dffd05b653a64f0caf3eb9bb454a "pdflatex"
-  "capstone_paper.tex" 1707947476 15655 2834358667f2e6682c931cb6a62fceb9 ""
+  "capstone_paper.aux" 1708062420 32 77e0dffd05b653a64f0caf3eb9bb454a "pdflatex"
+  "capstone_paper.tex" 1708062419 15964 4b52093d16c3fb30c8d16535f34054a6 ""
   (generated)
   "capstone_paper.aux"
   "capstone_paper.log"
