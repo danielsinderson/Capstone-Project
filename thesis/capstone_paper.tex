@@ -1,6 +1,8 @@
 \documentclass{article}
 
 \usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{tikz-cd}
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
@@ -59,13 +61,25 @@ With functors, it's possible to construct a category where the objects themselve
 There are some technicalities for such constructions involving formal notions of local and global size that are necessary to avoid the Russel-esque paradox of the category of categories containing itself, but we'll ignore these in this paper.
 
 \subsection*{Functor Categories and Natural Transformations}
-Taking one more step into the rarefied air, it's also possible to create a category whose objects are functors and whose structure-preserving maps are structures called natural transformations.
+Taking one more step into the rarefied air, it's also possible to create a category whose objects are functors and whose morphisms are structure-preserving maps called natural transformations.
 \begin{definition}[Natural Transformation]
     A natural transformation $\alpha :F\Rightarrow G$ is a map between functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{C}\rightarrow\mathcal{D}$ such that the following holds:
     \begin{enumerate}
         \item For each object $a \in Ob(\mathcal{C})$, there is a morphism $\alpha_a:Fa\rightarrow Ga$ in $\mathcal{D}$. This is called the c-component of $\alpha$.
         \item For every morphism $f:a\rightarrow b$ in $\mathcal{C}$, $\alpha_b\circ Ff=Gf\circ\alpha_a$. This is called the naturality condition, and it preserves functoriality.
     \end{enumerate}
+    \color{blue}
+    This means that the diagram below commutes.
+    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJGYSJdLFsxLDAsIkdhIl0sWzAsMSwiRmIiXSxbMSwxLCJHYiJdLFswLDEsIlxcYWxwaGFfYSJdLFswLDIsIkZmIiwyXSxbMSwzLCJHZiJdLFsyLDMsIlxcYWxwaGFfYiIsMl1d
+    \[\begin{tikzcd}
+            Fa & Ga \\
+            Fb & Gb
+            \arrow["{\alpha_a}", from=1-1, to=1-2]
+            \arrow["Ff"', from=1-1, to=2-1]
+            \arrow["Gf", from=1-2, to=2-2]
+            \arrow["{\alpha_b}"', from=2-1, to=2-2]
+        \end{tikzcd}\]
+    \color{black}
 \end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -207,10 +221,12 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 \begin{definition}[Covariant Representable]
     A functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in Ob(\mathcal{C})$ such that the functor $\mathcal{C}(c,-):\mathcal{C}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
 \end{definition}
+
+\color{blue}
 \begin{definition}[Contravariant Representable]
     A functor $F:\mathcal{C}^{op}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in Ob(\mathcal{C})$ such that the functor $\mathcal{C}(-,c):\mathcal{C}^{op}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
 \end{definition}
-
+\color{black}
 
 \begin{definition}[Forgetful]
     A forgetful functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is a functor that sends objects in a category of structures-on-sets, like groups or preorders, to the underlying sets themselves.
@@ -243,14 +259,11 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
     This means there exists some other natural transformation $\eta:G\rightarrow F$ such that $\eta_c\circ\alpha_c = 1_{Fc}$ and $\alpha_c\circ\eta_c = 1_{Gc}$.
 \end{definition}
 
-
+\color{blue}
 \begin{definition}[Adjunctions]
     An adjunction is a pair of functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{D}\rightarrow\mathcal{C}$ such that for any object $c\in Ob(\mathcal{C})$ and any object $d\in Ob(\mathcal{D})$ there is an isomorphism between the sets of functions between them and their images under the functors that is natural.
-    Formally, that means that the following holds:
-    \begin{enumerate}
-        \item $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$
-        \item ...
-    \end{enumerate}
+    In other words, that for every $c\in Ob(\mathcal{C})$ and $d\in Ob(\mathcal{D})$ there is a natural isomorphism $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$.\\\\
+    In this case, the functor $F$ is the left adjoint functor and the functor $G$ is the right adjoint functor.
 \end{definition}
-
+\color{black}
 \end{document}
