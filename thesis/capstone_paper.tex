@@ -351,6 +351,15 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
     In other words, that for every $c\in Ob(\mathcal{C})$ and $d\in Ob(\mathcal{D})$ there is a natural isomorphism $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$.\\\\
     In this case, the functor $F$ is the left adjoint functor and the functor $G$ is the right adjoint functor.
 \end{definition}
+
+
+\subsection*{The Yoneda Lemma}
+\begin{definition}
+    The Yoneda lemma states that for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ where $\mathcal{C}$ is locally small and any object $c\in Ob(\mathcal{C})$, there is a bijection between the collection of natural transformations going from the functor $\mathcal{C}(c,-)$ to $F$ and the object $Fc\in Ob(\mathbf{Set})$.
+    \\\\Stated another way, this means that $Hom(\mathcal{C}(c,-), F)\cong Fc$ for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ and all objects $c\in Ob(\mathcal{C})$.
+
+\end{definition}
+
 \color{black}
 \nocite{*}
 
