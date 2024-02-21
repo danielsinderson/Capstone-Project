@@ -1,10 +1,16 @@
-\begin{thebibliography}{Mye22}
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{DGA{\etalchar{+}}22}
 
 \bibitem[Che22]{cheng2022joy}
 Eugenia Cheng.
 \newblock {\em The joy of abstraction: an exploration of math, category theory, and life}.
 \newblock Cambridge University Press, 2022.
  \begin{quotation}\noindent \textit{The Joy of Abstraction} provides a gentle yet rigorous tour of category theory by first building up some intuition with non-mathematical concepts, then surveying common mathematical structures from ungraduate mathematics as categories, and then presenting the real (formal) definitions of the basic concepts of the theory. This book is a perfect introduction and companion volume to the richer, more advanced texts. \end{quotation}
+
+\bibitem[DGA{\etalchar{+}}22]{key}
+Andrew Dudzik, Bruno Gavranović, João~Guilherme Araújo, Petar Veličković, Pim de~Haan, David Spivak, Pietro Vertechi, Tai-Danae Bradley, Taco Cohen, Jules Hedge, and Thomas Gebhart.
+\newblock Categories for ai.
+\newblock online, 2022.
 
 \bibitem[FS19]{fong2019invitation}
 Brendan Fong and David~I Spivak.

@@ -1,0 +1,46 @@
+This is BibTeX, Version 0.99d (TeX Live 2023)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: capstone_paper.aux
+The style file: annotate.bst
+Database file #1: references.bib
+You've used 12 entries,
+            2588 wiz_defined-function locations,
+            625 strings with 8459 characters,
+and the built_in function-call counts, 3791 in all, are:
+= -- 323
+> -- 175
+< -- 11
++ -- 58
+- -- 55
+* -- 241
+:= -- 650
+add.period$ -- 36
+call.type$ -- 12
+change.case$ -- 63
+chr.to.int$ -- 12
+cite$ -- 12
+duplicate$ -- 180
+empty$ -- 303
+format.name$ -- 74
+if$ -- 752
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 20
+newline$ -- 75
+num.names$ -- 36
+pop$ -- 106
+preamble$ -- 1
+purify$ -- 84
+quote$ -- 0
+skip$ -- 128
+stack$ -- 0
+substring$ -- 87
+swap$ -- 14
+text.length$ -- 11
+text.prefix$ -- 8
+top$ -- 0
+type$ -- 60
+warning$ -- 0
+while$ -- 27
+width$ -- 15
+write$ -- 161
