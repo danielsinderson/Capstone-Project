@@ -6,6 +6,7 @@
 \usepackage{xcolor}
 \usepackage{tikz-cd}
 \usepackage{quiver}
+\usepackage{bbm}
 
 
 
@@ -393,6 +394,40 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 
 
 \section*{Adding Structure to Categories}
+\subsection*{Monoidal Categories}
+\begin{definition}[Monoidal Categories]
+    A category $\mathcal{C}$ is monoidal if the following exist.
+    \begin{enumerate}
+        \item A functor $\otimes:\mathcal{C}\times\mathcal{C}\rightarrow\mathcal{C}$ called the monoidal product.
+        \item An object $mathbbm{1}\in ob(\mathcal{C})$ called the unit.
+        \item A natural isomorphism $\alpha : (a\otimes b)\otimes c\rightarrow a\otimes (b\otimes c)$ called the associator, with components $\alpha_{x,y,z}: (x\otimes y)\otimes z\rightarrow x\otimes (y\otimes z)$.
+        \item A natural isomorphism $\lambda : \mathbbm{1}\otimes a\rightarrow a$ called the left unitor with components $\lambda_x : \mathbbm{1}\otimes x\rightarrow x$.
+        \item A natural isomorphism $\rho : a\otimes \mathbbm{1}\rightarrow a$ called the right unitor with components $\lambda_x : x\otimes \mathbbm{1}\rightarrow x$.
+    \end{enumerate}
+    All of the above must exist such that the following two diagrams, called the triangle identity and the pentagon identity, commute.
+    \[\begin{tikzcd}
+            {(x\otimes\mathbbm{1})\otimes y} && {x\otimes(\mathbbm{1}\otimes y)} \\
+            \\
+            && {x\otimes y}
+            \arrow["{{\rho_x\otimes 1_y}}"', from=1-1, to=3-3]
+            \arrow["{{1_x\otimes\lambda_y}}", from=1-3, to=3-3]
+            \arrow["{{\alpha_{x,y,z}}}", from=1-1, to=1-3]
+        \end{tikzcd}\]
+
+    \[\begin{tikzcd}
+            {((w\otimes x)\otimes y)\otimes z} && {(w\otimes x)\otimes(y\otimes z)} \\
+            \\
+            {(w\otimes (x\otimes y))\otimes z} \\
+            \\
+            {w\otimes ((x\otimes y)\otimes z)} && {w\otimes (x\otimes (y\otimes z))}
+            \arrow["{{\alpha_{w,x,(y\otimes z)}}}", from=1-3, to=5-3]
+            \arrow["{{\alpha_{(w\otimes x),y,z}}}", from=1-1, to=1-3]
+            \arrow["{{\alpha_{w,x,y}\otimes 1_z}}"', from=1-1, to=3-1]
+            \arrow["{{\alpha_{w,(x\otimes y),z}}}"', from=3-1, to=5-1]
+            \arrow["{{1_w\otimes \alpha_{x,y,z}}}"', from=5-1, to=5-3]
+        \end{tikzcd}\]
+\end{definition}
+
 
 \color{black}
 \nocite{*}
