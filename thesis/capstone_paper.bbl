@@ -18,6 +18,11 @@ Brendan Fong and David~I Spivak.
 \newblock Cambridge University Press, 2019.
  \begin{quotation}\noindent This is the go-to book for applications. It's also a fantastic source for building intuition and finding detailed examples of core categorical concepts. It's been core to my research. \end{quotation}
 
+\bibitem[Fur21]{}
+Marius Furter.
+\newblock Enriched category theory (playlist).
+\newblock \url{https://www.youtube.com/playlist?list=PLd8NbPjkXPlhkYKcf02_9riM629t3MjPV}, 2021.
+
 \bibitem[Gol14]{goldblatt2014topoi}
 Robert Goldblatt.
 \newblock {\em Topoi: the categorial analysis of logic}.
@@ -53,6 +58,12 @@ David~Jaz Myers.
 \newblock Categorical systems theory.
 \newblock {\em Manuscript in preparation}, 2022.
  \begin{quotation}\noindent no annotation yet \end{quotation}
+
+\bibitem[{nLa}24]{nlab:symmetric_monoidal_category}
+{nLab authors}.
+\newblock symmetric monoidal category.
+\newblock \url{https://ncatlab.org/nlab/show/symmetric+monoidal+category}, February 2024.
+\newblock \href{https://ncatlab.org/nlab/revision/symmetric+monoidal+category/54}{Revision 54}.
 
 \bibitem[Rie17]{riehl2017category}
 Emily Riehl.
