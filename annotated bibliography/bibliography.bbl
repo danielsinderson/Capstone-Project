@@ -1,0 +1,69 @@
+\begin{thebibliography}{{nLa}24}
+
+\bibitem[Che22]{cheng2022joy}
+Eugenia Cheng.
+\newblock {\em The joy of abstraction: an exploration of math, category theory, and life}.
+\newblock Cambridge University Press, 2022.
+ \begin{quotation}\noindent \textit{The Joy of Abstraction} provides a gentle yet rigorous tour of category theory by first building up some intuition with non-mathematical concepts, then surveying common mathematical structures from ungraduate mathematics as categories, and then presenting the real (formal) definitions of the basic concepts of the theory. This book is a perfect introduction and companion volume to the richer, more advanced texts. \end{quotation}
+
+\bibitem[FS19]{fong2019invitation}
+Brendan Fong and David~I Spivak.
+\newblock {\em An invitation to applied category theory: seven sketches in compositionality}.
+\newblock Cambridge University Press, 2019.
+ \begin{quotation}\noindent This is the go-to book for applications. It's also a fantastic source for building intuition and finding detailed examples of core categorical concepts. It's been core to my research. \end{quotation}
+
+\bibitem[Gol14]{goldblatt2014topoi}
+Robert Goldblatt.
+\newblock {\em Topoi: the categorial analysis of logic}.
+\newblock Elsevier, 2014.
+ \begin{quotation}\noindent This is a large book covering much more than basic category theory, but the first three chapters provide an excellent primer on the fundamentals. It's a bit older so some of the notation is different and the topics covered are slightly different. This is a good thing though! The inclusion of arrow categories and comma categories in chapter two gives a different perspective on functor categories and categories of (co)cones that I found useful. \end{quotation}
+
+\bibitem[Lei14]{leinster2014basic}
+Tom Leinster.
+\newblock {\em Basic category theory}, volume 143.
+\newblock Cambridge University Press, 2014.
+ \begin{quotation}\noindent This is a good second presentation of ideas. Its scope is smaller than \textit{Category Theory in Context} so it can spend more time on explanations. Otherwise it's written at a similar level. \end{quotation}
+
+\bibitem[LR03]{lawvere2003sets}
+F~William Lawvere and Robert Rosebrugh.
+\newblock {\em Sets for mathematics}.
+\newblock Cambridge University Press, 2003.
+ \begin{quotation}\noindent \textit{Sets for Mathematics} has been good for its longer explanations of concepts and the fact that it's all happening in \textbf{Set}, which is familiar from last term. It does use different terminology sometimes. This can be bad because it's confusing, but it can also be a good test of my understanding of the underlying math instead of my understanding of terminology. \end{quotation}
+
+\bibitem[Mil18]{milewski2018category}
+Bartosz Milewski.
+\newblock {\em Category theory for programmers}.
+\newblock Blurb, 2018.
+ \begin{quotation}\noindent This is another helpful book for acquiring intuition when the more rigorous and mathematical texts confused me. The level of rigor is around the same as (or even less than) \textit{The Joy of Abstraction} though and the examples are only useful if you have experience programming. Otherwise they'll just add to your confusion. \end{quotation}
+
+\bibitem[ML13]{mac2013categories}
+Saunders Mac~Lane.
+\newblock {\em Categories for the working mathematician}, volume~5.
+\newblock Springer Science \& Business Media, 2013.
+ \begin{quotation}\noindent This book was immediately overwhelming. The overall level of expected mathematical maturity was simply too high (graduate level). I put it down after the first couple of pages. \end{quotation}
+
+\bibitem[Mye22]{myers2022categorical}
+David~Jaz Myers.
+\newblock Categorical systems theory.
+\newblock {\em Manuscript in preparation}, 2022.
+ \begin{quotation}\noindent This is the work I used for everything relating to lenses. The entire section on Categorical Systems Theory is from this book. The book is still being worked on so there are a number of minor typos, sections that aren't fully written out yet, and notes the author has left for himself. The pace and the explanations are great though, at least in the first couple of chapters. The difficulty ramps up a lot by the end of chapter two. \end{quotation}
+
+\bibitem[{nLa}24]{nlab:symmetric_monoidal_category}
+{nLab authors}.
+\newblock symmetric monoidal category.
+\newblock \url{https://ncatlab.org/nlab/show/symmetric+monoidal+category}, February 2024.
+\newblock \href{https://ncatlab.org/nlab/revision/symmetric+monoidal+category/54}{Revision 54}.
+ \begin{quotation}\noindent I found this resource just last week. It's excellent though. I used this page as my primary reference for the section on monoidal categories. \end{quotation}
+\bibitem[Rie17]{riehl2017category}
+Emily Riehl.
+\newblock {\em Category theory in context}.
+\newblock Courier Dover Publications, 2017.
+ \begin{quotation}\noindent This book is not for the faint of heart. It is, without hesitation, the most difficult book I've ever read. Riehl's definitions are detailed, clear, and rigorous, but she expects a lot of mathematical maturity from the reader. This really becomes apparent in her examples, within which she assumes a deep understanding of all of undergraduate mathematics. This book is the syllabus and the test: it tells me what I need to know and tells me, in no uncertain terms, if I actually know it. The other books are the lectures where I actually learn the concepts. \end{quotation}
+
+\bibitem[Ros22]{rosiak2022sheaf}
+Daniel Rosiak.
+\newblock {\em Sheaf theory through examples}.
+\newblock MIT Press, 2022.
+ \begin{quotation}\noindent This is a great book. I found it pretty late in the term, but it's explanations and motivating examples are really good. I'll be returning to it. \end{quotation}
+
+\end{thebibliography}
