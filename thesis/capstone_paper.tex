@@ -122,8 +122,8 @@ Taking one more step into the rarefied air, it's also possible to create a categ
 \end{definition}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Structure within Categories}
-\subsection*{Kinds of Morphisms}
+\subsection*{Structure within Categories}
+\subsubsection*{Kinds of Morphisms}
 
 NOTE: Isomorphism in the category \textbf{Set} are bijective functions.
 \begin{definition}[Isomorphism]
@@ -141,7 +141,7 @@ NOTE: Epimorphisms in the category \textbf{Set} are surjective functions.
     A morphism $f:b\rightarrow c$ is an epimorphism if for any pair of parallel morphisms $g,h:c\rightarrow d$, $g\circ f=h\circ f$ implies that $g=h$.
 \end{definition}
 
-\subsection*{Universal Properties}
+\subsubsection*{Universal Properties}
 
 \begin{definition}[Terminal Object]
     Let $t\in Ob(\mathcal{C})$ be given. Then $t$ is a terminal object in $\mathcal{C}$ if the following hold:
@@ -306,7 +306,7 @@ Such a cone is universal if for all other cones of that type in the category the
 A cocone consists of any finite collection of objects and morphisms between them, combined with an additional object $v$ called the vertex of the cocone and morphisms from all other objects in the collection to $v$.
 Such a cocone is universal if for all other cocones of that type in the category there is a unique morphisms from $v$ to their vertex: i.e, $k:\rightarrow v'$ exists and is unique.\\\\
 
-\subsection*{Limits and Colimits}
+\subsubsection*{Limits and Colimits}
 Given any cone, if there is an instance of that cone for which all other instances have a unique morphism to it, that cone is the limit.
 Dually for cocones and colimits.
 In fact, it's possible to construct a category whose objects are the cones and whose morphisms are these unique factorizations.
@@ -315,9 +315,9 @@ Dually for cocones and colimits again, except the colimit is an initial object i
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
-\section*{Structure Between Categories}
+\subsection*{Structure Between Categories}
 
-\subsection*{Kinds of Functors}
+\subsubsection*{Kinds of Functors}
 
 \begin{definition}[Full Functor]
     A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is full if for each $x,y\in Ob(\mathcal{C})$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is surjective.
@@ -359,7 +359,7 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 
 
 
-\subsection*{Comparing Categories}
+\subsubsection*{Comparing Categories}
 
 \begin{definition}[Subcategory]
     A category $\mathcal{C}$ with a functor $F:\mathcal{C}\rightarrow\mathcal{D}$ that is both faithful and injective on objects is a subcategory of the domain $\mathcal{D}$.
@@ -386,7 +386,7 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 \end{definition}
 
 
-\subsection*{The Yoneda Lemma}
+\subsubsection*{The Yoneda Lemma}
 \begin{definition}
     The Yoneda lemma states that for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ where $\mathcal{C}$ is locally small and any object $c\in Ob(\mathcal{C})$, there is a bijection between the collection of natural transformations going from the functor $\mathcal{C}(c,-)$ to $F$ and the object $Fc\in Ob(\mathbf{Set})$.
     \\\\Stated another way, this means that $Hom(\mathcal{C}(c,-), F)\cong Fc$ for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ and all objects $c\in Ob(\mathcal{C})$.
@@ -394,8 +394,7 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 \end{definition}
 
 
-\section*{Adding Structure to Categories}
-\subsection*{Monoidal Categories}
+\subsection*{Adding Structure to Categories}
 \begin{definition}[Monoidal Categories]
     A category $\mathcal{C}$ is monoidal if the following exist.
     \begin{enumerate}
@@ -451,6 +450,19 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
     This obviously means that $\mathcal{C}$ must contain all products and have a terminal object.
 \end{definition}
 An example of this would be \textbf{Set}, where the Cartesian product is the monoidal product and the singleton set is the monoidal unit.
+
+\section*{Categorical System Theory}
+\subsection*{What is a System?}
+\subsection*{The Category $\textbf{Set}_{\mathcal{C}}$}
+
+\begin{definition}[Lenses]
+    Given a cartesian category $\mathcal{C}$ and objects $A^-, A^+, B^-, B^+ \in ob(\mathcal{C})$, a lens consists of a passforward map $f:A^+\rightarrow B^+$ and a passback map $f^\#:A^+ \times B^- \rightarrow A^-$.
+    \[
+        \begin{pmatrix}
+            f^\# \\ f
+        \end{pmatrix}
+    \]
+\end{definition}
 \color{black}
 
 
