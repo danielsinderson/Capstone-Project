@@ -31,8 +31,8 @@
 
 \section*{Category Theory Basics}
 \color{blue}
-Category theory is the tall tower of mathematics.
-From its high vantage point it's possible to see the patterns that repeat across the panorama of mathematical fields: from group theory to linear algebra to topology.
+Category theory is a tall tower.
+From its vantage point it's possible to see the patterns that repeat across the panorama of mathematical fields: from group theory to linear algebra to topology.
 This view is spectacular.
 It's also useful.
 Category theory helps us structure our thinking by finding and giving a name to those patterns and abstractions common to mathematics, science, engineering, and linguistics.
@@ -392,6 +392,39 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
     In this case, the functor $F$ is the left adjoint functor and the functor $G$ is the right adjoint functor.
 \end{definition}
 
+\color{blue}
+\begin{definition}[Monad]
+    Given a category $\mathcal{C}$, a monad on $\mathcal{C}$ is a functor $M:\mathcal{C}\rightarrow\mathcal{C}$ with the following two natural transformations:
+    \begin{enumerate}
+        \item $\eta : 1_{\mathcal{C}} \rightarrow M$ called the unit.
+        \item $\mu: TT \rightarrow T$ called the multiplication.
+    \end{enumerate}
+    These natural transformation are required to make the following diagrams commute.
+
+    \[\begin{tikzcd}
+            MMM && MM \\
+            \\
+            MM && M
+            \arrow["M\mu", from=1-1, to=1-3]
+            \arrow["\mu", from=1-3, to=3-3]
+            \arrow["\mu"', from=3-1, to=3-3]
+            \arrow["{\mu M}"', from=1-1, to=3-1]
+        \end{tikzcd}\]
+
+    \[\begin{tikzcd}
+            M && MM && M \\
+            \\
+            && M
+            \arrow["{\eta M}", from=1-1, to=1-3]
+            \arrow["M\eta"', from=1-5, to=1-3]
+            \arrow["\mu", from=1-3, to=3-3]
+            \arrow["{1_M}", from=1-5, to=3-3]
+            \arrow["{1_M}"', from=1-1, to=3-3]
+        \end{tikzcd}\]
+
+    These commutative diagrams with the natural transformations $\eta$ and $\mu$ create a kind of monoidal structure on the collection of endofunctors $M, MM, MMM, etc.$.
+\end{definition}
+\color{black}
 
 \subsubsection*{The Yoneda Lemma}
 \begin{definition}
@@ -473,6 +506,9 @@ We can connect them.
 
 \begin{definition}[Lenses]
     Given a cartesian category $\mathcal{C}$ and objects $A^-, A^+, B^-, B^+ \in ob(\mathcal{C})$, a lens consists of a passforward map $f:A^+\rightarrow B^+$ and a passback map $f^\#:A^+ \times B^- \rightarrow A^-$.
+    \[
+        \begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\rightarrow\begin{pmatrix}B^-\\B^+\end{pmatrix}
+    \]
 \end{definition}
 \color{black}
 
