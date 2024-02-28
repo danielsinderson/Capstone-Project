@@ -30,6 +30,13 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Category Theory Basics}
+\color{blue}
+Category theory is the tall tower of mathematics.
+From its high vantage point it's possible to see the patterns that repeat across the panorama of mathematical fields: from group theory to linear algebra to topology.
+This view is spectacular.
+It's also useful.
+Category theory helps us structure our thinking by finding and giving a name to those patterns and abstractions common to mathematics, science, engineering, and linguistics.
+\color{black}
 \subsection*{Categories}
 Category theory provides a mathematical structure for understanding the abstract concept of composition.
 Categories themselves are fairly simple to define.
@@ -452,19 +459,22 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 An example of this would be \textbf{Set}, where the Cartesian product is the monoidal product and the singleton set is the monoidal unit.
 
 \section*{Categorical System Theory}
-\subsection*{What is a System?}
-\subsection*{The Category $\textbf{Set}_{\mathcal{C}}$}
+Systems are everywhere in science and engineering.
+Whether discrete or continuous, deterministic or stochastic, all such systems have two things in common: states that they can be in, and rules for how the system's current state changes.
+These two features alone describe what are called closed systems.
+Closed systems are systems that don't interact with others or with an outside environment that they're a part of.
+This is a hobbling limitation.
+In order to open these systems up we need to give them an interface.
+We need them to be able to accept inputs that shape the way they evolve, and we need them to be able to expose some part of their current state to their surrounding environment.
+This is the gift that category theory will give us.
+By opening our systems up, we open them to the power of composition.
+We can connect them.
+\subsection*{The Category $\textbf{Lens}_{\mathcal{C}}$}
 
 \begin{definition}[Lenses]
     Given a cartesian category $\mathcal{C}$ and objects $A^-, A^+, B^-, B^+ \in ob(\mathcal{C})$, a lens consists of a passforward map $f:A^+\rightarrow B^+$ and a passback map $f^\#:A^+ \times B^- \rightarrow A^-$.
-    \[
-        \begin{pmatrix}
-            f^\# \\ f
-        \end{pmatrix}
-    \]
 \end{definition}
 \color{black}
-
 
 
 \nocite{*}
