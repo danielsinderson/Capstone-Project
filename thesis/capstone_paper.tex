@@ -6,6 +6,7 @@
 \usepackage{xcolor}
 \usepackage{tikz-cd}
 \usepackage{quiver}
+\usepackage{mathtools}
 \usepackage{bbm}
 \usepackage{hyperref}
 
@@ -35,11 +36,15 @@ Category theory is a tall tower.
 From its vantage point it's possible to see the patterns that repeat across the panorama of mathematical fields: from group theory to linear algebra to topology.
 This view is spectacular.
 It's also useful.
-Category theory helps us structure our thinking by finding and giving a name to those patterns and abstractions common to mathematics, science, engineering, and linguistics.
+Category theory helps us structure our thinking by finding and giving a name to those patterns and abstractions common to fields within mathematics and beyond, such as science, engineering, and linguistics.
 \color{black}
 \subsection*{Categories}
-Category theory provides a mathematical structure for understanding the abstract concept of composition.
-Categories themselves are fairly simple to define.
+\color{blue}
+What gives Category theory this bird's eye view is the way that it abstracts the concept of composition.
+Of how, given a path from $a$ to $b$ and a path from $b$ to $c$, you can create a new path from $a$ to $c$.
+This probably seems unassumingly simple, and it really is.
+As such categories themselves are fairly simple to define.
+\color{black}
 \begin{definition}[Category]
     A category $\mathcal{C}$ is defined by the following:
     \begin{enumerate}
@@ -503,12 +508,30 @@ This is the gift that category theory will give us.
 By opening our systems up, we open them to the power of composition.
 We can connect them.
 \subsection*{The Category $\textbf{Lens}_{\mathcal{C}}$}
+Given a cartesian category, it's possible to construct a new category of systems whose states are drawn from the objects of your base category and whose rules for updating their state are drawn from the morphism of your base category.
+We call this category $\textbf{Lens}_{\mathcal{C}}$, where $\mathcal{C}$ is the base category.
+The objects in this category are called arenas and the morphisms between them are called lenses.
 
 \begin{definition}[Lenses]
-    Given a cartesian category $\mathcal{C}$ and objects $A^-, A^+, B^-, B^+ \in ob(\mathcal{C})$, a lens consists of a passforward map $f:A^+\rightarrow B^+$ and a passback map $f^\#:A^+ \times B^- \rightarrow A^-$.
+    Given a cartesian category $\mathcal{C}$ and objects $A^-, A^+, B^-, B^+ \in ob(\mathcal{C})$, a lens consists of a passforward map $f:A^+\rightarrow B^+$ and a passback map $f^\#:A^+ \times B^- \rightarrow A^-$ between two arenas as follows:
     \[
-        \begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\rightarrow\begin{pmatrix}B^-\\B^+\end{pmatrix}
+        \begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}
     \]
+\end{definition}
+
+\begin{definition}[The Category $\textbf{Lens}_\mathcal{C}$]
+    Given a cartesian category $\mathcal{C}$, the category $\textbf{Lens}_{\mathcal{C}}$ has the following properties.
+    \begin{enumerate}
+        \item A collection of objects called arenas. An arena $\begin{pmatrix}A^-\\A^+\end{pmatrix}$ is a pair of objects $A^-,A^+ \in ob(\mathcal{C})$.
+        \item For each pair of arenas a collection of morphisms $\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$ called lenses.
+        \item For each arena an identity lens $\begin{pmatrix}\pi_2\\1_{A^+}\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}A^-\\A^+\end{pmatrix}$ where the passback map $\pi_2$ is the projection $\pi_2:A^+ \times A^- \rightarrow A^-$.
+        \item For any two compatible lenses a composite lens as follows:
+              $$\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$$
+              $$\begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}B^-\\B^+\end{pmatrix}\leftrightarrows\begin{pmatrix}C^-\\C^+\end{pmatrix}$$
+              $$\begin{pmatrix}g^{\#}\\g\end{pmatrix} \circ \begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}C^-\\C^+\end{pmatrix}$$
+              \\such that the passforward map is
+              and the passback map sends
+    \end{enumerate}
 \end{definition}
 \color{black}
 
