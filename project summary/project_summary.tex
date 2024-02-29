@@ -1,0 +1,123 @@
+\documentclass{article}
+
+
+
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{tikz-cd}
+\usepackage{quiver}
+\usepackage{mathtools}
+\usepackage{bbm}
+\usepackage[hidelinks]{hyperref}
+\usepackage{stmaryrd}
+
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}
+
+
+
+\title{Capstone Summary}
+\author{Daniel Sinderson}
+\date{March 2024}
+
+\begin{document}
+\maketitle
+
+% PREAMBLE AND INTRO
+\section*{Introduction}
+For my senior capstone project in mathematics I'm learning category theory,
+specifically with an interest in recent work applying category theory to dynamical systems.
+
+Category theory studies composition.
+By studying and abstracting notions of composition, categories manage to encapsulate
+a shockingly flexible and wide-reaching language for describing and working with structure of all sorts.
+Much like the study of sets and the set membership of elements turns out to be capable of formalizing all of mathematics,
+so too does category theory, except from a bird's eye point of view:
+the details of a particular field go out of focus and only its high level structural patterns remain.
+This is useful.
+High levels of abstraction provide high levels of generality,
+and a general, common language of how things are structured is useful for both organizing thought and sharing it.
+This is the primary reason I'm drawn to category theory.
+
+The second reason is its potential for opening a broader class of thinking and phenomena to mathematical rigor.
+I have a Bachelor' degree in anthropology.
+I still read 5-10 ethnographies and works on social theory every year,
+and I'm consistently impressed by the qualitative depth and intellectual creativity of the field.
+I'm also consistently left wanting more by the body of theory underpinning the research and how it's interpreted.
+Not because it's not brilliant, but because of the extraordinary imprecision of its language,
+and the opportunities that that affords for misunderstanding, misinterpretation, and misuse.
+Part of my wandering into category theory then and its applications to systems theory
+is a search for a better language of structure: a language that's flexible and abstract enough
+to hold the complications and self-referentiality of human relations, and rigorous and precise enough
+to do so clearly.
+I've only just arrived, but the view is promising and, more importantly, its spectacular.
+
+
+%WAIT, WHAT'S A CATEGORY? I DO NOT THINK THIS WORD MEANS WHAT YOU THINK IT MEANS.
+\section*{Category Theory, Briefly}
+The first step to understanding category theory is to understand what a category is.
+If you're new to higher mathematics it's time to take a deep breath.
+This will seem like a lot.
+
+\begin{definition}[Category]
+    A category $\mathcal{C}$ is defined by the following:
+    \begin{enumerate}
+        \item $\mathcal{C}$ contains a collection of objects $ob(\mathcal{C})$. We'll denote that an object is in a category using set notation: $c\in\mathcal{C}$.
+        \item For any two objects $a$, $b$ $\in \mathcal{C}$ there is a collection of morphisms, or arrows, between those objects $\mathcal{C}(a,b)$ called the homset. This is short for ``set of homomorphism." We'll denote an element $f\in\mathcal{C}(a,b)$ using function notation: $f:a\rightarrow b$.
+        \item Every object $a\in \mathcal{C}$ has a morphism to itself $id_a:a\rightarrow a$ called its identity. This morphism doesn't do anything. It's like multiplying a number by 1.
+        \item For every two morphisms $f:a\rightarrow b$ and $g: b\rightarrow c$ there's a third morphism $g\circ f:a\rightarrow c$ that's their composition. The circle is the symbol for function composition and $g \circ f$ is read ``g after f."
+
+              \[\begin{tikzcd}
+                      a && b \\
+                      \\
+                      && c
+                      \arrow["f", from=1-1, to=1-3]
+                      \arrow["g", from=1-3, to=3-3]
+                      \arrow["{g\circ f}"', from=1-1, to=3-3]
+                  \end{tikzcd}\]
+
+    \end{enumerate}
+    These objects and morphisms are then under the following two constraints:
+    \begin{enumerate}
+        \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ 1_a=1_b\circ f=f$. This makes the following diagram commute. What this means is that both paths from $a$ to $b$ here are equivalent.
+
+              \[\begin{tikzcd}
+                      a && b \\
+                      \\
+                      a && b
+                      \arrow["f", from=1-1, to=1-3]
+                      \arrow["{1_a}"', from=1-1, to=3-1]
+                      \arrow["{1_b}", from=1-3, to=3-3]
+                      \arrow["f"', from=3-1, to=3-3]
+                  \end{tikzcd}\]
+
+        \item (Associativity) For any morphisms $f:a\rightarrow b$, $g:b\rightarrow c$, and $h:c\rightarrow d$, $h\circ (g\circ f)=(h\circ g)\circ f$. Since it doesn't matter what order we apply the morphisms, we write this $h\circ g \circ f$.
+
+              \[\begin{tikzcd}
+                      a & b & c & d
+                      \arrow["f"', from=1-1, to=1-2]
+                      \arrow["g"', from=1-2, to=1-3]
+                      \arrow["h"', from=1-3, to=1-4]
+                      \arrow["{{g\circ f}}", curve={height=-24pt}, from=1-1, to=1-3]
+                      \arrow["{{h\circ g}}"', curve={height=24pt}, from=1-2, to=1-4]
+                  \end{tikzcd}\]
+
+    \end{enumerate}
+\end{definition}
+
+Let's break this down a little bit.
+We have a collection of objects with connections between them, and a couple of rules.
+We know that every object is connected to itself.
+And we know that if object $a$ is connected to $b$, and $b$ is connected to $c$, then $a$ is connected to $c$ through $b$.\footnote{For people with some background in math or logic this might be familiar as the transitive property.}
+That's it.
+Categories are honestly pretty simple.
+But from these humble beginnings we're going to climb very high.
+
+
+
+
+\end{document}
+
+
+

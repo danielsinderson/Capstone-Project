@@ -9,6 +9,7 @@
 \usepackage{mathtools}
 \usepackage{bbm}
 \usepackage{hyperref}
+\usepackage{stmaryrd}
 
 
 
@@ -402,14 +403,14 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
     Given a category $\mathcal{C}$, a monad on $\mathcal{C}$ is a functor $M:\mathcal{C}\rightarrow\mathcal{C}$ with the following two natural transformations:
     \begin{enumerate}
         \item $\eta : 1_{\mathcal{C}} \rightarrow M$ called the unit.
-        \item $\mu: TT \rightarrow T$ called the multiplication.
+        \item $\mu: M\circ M \rightarrow M$ called the multiplication.
     \end{enumerate}
     These natural transformation are required to make the following diagrams commute.
 
     \[\begin{tikzcd}
-            MMM && MM \\
+            M\circ M\circ M && M\circ M \\
             \\
-            MM && M
+            M\circ M && M
             \arrow["M\mu", from=1-1, to=1-3]
             \arrow["\mu", from=1-3, to=3-3]
             \arrow["\mu"', from=3-1, to=3-3]
@@ -417,7 +418,7 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
         \end{tikzcd}\]
 
     \[\begin{tikzcd}
-            M && MM && M \\
+            M && M\circ M && M \\
             \\
             && M
             \arrow["{\eta M}", from=1-1, to=1-3]
@@ -427,7 +428,7 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
             \arrow["{1_M}"', from=1-1, to=3-3]
         \end{tikzcd}\]
 
-    These commutative diagrams with the natural transformations $\eta$ and $\mu$ create a kind of monoidal structure on the collection of endofunctors $M, MM, MMM, etc.$.
+    These commutative diagrams with the natural transformations $\eta$ and $\mu$ create a kind of monoidal structure on the collection of endofunctors $M, M\circ M, M\circ M\circ M, etc.$.
 \end{definition}
 \color{black}
 
