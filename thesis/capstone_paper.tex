@@ -8,7 +8,7 @@
 \usepackage{quiver}
 \usepackage{mathtools}
 \usepackage{bbm}
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 \usepackage{stmaryrd}
 
 
@@ -18,7 +18,7 @@
 
 
 
-\title{TITLE}
+\title{Designing and Modeling Complex Systems with Category Theory}
 \author{Daniel Sinderson}
 \date{May 2024}
 
@@ -26,9 +26,6 @@
 \maketitle
 
 \section*{Introduction}
-For my senior capstone project in mathematics I'm learning category theory,
-specifically with an interest in recent work applying category theory to dynamical systems.
-
 Category theory studies composition.
 By studying and abstracting notions of composition, categories manage to encapsulate
 a shockingly flexible and wide-reaching language for describing and working with structure of all sorts.
@@ -38,46 +35,38 @@ the details of a particular field go out of focus and only its high level struct
 This is useful.
 High levels of abstraction provide high levels of generality,
 and a general, common language of how things are structured is useful for both organizing thought and sharing it.
-This is the primary reason I'm drawn to category theory.
 
-The second reason is its potential for opening a broader class of thinking and phenomena to mathematical rigor.
-I have a Bachelor' degree in anthropology.
-I still read 5-10 ethnographies and works on social theory every year,
-and I'm consistently impressed by the qualitative depth and intellectual creativity of the field.
-I'm also consistently left wanting more by the body of theory underpinning the research and how it's interpreted.
-Not because it's not brilliant, but because of the extraordinary imprecision of its language,
-and the opportunities that that affords for misunderstanding, misinterpretation, and misuse.
-Part of my wandering into category theory then and its applications to systems theory
-is a search for a better language of structure: a language that's flexible and abstract enough
-to hold the complications and self-referentiality of human relations, and rigorous and precise enough
-to do so clearly.
-I've only just arrived, but the view is promising and, more importantly, its spectacular.
+Because of this generality, category theory also has some potential for
+reformulating difficult problems in other fields or even
+opening a broader class of thinking and phenomena to mathematical rigor.
+This is an active field of research.
+There are people using the tools of category to formalize and investigate everything from quantum mechanics and linguistics to philosophy and systems theory.
+
+It's this last application to systems theory that we'll be looking more deeply at in this text.
+Though we're merely wandering at the edge of the work being done, we'll see how to use category theory to build the specifications for, and investigate the behaviors of, dynamical systems built from the composition of smaller, simpler systems.
+We'll do this by working through a case study for both discrete and differential deterministic equations.
+For our first case study we'll build a state machine to control the behavior of agents in a game.
+For our second case study we'll build a differential system for modeling a complicated food web.
+
+With even this partial, introductory view of the subject matter
+it should be easy to see the promise of this approach for facilitate thinking about
+and designing models for complex systems.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{Category Theory Basics}
-\color{blue}
-Category theory is a tall tower.
-From its vantage point it's possible to see the patterns that repeat across the panorama of mathematical fields: from group theory to linear algebra to topology.
-This view is spectacular.
-It's also useful.
-Category theory helps us structure our thinking by finding and giving a name to those patterns and abstractions common to fields within mathematics and beyond, such as science, engineering, and linguistics.
-\color{black}
-\subsection*{Categories}
-\color{blue}
-What gives Category theory this bird's eye view is the way that it abstracts the concept of composition.
-Of how, given a path from $a$ to $b$ and a path from $b$ to $c$, you can create a new path from $a$ to $c$.
-This probably seems unassumingly simple, and it really is.
-As such categories themselves are fairly simple to define.
-\color{black}
+The first step to understanding category theory is to understand what a category is.
+If you're new to higher mathematics it's time to take a deep breath.
+This will seem like a lot.
+
 \begin{definition}[Category]
     A category $\mathcal{C}$ is defined by the following:
     \begin{enumerate}
-        \item $\mathcal{C}$ contains a collection of objects $ob(\mathcal{C})$
-        \item For any two objects $a$, $b$ $\in ob(\mathcal{C})$ there is a collection of morphisms between those objects $\mathcal{C}(a,b)$ called the homset. We'll denote an element $f\in\mathcal{C}(a,b)$ using function notation $f:a\rightarrow b$.
-        \item Every object $a\in ob(\mathcal{C})$ has a morphism to itself $1_a:a\rightarrow a$.
-        \item For every two morphisms $f:a\rightarrow b$ and $g: b\rightarrow c$ there's a third morphism $g\circ f:a\rightarrow c$ that's their composition.
+        \item $\mathcal{C}$ contains a collection of objects $ob(\mathcal{C})$. We'll denote that an object is in a category using set notation: $c\in\mathcal{C}$.
+        \item For any two objects $a$, $b$ $\in \mathcal{C}$ there is a collection of morphisms, or arrows, between those objects $\mathcal{C}(a,b)$ called the homset. This is short for ``set of homomorphism." We'll denote an element $f\in\mathcal{C}(a,b)$ using function notation: $f:a\rightarrow b$.
+        \item Every object $a\in \mathcal{C}$ has a morphism to itself $id_a:a\rightarrow a$ called its identity. This morphism doesn't do anything. It's like multiplying a number by 1.
+        \item For every two morphisms $f:a\rightarrow b$ and $g: b\rightarrow c$ there's a third morphism $g\circ f:a\rightarrow c$ that's their composition. The circle is the symbol for function composition and $g \circ f$ is read ``g after f."
 
               \[\begin{tikzcd}
                       a && b \\
@@ -91,7 +80,7 @@ As such categories themselves are fairly simple to define.
     \end{enumerate}
     These objects and morphisms are then under the following two constraints:
     \begin{enumerate}
-        \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ 1_a=1_b\circ f=f$. Thus making the following diagram commute:
+        \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ 1_a=1_b\circ f=f$. This makes the following diagram commute. What this means is that both paths from $a$ to $b$ here are equivalent.
 
               \[\begin{tikzcd}
                       a && b \\
@@ -103,22 +92,27 @@ As such categories themselves are fairly simple to define.
                       \arrow["f"', from=3-1, to=3-3]
                   \end{tikzcd}\]
 
-        \item (Associativity) For any morphisms $f:a\rightarrow b$, $g:b\rightarrow c$, and $h:c\rightarrow d$, $h\circ (g\circ f)=(h\circ g)\circ f$.
+        \item (Associativity) For any morphisms $f:a\rightarrow b$, $g:b\rightarrow c$, and $h:c\rightarrow d$, $h\circ (g\circ f)=(h\circ g)\circ f$. Since it doesn't matter what order we apply the morphisms, we write this $h\circ g \circ f$.
 
               \[\begin{tikzcd}
                       a & b & c & d
                       \arrow["f"', from=1-1, to=1-2]
                       \arrow["g"', from=1-2, to=1-3]
                       \arrow["h"', from=1-3, to=1-4]
-                      \arrow["{g\circ f}", curve={height=-18pt}, from=1-1, to=1-3]
-                      \arrow["{h\circ g}"', curve={height=18pt}, from=1-2, to=1-4]
+                      \arrow["{{g\circ f}}", curve={height=-24pt}, from=1-1, to=1-3]
+                      \arrow["{{h\circ g}}"', curve={height=24pt}, from=1-2, to=1-4]
                   \end{tikzcd}\]
 
     \end{enumerate}
 \end{definition}
-It turns out that categories are a fantastically powerful abstraction.
-Since composition lies at the heart of most of mathematics and many other disciplines such as physics, engineering, and linguistics, an abstraction over composition has applications in a stunningly wide range of fields.
-Categories can even model categories.
+
+Let's break this down a little bit.
+We have a collection of objects with connections between them, and a couple of rules.
+We know that every object is connected to itself.
+And we know that if object $a$ is connected to $b$, and $b$ is connected to $c$, then $a$ is connected to $c$ through $b$.\footnote{For people with some background in math or logic this might be familiar as the transitive property.}
+That's it.
+Categories are honestly pretty simple.
+But from these humble beginnings we're going to climb very high.
 
 \subsection*{Functors and Categories of Categories}
 Since categories are a mathematical structure, like groups or vector spaces, it makes sense to ask if there exists a kind of structure-preserving map between them, much like a homomorphism between groups or a linear transformation between vector spaces.
@@ -423,7 +417,6 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
     In this case, the functor $F$ is the left adjoint functor and the functor $G$ is the right adjoint functor.
 \end{definition}
 
-\color{blue}
 \begin{definition}[Monad]
     Given a category $\mathcal{C}$, a monad on $\mathcal{C}$ is a functor $M:\mathcal{C}\rightarrow\mathcal{C}$ with the following two natural transformations:
     \begin{enumerate}
@@ -455,7 +448,6 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 
     These commutative diagrams with the natural transformations $\eta$ and $\mu$ create a kind of monoidal structure on the collection of endofunctors $M, M\circ M, M\circ M\circ M, etc.$.
 \end{definition}
-\color{black}
 
 \subsubsection*{The Yoneda Lemma}
 \begin{definition}
@@ -498,7 +490,6 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
             \arrow["{{1_w\otimes \alpha_{x,y,z}}}"', from=5-1, to=5-3]
         \end{tikzcd}\]
 \end{definition}
-\color{blue}
 \begin{definition}[Symmetric Monoidal Category]
     A monoidal category equipped with a natural isomorphism $\beta:a\otimes b\rightarrow b\otimes a$, called its braiding, is symmetric if $\beta_{y,x}\circ\beta_{x,y}=1_{x\otimes y}$ for all $x,y\in Ob(\mathcal{C})$
     and if the following diagram, called the hexagon identity, commutes.
@@ -545,21 +536,31 @@ The objects in this category are called arenas and the morphisms between them ar
     \]
 \end{definition}
 
+For our purposes we'll be sticking to two such categories: the category of lenses over the category of sets and functions, $\textbf{Lens}_{\textbf{Set}}$, for discrete systems and the category of Euclidean spaces and smooth functions, $\textbf{Lens}_\textbf{Euc}$, for differential systems.
+
 \begin{definition}[The Category $\textbf{Lens}_\mathcal{C}$]
-    Given a cartesian category $\mathcal{C}$, the category $\textbf{Lens}_{\mathcal{C}}$ has the following properties.
+    Given the cartesian category $\mathcal{C}$, the category $\textbf{Lens}_{\mathcal{C}}$ has the following properties.
     \begin{enumerate}
-        \item A collection of objects called arenas. An arena $\begin{pmatrix}A^-\\A^+\end{pmatrix}$ is a pair of objects $A^-,A^+ \in ob(\mathcal{C})$.
+        \item A collection of objects called arenas. An arena $\begin{pmatrix}A^-\\A^+\end{pmatrix}$ is a pair of objects in $\mathcal{C}$.
         \item For each pair of arenas a collection of morphisms $\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$ called lenses.
         \item For each arena an identity lens $\begin{pmatrix}\pi_2\\1_{A^+}\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}A^-\\A^+\end{pmatrix}$ where the passback map $\pi_2$ is the projection $\pi_2:A^+ \times A^- \rightarrow A^-$.
         \item For any two compatible lenses a composite lens as follows:
               $$\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$$
               $$\begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}B^-\\B^+\end{pmatrix}\leftrightarrows\begin{pmatrix}C^-\\C^+\end{pmatrix}$$
               $$\begin{pmatrix}g^{\#}\\g\end{pmatrix} \circ \begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}C^-\\C^+\end{pmatrix}$$
-              \\such that the passforward map is
-              and the passback map sends
+              \\such that the passforward map is defined as $a^+ \mapsto g(f(a^+))$,
+              and the passback map is defined as $(a^+, c^-) \mapsto f^\#(a^+, g^\#(f(a^+), c^-))$.
+    \end{enumerate}
+    $\textbf{Lens}_{\mathcal{C}}$ is also a monoidal category with the monoidal product being defined as follows.
+    \begin{enumerate}
+        \item The monoidal unit is the arena $\begin{pmatrix}1\\1\end{pmatrix}$.
+        \item Given lenses $\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$
+              and $\begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}C^-\\C^+\end{pmatrix}\leftrightarrows\begin{pmatrix}D^-\\D^+\end{pmatrix}$, the monoidal product
+              $$\begin{pmatrix}f^{\#}\\f\end{pmatrix} \otimes \begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}A^- \times C^-\\A^+ \times C^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^- \times D^-\\B^+ \times D^+\end{pmatrix}$$
+              such that the passforward map is defined as $(a^+, c^+) \mapsto (f(a^+), g(c^+))$ and the passback map is defined as $((a^+, c^+), (b^-, d^-)) \mapsto ((f^\#(a^+, b^-)), g^\#(c^+, d^-))$.
+
     \end{enumerate}
 \end{definition}
-\color{black}
 
 
 \nocite{*}
