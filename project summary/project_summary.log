@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  29 FEB 2024 05:36
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  3 MAR 2024 05:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -493,69 +493,164 @@ Package: stmaryrd 1994/03/03 St Mary's Road symbol package
 \symstmry=\mathgroup6
 LaTeX Font Info:    Overwriting symbol font `stmry' in version `bold'
 (Font)                  U/stmry/m/n --> U/stmry/b/n on input line 89.
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count312
+\lst@gtempboxa=\box66
+\lst@token=\toks42
+\lst@length=\count313
+\lst@currlwidth=\dimen283
+\lst@column=\count314
+\lst@pos=\count315
+\lst@lostspace=\dimen284
+\lst@width=\dimen285
+\lst@newlines=\count316
+\lst@lineno=\count317
+\lst@maxwidth=\dimen286
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count318
+\lst@skipnumbers=\count319
+\lst@framebox=\box67
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (/usr/local/texlive/2023/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
-\c@definition=\count312
+\Gm@cnth=\count320
+\Gm@cntv=\count321
+\c@Gm@tempcnt=\count322
+\Gm@bindingoffset=\dimen287
+\Gm@wd@mp=\dimen288
+\Gm@odd@mp=\dimen289
+\Gm@even@mp=\dimen290
+\Gm@layoutwidth=\dimen291
+\Gm@layoutheight=\dimen292
+\Gm@layouthoffset=\dimen293
+\Gm@layoutvoffset=\dimen294
+\Gm@dimlist=\toks43
+)
+\c@definition=\count323
  (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count313
-\l__pdf_internal_box=\box66
+\l__color_backend_stack_int=\count324
+\l__pdf_internal_box=\box68
 ) (./project_summary.aux)
 \openout1 = `project_summary.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 24.
-LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 26.
+LaTeX Font Info:    ... okay on input line 26.
  (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count314
-\scratchdimen=\dimen283
-\scratchbox=\box67
-\nofMPsegments=\count315
-\nofMParguments=\count316
-\everyMPshowfont=\toks42
-\MPscratchCnt=\count317
-\MPscratchDim=\dimen284
-\MPnumerator=\count318
-\makeMPintoPDFobject=\count319
-\everyMPtoPDFconversion=\toks43
+\scratchcounter=\count325
+\scratchdimen=\dimen295
+\scratchbox=\box69
+\nofMPsegments=\count326
+\nofMParguments=\count327
+\everyMPshowfont=\toks44
+\MPscratchCnt=\count328
+\MPscratchDim=\dimen296
+\MPnumerator=\count329
+\makeMPintoPDFobject=\count330
+\everyMPtoPDFconversion=\toks45
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 24.
+Package hyperref Info: Link coloring OFF on input line 26.
  (./project_summary.out) (./project_summary.out)
 \@outlinefile=\write4
 \openout4 = `project_summary.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 26.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
+\c@lstlisting=\count331
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
+(/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 26.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 26.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 28.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] (./project_summary.aux)
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 115.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
+File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
+) [2] [3] [4] (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2023/02/27 1.9 listings language file
+)
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 208.
+ (./Lenses.py
+LaTeX Font Info:    Trying to load font information for OML+cmr on input line 17.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/base/omlcmr.fd
+File: omlcmr.fd 2023/04/13 v2.5m Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 17.
+
+Overfull \hbox (47.29695pt too wide) in paragraph at lines 23--24
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [5{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}] [6] (./project_summary.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
@@ -564,18 +659,18 @@ Package rerunfilecheck Info: File `project_summary.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 22642 strings out of 474142
- 438669 string characters out of 5744617
- 1948995 words of memory out of 5000000
- 44576 multiletter control sequences out of 15000+600000
- 566849 words of font info for 72 fonts, out of 8000000 for 9000
+ 25135 strings out of 474142
+ 473930 string characters out of 5744617
+ 1970995 words of memory out of 5000000
+ 46974 multiletter control sequences out of 15000+600000
+ 570457 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,15n,121p,613b,1229s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on project_summary.pdf (3 pages, 146041 bytes).
+ 116i,15n,121p,613b,1520s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0900.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0900.pfb>
+Output written on project_summary.pdf (6 pages, 262472 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 71 compressed objects within 1 object stream
- 14 named destinations out of 1000 (max. 500000)
+ 239 PDF objects out of 1000 (max. 8388607)
+ 180 compressed objects within 2 object streams
+ 68 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
