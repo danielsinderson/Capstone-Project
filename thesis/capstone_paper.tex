@@ -82,15 +82,15 @@ This will seem like a lot.
     \end{enumerate}
     These objects and morphisms are then under the following two constraints:
     \begin{enumerate}
-        \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ 1_a=1_b\circ f=f$. This makes the following diagram commute. What this means is that both paths from $a$ to $b$ here are equivalent.
+        \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ id_a=id_b\circ f=f$. This makes the following diagram commute. What this means is that both paths from $a$ to $b$ here are equivalent.
 
               \[\begin{tikzcd}
                       a && b \\
                       \\
                       a && b
                       \arrow["f", from=1-1, to=1-3]
-                      \arrow["{1_a}"', from=1-1, to=3-1]
-                      \arrow["{1_b}", from=1-3, to=3-3]
+                      \arrow["{id_a}"', from=1-1, to=3-1]
+                      \arrow["{id_b}", from=1-3, to=3-3]
                       \arrow["f"', from=3-1, to=3-3]
                   \end{tikzcd}\]
 
@@ -116,6 +116,7 @@ That's it.
 Categories are honestly pretty simple.
 But from these humble beginnings we're going to climb very high.
 
+\color{blue}
 \subsection*{Functors and Categories of Categories}
 Most mathematical structures have some way of mapping one instance of that structure to another instance.
 Functions map sets to sets.
@@ -127,9 +128,9 @@ We call such a map between categories a functor.
 \begin{definition}[Functor]
     A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is a map between categories $\mathcal{C}$ and $\mathcal{D}$ such that the following hold:
     \begin{enumerate}
-        \item For any object $a\in ob(\mathcal{C})$ there is an object $Fa\in\ ob(\mathcal{D})$.
+        \item For any object $a\in\mathcal{C}$ there is an object $Fa\in\mathcal{D}$.
         \item For any morphism $f:a\rightarrow b$ between objects $a$ and $b$ in $\mathcal{C}$ there is a morphism $Ff:Fa\rightarrow Fb$ between objects $Fa$ and  $Fb$ in $\mathcal{D}$.
-        \item For all objects $a\in ob(\mathcal{C})$ and $Fa\in ob(\mathcal{D})$, $F1_a=1_{Fa}$.
+        \item For all objects $a\in\mathcal{C}$ and $Fa\in\mathcal{D}$, $Fid_a=id_{Fa}$.
         \item For any composition of morphisms $g\circ f$ in $\mathcal{C}$, $F(g\circ f)=Fg\circ Ff$ in $\mathcal{D}$.
     \end{enumerate}
 \end{definition}
@@ -183,24 +184,23 @@ We need to see what natural transformations do to functors, but also to what the
 
 \end{definition}
 
-This definition is short but there's a lot going on in it.
-There's a whole extra layer of stuff to keep track of since we added a layer of abstraction.
+This definition is short but there's a whole extra layer of stuff to keep track of since we added a layer of abstraction.
 Let's get a better idea of what this definition captures by using a picture.\\
 
 %\vspace*{0.25in}
 
 \includegraphics*[scale=0.75]{NT2.png}\\
 
-Here we see two simple categories, $\mathcal{C}$ and $\mathcal{D}$, and two functors $F$ and $G$ between them.
+Here we see two simple categories, $\mathcal{C}$ and $\mathcal{D}$, and two functors $F$ (the dashed lines) and $G$ (the dotted lines) between them.
 Let's dig into this picture a bit and pick apart the functors and the natural transformation.
 
 First, let's note all the important mappings of the functors and the component morphisms of the natural transformation.
 \begin{itemize}
     \item $Fa=x$, $Fb=x$, $Fc=y$, $Ff=id_x$, $Fg=k$, $F(g\circ f)=k$
     \item $Ga=x$, $Gb=y$, $Gc=y$, $Gf=k$, $Gg=id_y$, $G(g\circ f)=k$
-    \item $N_a:Fa\rightarrow Ga = id_x$
-    \item $N_b:Fb\rightarrow Gb = k$
-    \item $N_c:Fc\rightarrow Gc = id_y$
+    \item $N_a:Fa\rightarrow Ga$; $N_a = id_x$
+    \item $N_b:Fb\rightarrow Gb$; $N_b = k$
+    \item $N_c:Fc\rightarrow Gc$; $N_c = id_y$
 \end{itemize}
 
 Next, let's check that the functors preserve composition.\footnote{You should be able to convince yourself that they preserve identities.}
@@ -216,17 +216,59 @@ Everything is working as expected.
 Hopefully this helped to unpack some of the complexity behind the natural transformation definition.
 In a real example, our functors would be defined equationally and we'd prove these properties for arbitrary morphisms instead of proving them for each morphism individually like we did here.
 
-Categories, functors, and natural transformations are the core of category theory.
-We'll be using them a lot in the upcoming sections.
-First though, we're going to take a look at the kinds of structure that can exist inside an individual category.
+\subsection*{Duality}
+The last thing we'll cover in this section is the very simple, and very powerful, property of duality.
+Every category has a dual category.
+The objects in this dual category are exactly the same as in the original category, but every arrow is turned around: its source becomes its target and its target becomes its source.
+Let's look at a simple example.\\\\
+Let $\mathcal{C}$ be the category below.
+
+\[\mathcal{C} := \begin{tikzcd}
+        a && b && c \\
+        \\
+        && d && e
+        \arrow[from=1-1, to=1-3]
+        \arrow[from=1-1, to=3-3]
+        \arrow[from=1-3, to=3-3]
+        \arrow[from=3-3, to=3-5]
+        \arrow[from=1-3, to=1-5]
+        \arrow[from=1-5, to=3-5]
+    \end{tikzcd}\]
+\\\\It's dual category then we write as $\mathcal{C}^{op}$ and define as follows.
+\[\mathcal{C}^{op} := \begin{tikzcd}
+        a && b && c \\
+        \\
+        && d && e
+        \arrow[from=1-3, to=1-1]
+        \arrow[from=3-3, to=1-1]
+        \arrow[from=3-3, to=1-3]
+        \arrow[from=3-5, to=3-3]
+        \arrow[from=1-5, to=1-3]
+        \arrow[from=3-5, to=1-5]
+    \end{tikzcd}\]
+\\
+And that's it.
+The reason duality turns out to be so powerful is that it essentially doubles our effectiveness.
+For every structure we find in the next section, we get the dual structure essentially for free.
+Duality also plays an important role in representability and the Yoneda embedding which are major features of category theory that we'll get to later.
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Structure within Categories: Duality, Universal Properties and (Co)Limits}
+First though, we're going to take a look at the kinds of structure that can exist inside an individual category.
+We'll start with
+
+
+
 \subsection*{Kinds of Morphisms}
 
 NOTE: Isomorphism in the category \textbf{Set} are bijective functions.
 \begin{definition}[Isomorphism]
-    We say that two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $g\circ f=1_b$ and $f\circ g=1_a$.
+    We say that two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $g\circ f=id_b$ and $f\circ g=id_a$.
     Such a morphism is called an isomorphism.
 \end{definition}
 
@@ -243,25 +285,25 @@ NOTE: Epimorphisms in the category \textbf{Set} are surjective functions.
 \subsubsection*{Universal Properties}
 
 \begin{definition}[Terminal Object]
-    Let $t\in Ob(\mathcal{C})$ be given. Then $t$ is a terminal object in $\mathcal{C}$ if the following hold:
+    Let $t\in\mathcal{C}$ be given. Then $t$ is a terminal object in $\mathcal{C}$ if the following hold:
     \begin{enumerate}
-        \item For all $x\in Ob(\mathcal{C})$, there is exactly one morphism $f:x\rightarrow t$.
+        \item For all $x\in\mathcal{C}$, there is exactly one morphism $f:x\rightarrow t$.
         \item For any other object $t'$ in $\mathcal{C}$ that meets condition (1), there exists an unique isomorphism $g:t\rightarrow t'$.
     \end{enumerate}
 \end{definition}
 
 Dual to terminal objects are initial objects.
 \begin{definition}[Initial Object]
-    Let $i\in Ob(\mathcal{C})$ be given. Then $i$ is a initial object in $\mathcal{C}$ if the following hold:
+    Let $i\in\mathcal{C}$ be given. Then $i$ is a initial object in $\mathcal{C}$ if the following hold:
     \begin{enumerate}
-        \item For all $x\in Ob(\mathcal{C})$, there is exactly one morphism $f:i\rightarrow x$.
+        \item For all $x\in\mathcal{C}$, there is exactly one morphism $f:i\rightarrow x$.
         \item For any other object $i'$ in $\mathcal{C}$ that meets condition (1), there exists an unique isomorphism $g:i\rightarrow i'$.
     \end{enumerate}
 \end{definition}
 
 In category theory there's a universal property that generalizes notions of multiplication called the product.
 \begin{definition}[Product]
-    Let $a,b,v\in Ob(\mathcal{C})$ and morphisms $f:v\rightarrow a$ and $g:v\rightarrow b$ be given.
+    Let $a,b,v\in\mathcal{C}$ and morphisms $f:v\rightarrow a$ and $g:v\rightarrow b$ be given.
     The object $v$ is a product of $a$ and $b$ if the following holds:
     \begin{enumerate}
         \item For any other object $x$ with morphisms $f':x\rightarrow a$ and $g':x\rightarrow b$, there is a unique isomorphism $k:x\rightarrow v$ such that $f\circ k=f'$ and $g\circ k=g'$.
@@ -284,7 +326,7 @@ This conditions ensures that the object $v$ is the universal or canonical object
 
 Dual to products are coproducts, which generalize the notion of addition.
 \begin{definition}[Coproduct]
-    Let $a,b,v\in Ob(\mathcal{C})$ and morphisms $f:a\rightarrow v$ and $g:b\rightarrow v$ be given.
+    Let $a,b,v\in\mathcal{C}$ and morphisms $f:a\rightarrow v$ and $g:b\rightarrow v$ be given.
     The object $v$ is a coproduct of $a$ and $b$ if the following holds:
     \begin{enumerate}
         \item For any other object $x$ with morphisms $f':a\rightarrow x$ and $g':b\rightarrow x$, there is a unique isomorphism $k:v\rightarrow x$ such that $k\circ f=f'$ and $k\circ g=g'$.
@@ -306,11 +348,11 @@ Dual to products are coproducts, which generalize the notion of addition.
 
 NOTE: In \textbf{Set}, equalizers pick out the subset of a set $a$ that is the intersection of the preimages $f^{-1}:b\rightarrow a$ and $g^{-1}:b\rightarrow a$.
 \begin{definition}[Equalizer]
-    Let $a,b,v\in Ob(\mathcal{C})$ and let morphisms $f:a\rightarrow b$, $g:a\rightarrow b$, and $h:v\rightarrow a$ be given.
+    Let $a,b,v\in\mathcal{C}$ and let morphisms $f:a\rightarrow b$, $g:a\rightarrow b$, and $h:v\rightarrow a$ be given.
     The object $v$ is an equalizer if the following hold:
     \begin{enumerate}
         \item $f\circ h=g\circ h$.
-        \item For any other object $x\in Ob(\mathcal{C})$ with morphism $h':x\rightarrow a$ such that $f\circ h'=g\circ h'$, there exists a unique morphism $k:x\rightarrow v$ such that $h'=h\circ k$.
+        \item For any other object $x\in\mathcal{C}$ with morphism $h':x\rightarrow a$ such that $f\circ h'=g\circ h'$, there exists a unique morphism $k:x\rightarrow v$ such that $h'=h\circ k$.
     \end{enumerate}
 
     This means the following diagram commutes:
@@ -327,11 +369,11 @@ NOTE: In \textbf{Set}, equalizers pick out the subset of a set $a$ that is the i
 
 NOTE: In \textbf{Set}, coequalizers pick out the subset of a set $b$ that is the intersection of the images $f:a\rightarrow b$ and $g:a\rightarrow b$.
 \begin{definition}[Coequalizer]
-    Let $a,b,v\in Ob(\mathcal{C})$ and let morphisms $f:a\rightarrow b$, $g:a\rightarrow b$, and $h:b\rightarrow v$ be given.
+    Let $a,b,v\in\mathcal{C}$ and let morphisms $f:a\rightarrow b$, $g:a\rightarrow b$, and $h:b\rightarrow v$ be given.
     The object $v$ is a coequalizer if the following hold:
     \begin{enumerate}
         \item $h\circ f=h\circ g$.
-        \item For any other object $x\in Ob(\mathcal{C})$ with morphism $h':b\rightarrow x$ such that $h'\circ f=h'\circ g$, there exists a unique morphism $k:v\rightarrow x$ such that $h'=k\circ h$.
+        \item For any other object $x\in\mathcal{C}$ with morphism $h':b\rightarrow x$ such that $h'\circ f=h'\circ g$, there exists a unique morphism $k:v\rightarrow x$ such that $h'=k\circ h$.
     \end{enumerate}
 
     This means that the following diagram commutes:
@@ -348,11 +390,11 @@ NOTE: In \textbf{Set}, coequalizers pick out the subset of a set $b$ that is the
 
 NOTE: In \textbf{Set}, pullbacks are the fiber product of two sets.
 \begin{definition}[Pullback]
-    Let $a, b, c, v\in Ob(\mathcal{C})$ and let morphisms $f:a\rightarrow c$, $g:b\rightarrow c$, $h:v\rightarrow a$, and $k:v\rightarrow b$ be given.
+    Let $a, b, c, v\in\mathcal{C}$ and let morphisms $f:a\rightarrow c$, $g:b\rightarrow c$, $h:v\rightarrow a$, and $k:v\rightarrow b$ be given.
     The object $v$ is a pullback if the following hold:
     \begin{enumerate}
         \item $f\circ h=g\circ k$.
-        \item For any other object $x\in Ob(\mathcal{C})$ with morphisms $h':x\rightarrow a$, and $k':x\rightarrow b$ such that $f'\circ h=g'\circ k$, there exists a unique morphism $j:x\rightarrow v$ such that $f'=f\circ j$ and $g'=g\circ j$.
+        \item For any other object $x\in\mathcal{C}$ with morphisms $h':x\rightarrow a$, and $k':x\rightarrow b$ such that $f'\circ h=g'\circ k$, there exists a unique morphism $j:x\rightarrow v$ such that $f'=f\circ j$ and $g'=g\circ j$.
     \end{enumerate}
 
     This means that the following diagram commutes:
@@ -374,11 +416,11 @@ NOTE: In \textbf{Set}, pullbacks are the fiber product of two sets.
 
 NOTE: In \textbf{Set}, pushouts are...
 \begin{definition}[Pushout]
-    Let $a, b, c, v\in Ob(\mathcal{C})$ and let morphisms $f:c\rightarrow a$, $g:c\rightarrow b$, $h:a\rightarrow v$, and $k:b\rightarrow v$ be given.
+    Let $a, b, c, v\in\mathcal{C}$ and let morphisms $f:c\rightarrow a$, $g:c\rightarrow b$, $h:a\rightarrow v$, and $k:b\rightarrow v$ be given.
     The object $v$ is a pushout if the following hold:
     \begin{enumerate}
         \item $h\circ f=k\circ g$.
-        \item For any other object $x\in Ob(\mathcal{C})$ with morphisms $h':a\rightarrow x$, and $k':b\rightarrow x$ such that $h'\circ f=k'\circ g$, there exists a unique morphism $j:v\rightarrow x$ such that $h'=j\circ h$ and $k'=j\circ k$.
+        \item For any other object $x\in\mathcal{C}$ with morphisms $h':a\rightarrow x$, and $k':b\rightarrow x$ such that $h'\circ f=k'\circ g$, there exists a unique morphism $j:v\rightarrow x$ such that $h'=j\circ h$ and $k'=j\circ k$.
     \end{enumerate}
 
     This means that the following diagram commutes:
@@ -398,6 +440,7 @@ NOTE: In \textbf{Set}, pushouts are...
 
 \end{definition}
 
+\subsubsection*{Cones and Limits}
 In this last part of the section we're going to discuss a generalization of all of the previous universal properties called cones and cocones.
 A cone consists of any finite collection of objects and morphisms between them, combined with an additional object $v$ called the vertex of the cone and morphisms from $v$ to all other objects in the collection.
 Such a cone is universal if for all other cones of that type in the category there is a unique morphisms from their vertex to $v$: i.e, $k:v'\rightarrow v$ exists and is unique.\\\\
@@ -405,7 +448,6 @@ Such a cone is universal if for all other cones of that type in the category the
 A cocone consists of any finite collection of objects and morphisms between them, combined with an additional object $v$ called the vertex of the cocone and morphisms from all other objects in the collection to $v$.
 Such a cocone is universal if for all other cocones of that type in the category there is a unique morphisms from $v$ to their vertex: i.e, $k:\rightarrow v'$ exists and is unique.\\\\
 
-\subsubsection*{Limits and Colimits}
 Given any cone, if there is an instance of that cone for which all other instances have a unique morphism to it, that cone is the limit.
 Dually for cocones and colimits.
 In fact, it's possible to construct a category whose objects are the cones and whose morphisms are these unique factorizations.
@@ -419,30 +461,30 @@ Dually for cocones and colimits again, except the colimit is an initial object i
 \subsubsection*{Kinds of Functors}
 
 \begin{definition}[Full Functor]
-    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is full if for each $x,y\in Ob(\mathcal{C})$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is surjective.
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is full if for each $x,y\in\mathcal{C}$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is surjective.
 \end{definition}
 
 \begin{definition}[Faithful Functor]
-    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is faithful if for each $x,y\in Ob(\mathcal{C})$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is injective.
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is faithful if for each $x,y\in\mathcal{C}$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is injective.
 \end{definition}
 
 \begin{definition}[Essentially Surjective On Objects]
-    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is essentially surjective on objects if for each $y\in Ob(\mathcal{D})$, there is some $x\in Ob(\mathcal{C})$ such that $y$ is isomorphic to $Fc$.
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is essentially surjective on objects if for each $y\in\mathcal{D}$, there is some $x\in\mathcal{C}$ such that $y$ is isomorphic to $Fc$.
 \end{definition}
 
 \begin{definition}[Injective on Objects]
-    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is injective on objects if for each $x\in Ob(\mathcal{C})$, there is a unique $y\in Ob(\mathcal{D})$ such that $y=Fx$.
+    A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is injective on objects if for each $x\in\mathcal{C}$, there is a unique $y\in\mathcal{D}$ such that $y=Fx$.
 \end{definition}
 
 NOTE: Play a huge role in category theory: i.e in the Yoneda lemma\\
 NOTE: Representable functors require that the source category $\mathcal{C}$ be locally small so that the collections of morphisms between objects in the category are sets.
 \begin{definition}[Covariant Representable]
-    A functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in Ob(\mathcal{C})$ such that the functor $\mathcal{C}(c,-):\mathcal{C}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
+    A functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in\mathcal{C}$ such that the functor $\mathcal{C}(c,-):\mathcal{C}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
 \end{definition}
 
 
 \begin{definition}[Contravariant Representable]
-    A functor $F:\mathcal{C}^{op}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in Ob(\mathcal{C})$ such that the functor $\mathcal{C}(-,c):\mathcal{C}^{op}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
+    A functor $F:\mathcal{C}^{op}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in\mathcal{C}$ such that the functor $\mathcal{C}(-,c):\mathcal{C}^{op}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
 \end{definition}
 
 
@@ -473,22 +515,22 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 
 
 \begin{definition}[Natural Isomorphism]
-    A natural isomorphism is a natural tranformation $\alpha:F\rightarrow G$ where all of the c-components of the transformation $\alpha_{c}:Fc\rightarrow Gc$ are isomorphisms.
-    This means there exists some other natural transformation $\eta:G\rightarrow F$ such that $\eta_c\circ\alpha_c = 1_{Fc}$ and $\alpha_c\circ\eta_c = 1_{Gc}$.
+    A natural isomorphism is a natural transformation $\alpha:F\Rightarrow G$ where all of the c-components of the transformation $\alpha_{c}:Fc\rightarrow Gc$ are isomorphisms.
+    This means there exists some other natural transformation $\eta:G\Rightarrow F$ such that $\eta_c\circ\alpha_c = id_{Fc}$ and $\alpha_c\circ\eta_c = id_{Gc}$.
 \end{definition}
 
 
 \begin{definition}[Adjunctions]
-    An adjunction is a pair of functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{D}\rightarrow\mathcal{C}$ such that for any object $c\in Ob(\mathcal{C})$ and any object $d\in Ob(\mathcal{D})$ there is an isomorphism between the sets of functions between them and their images under the functors that is natural.
-    In other words, that for every $c\in Ob(\mathcal{C})$ and $d\in Ob(\mathcal{D})$ there is a natural isomorphism $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$.\\\\
+    An adjunction is a pair of functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{D}\rightarrow\mathcal{C}$ such that for any object $c\in\mathcal{C}$ and any object $d\in\mathcal{D}$ there is an isomorphism between the sets of functions between them and their images under the functors that is natural.
+    In other words, that for every $c\in\mathcal{C}$ and $d\in\mathcal{D}$ there is a natural isomorphism $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$.\\\\
     In this case, the functor $F$ is the left adjoint functor and the functor $G$ is the right adjoint functor.
 \end{definition}
 
 \begin{definition}[Monad]
     Given a category $\mathcal{C}$, a monad on $\mathcal{C}$ is a functor $M:\mathcal{C}\rightarrow\mathcal{C}$ with the following two natural transformations:
     \begin{enumerate}
-        \item $\eta : 1_{\mathcal{C}} \rightarrow M$ called the unit.
-        \item $\mu: M\circ M \rightarrow M$ called the multiplication.
+        \item $\eta : id_{\mathcal{C}} \Rightarrow M$ called the unit.
+        \item $\mu: M\circ M \Rightarrow M$ called the multiplication.
     \end{enumerate}
     These natural transformation are required to make the following diagrams commute.
 
@@ -509,8 +551,8 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
             \arrow["{\eta M}", from=1-1, to=1-3]
             \arrow["M\eta"', from=1-5, to=1-3]
             \arrow["\mu", from=1-3, to=3-3]
-            \arrow["{1_M}", from=1-5, to=3-3]
-            \arrow["{1_M}"', from=1-1, to=3-3]
+            \arrow["{id_M}", from=1-5, to=3-3]
+            \arrow["{id_M}"', from=1-1, to=3-3]
         \end{tikzcd}\]
 
     These commutative diagrams with the natural transformations $\eta$ and $\mu$ create a kind of monoidal structure on the collection of endofunctors $M, M\circ M, M\circ M\circ M, etc.$.
@@ -518,8 +560,8 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
 
 \subsubsection*{The Yoneda Lemma}
 \begin{definition}
-    The Yoneda lemma states that for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ where $\mathcal{C}$ is locally small and any object $c\in Ob(\mathcal{C})$, there is a bijection between the collection of natural transformations going from the functor $\mathcal{C}(c,-)$ to $F$ and the object $Fc\in Ob(\mathbf{Set})$.
-    \\\\Stated another way, this means that $Hom(\mathcal{C}(c,-), F)\cong Fc$ for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ and all objects $c\in Ob(\mathcal{C})$.
+    The Yoneda lemma states that for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ where $\mathcal{C}$ is locally small and any object $c\in\mathcal{C}$, there is a bijection between the collection of natural transformations going from the functor $\mathcal{C}(c,-)$ to $F$ and the object $Fc\in\mathbf{Set}$.
+    \\\\Stated another way, this means that $Hom(\mathcal{C}(c,-), F)\cong Fc$ for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ and all objects $c\in\mathcal{C}$.
 
 \end{definition}
 
@@ -529,18 +571,18 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
     A category $\mathcal{C}$ is monoidal if the following exist.
     \begin{enumerate}
         \item A functor $\otimes:\mathcal{C}\times\mathcal{C}\rightarrow\mathcal{C}$ called the monoidal product.
-        \item An object $\mathbbm{1}\in ob(\mathcal{C})$ called the unit.
-        \item A natural isomorphism $\alpha : (a\otimes b)\otimes c\rightarrow a\otimes (b\otimes c)$ called the associator, with components $\alpha_{x,y,z}: (x\otimes y)\otimes z\rightarrow x\otimes (y\otimes z)$.
-        \item A natural isomorphism $\lambda : \mathbbm{1}\otimes a\rightarrow a$ called the left unitor with components $\lambda_x : \mathbbm{1}\otimes x\rightarrow x$.
-        \item A natural isomorphism $\rho : a\otimes \mathbbm{1}\rightarrow a$ called the right unitor with components $\lambda_x : x\otimes \mathbbm{1}\rightarrow x$.
+        \item An object $\mathbbm{1}\in\mathcal{C}$ called the unit.
+        \item A natural isomorphism $\alpha : (a\otimes b)\otimes c\Rightarrow a\otimes (b\otimes c)$ called the associator, with components $\alpha_{x,y,z}: (x\otimes y)\otimes z\rightarrow x\otimes (y\otimes z)$.
+        \item A natural isomorphism $\lambda : \mathbbm{1}\otimes a\Rightarrow a$ called the left unitor with components $\lambda_x : \mathbbm{1}\otimes x\rightarrow x$.
+        \item A natural isomorphism $\rho : a\otimes \mathbbm{1}\Rightarrow a$ called the right unitor with components $\lambda_x : x\otimes \mathbbm{1}\rightarrow x$.
     \end{enumerate}
     All of the above must exist such that the following two diagrams, called the triangle identity and the pentagon identity, commute.
     \[\begin{tikzcd}
             {(x\otimes\mathbbm{1})\otimes y} && {x\otimes(\mathbbm{1}\otimes y)} \\
             \\
             && {x\otimes y}
-            \arrow["{{\rho_x\otimes 1_y}}"', from=1-1, to=3-3]
-            \arrow["{{1_x\otimes\lambda_y}}", from=1-3, to=3-3]
+            \arrow["{{\rho_x\otimes id_y}}"', from=1-1, to=3-3]
+            \arrow["{{id_x\otimes\lambda_y}}", from=1-3, to=3-3]
             \arrow["{{\alpha_{x,y,z}}}", from=1-1, to=1-3]
         \end{tikzcd}\]
 
@@ -552,13 +594,13 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
             {w\otimes ((x\otimes y)\otimes z)} && {w\otimes (x\otimes (y\otimes z))}
             \arrow["{{\alpha_{w,x,(y\otimes z)}}}", from=1-3, to=5-3]
             \arrow["{{\alpha_{(w\otimes x),y,z}}}", from=1-1, to=1-3]
-            \arrow["{{\alpha_{w,x,y}\otimes 1_z}}"', from=1-1, to=3-1]
+            \arrow["{{\alpha_{w,x,y}\otimes id_z}}"', from=1-1, to=3-1]
             \arrow["{{\alpha_{w,(x\otimes y),z}}}"', from=3-1, to=5-1]
-            \arrow["{{1_w\otimes \alpha_{x,y,z}}}"', from=5-1, to=5-3]
+            \arrow["{{id_w\otimes \alpha_{x,y,z}}}"', from=5-1, to=5-3]
         \end{tikzcd}\]
 \end{definition}
 \begin{definition}[Symmetric Monoidal Category]
-    A monoidal category equipped with a natural isomorphism $\beta:a\otimes b\rightarrow b\otimes a$, called its braiding, is symmetric if $\beta_{y,x}\circ\beta_{x,y}=1_{x\otimes y}$ for all $x,y\in Ob(\mathcal{C})$
+    A monoidal category equipped with a natural isomorphism $\beta:a\otimes b\Rightarrow b\otimes a$, called its braiding, is symmetric if $\beta_{y,x}\circ\beta_{x,y}=id_{x\otimes y}$ for all $x,y\in\mathcal{C}$
     and if the following diagram, called the hexagon identity, commutes.
     \[\begin{tikzcd}
             {(x\otimes y)\otimes z} && {x \otimes (y \otimes z)} && {(y\otimes z)\otimes x} \\
@@ -568,9 +610,9 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
             \arrow["{\alpha_{x,y,z}}", from=1-1, to=1-3]
             \arrow["{\beta_{x,y\otimes z}}", from=1-3, to=1-5]
             \arrow["{\alpha_{y,z,x}}", from=1-5, to=4-5]
-            \arrow["{\beta_{x,y}\otimes 1_z}"', from=1-1, to=4-1]
+            \arrow["{\beta_{x,y}\otimes id_z}"', from=1-1, to=4-1]
             \arrow["{\alpha_{y,x,z}}"', from=4-1, to=4-3]
-            \arrow["{1_y \otimes \beta_{x,y}}"', from=4-3, to=4-5]
+            \arrow["{id_y \otimes \beta_{x,y}}"', from=4-3, to=4-5]
         \end{tikzcd}\]
 \end{definition}
 
@@ -597,7 +639,7 @@ We call this category $\textbf{Lens}_{\mathcal{C}}$, where $\mathcal{C}$ is the 
 The objects in this category are called arenas and the morphisms between them are called lenses.
 
 \begin{definition}[Lenses]
-    Given a cartesian category $\mathcal{C}$ and objects $A^-, A^+, B^-, B^+ \in ob(\mathcal{C})$, a lens consists of a passforward map $f:A^+\rightarrow B^+$ and a passback map $f^\#:A^+ \times B^- \rightarrow A^-$ between two arenas as follows:
+    Given a cartesian category $\mathcal{C}$ and objects $A^-, A^+, B^-, B^+ \in\mathcal{C}$, a lens consists of a passforward map $f:A^+\rightarrow B^+$ and a passback map $f^\#:A^+ \times B^- \rightarrow A^-$ between two arenas as follows:
     \[
         \begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}
     \]
@@ -610,7 +652,7 @@ For our purposes we'll be sticking to two such categories: the category of lense
     \begin{enumerate}
         \item A collection of objects called arenas. An arena $\begin{pmatrix}A^-\\A^+\end{pmatrix}$ is a pair of objects in $\mathcal{C}$.
         \item For each pair of arenas a collection of morphisms $\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$ called lenses.
-        \item For each arena an identity lens $\begin{pmatrix}\pi_2\\1_{A^+}\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}A^-\\A^+\end{pmatrix}$ where the passback map $\pi_2$ is the projection $\pi_2:A^+ \times A^- \rightarrow A^-$.
+        \item For each arena an identity lens $\begin{pmatrix}\pi_2\\id_{A^+}\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}A^-\\A^+\end{pmatrix}$ where the passback map $\pi_2$ is the projection $\pi_2:A^+ \times A^- \rightarrow A^-$.
         \item For any two compatible lenses a composite lens as follows:
               $$\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$$
               $$\begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}B^-\\B^+\end{pmatrix}\leftrightarrows\begin{pmatrix}C^-\\C^+\end{pmatrix}$$
