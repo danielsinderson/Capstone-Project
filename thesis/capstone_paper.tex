@@ -10,6 +10,8 @@
 \usepackage{bbm}
 \usepackage[hidelinks]{hyperref}
 \usepackage{stmaryrd}
+\usepackage{graphicx}
+\usepackage{amssymb}
 
 
 
@@ -115,32 +117,60 @@ Categories are honestly pretty simple.
 But from these humble beginnings we're going to climb very high.
 
 \subsection*{Functors and Categories of Categories}
-Since categories are a mathematical structure, like groups or vector spaces, it makes sense to ask if there exists a kind of structure-preserving map between them, much like a homomorphism between groups or a linear transformation between vector spaces.
-For categories, such a map would have to preserve identities, composition, unitality, and associativity.
-We call such a map a functor.
+Most mathematical structures have some way of mapping one instance of that structure to another instance.
+Functions map sets to sets.
+Linear transformations map vector spaces to other vector spaces.
+And group homomorphisms map groups to other groups.
+Since categories are a mathematical structure, like groups or vector spaces, it makes sense to ask if there exists a way to map between them.
+Such a map would have to preserve all of the things that make a category a category: identity morphisms and composite morphisms, and the rules of unitality and associativity.
+We call such a map between categories a functor.
 \begin{definition}[Functor]
     A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is a map between categories $\mathcal{C}$ and $\mathcal{D}$ such that the following hold:
     \begin{enumerate}
         \item For any object $a\in ob(\mathcal{C})$ there is an object $Fa\in\ ob(\mathcal{D})$.
         \item For any morphism $f:a\rightarrow b$ between objects $a$ and $b$ in $\mathcal{C}$ there is a morphism $Ff:Fa\rightarrow Fb$ between objects $Fa$ and  $Fb$ in $\mathcal{D}$.
         \item For all objects $a\in ob(\mathcal{C})$ and $Fa\in ob(\mathcal{D})$, $F1_a=1_{Fa}$.
-        \item For any composition of morphisms $g\circ f$ in $\mathcal{C}$, $Fg\circ Ff=F(g\circ f)$ in $\mathcal{D}$.
+        \item For any composition of morphisms $g\circ f$ in $\mathcal{C}$, $F(g\circ f)=Fg\circ Ff$ in $\mathcal{D}$.
     \end{enumerate}
 \end{definition}
-With functors, it's possible to construct a category where the objects themselves are categories and the morphism between them are functors.
-There are some technicalities for such constructions involving formal notions of local and global size that are necessary to avoid the Russel-esque paradox of the category of categories containing itself, but we'll ignore these in this paper.
+
+There are some things to note here.
+The first is that, like sets and functions, the mapping of objects from one category to another is unique.
+Every object in the source category is mapped to exactly one object in the target category.
+The same goes for morphisms.
+The second is that identity morphisms get mapped to identity morphisms and compositions get mapped to compositions.
+This ensures that our two rules, unitality and associativity, will be preserved since they're expressible purely in terms of composition of morphisms, identities and otherwise.
+
+With functors in our toolbox, it's now possible to construct a category where the objects themselves are categories and the morphism between them are functors.
+This, along with our next step, will prove to be extremely powerful.
+
+\subsubsection*{Avoiding Paradox}
+For anyone who has taken a course in logic or set theory, that last paragraph might be ringing some alarm bells.
+Whenever we have recursion in our structure like this, there's the opportunity for paradox to sneak in.
+The category of categories is no exception.
+
+To avoid the paradox of whether the category of categories contains itself, category theorists employ formal notions of ``size" to differentiate distinct universes of categories.
+These formalisms can get pretty technical though, so we'll be ignoring them in this paper.
+For us it will be enough to assume that whenenever we talk about a category whose objects are also categories, our object categories are in some way ``smaller" than the category that they're a part of, and thus of a different type.\footnote{In general, this ``smallness" will be that the category's collection of objects forms a set.}
 
 \subsection*{Functor Categories and Natural Transformations}
-Taking one more step into the rarefied air, it's also possible to create a category whose objects are functors and whose morphisms are structure-preserving maps called natural transformations.
+For our next, and last, step up into abstraction let's talk about functor categories.
+Functor categories are categories whose objects are functors and whose morphisms are maps called natural transformations.
+
+Since natural transformations map functors to other functors, we know that they must preserve the essential ``functor-ness'' of functors.
+This ``functor-ness'' is a bit harder to pin down than the ``category-ness'' that functors themselves preserve.
+We need to see what natural transformations do to functors, but also to what they do to the objects and arrows of the categories that the functors are acting on.
+
 \begin{definition}[Natural Transformation]
     A natural transformation $\alpha :F\Rightarrow G$ is a map between functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{C}\rightarrow\mathcal{D}$ such that the following holds:
     \begin{enumerate}
-        \item For each object $a \in Ob(\mathcal{C})$, there is a morphism $\alpha_a:Fa\rightarrow Ga$ in $\mathcal{D}$. This is called the c-component of $\alpha$.
-        \item For every morphism $f:a\rightarrow b$ in $\mathcal{C}$, $\alpha_b\circ Ff=Gf\circ\alpha_a$. This is called the naturality condition, and it preserves functoriality.
+        \item For each object $c\in\mathcal{C}$, there is a morphism $\alpha_c:Fc\rightarrow Gc$ in $\mathcal{D}$.
+              This is called the $c$-component of $\alpha$.
+        \item For every morphism $f:a\rightarrow b$ in $\mathcal{C}$, $\alpha_b\circ Ff=Gf\circ\alpha_a$.
+              This is called the naturality condition, and it preserves functoriality.
     \end{enumerate}
 
-    This means that the diagram below commutes.
-    % https://q.uiver.app/#q=WzAsNCxbMCwwLCJGYSJdLFsxLDAsIkdhIl0sWzAsMSwiRmIiXSxbMSwxLCJHYiJdLFswLDEsIlxcYWxwaGFfYSJdLFswLDIsIkZmIiwyXSxbMSwzLCJHZiJdLFsyLDMsIlxcYWxwaGFfYiIsMl1d
+    The naturality condition ensures that the following diagram commutes.
     \[\begin{tikzcd}
             Fa && Ga \\
             \\
@@ -153,9 +183,46 @@ Taking one more step into the rarefied air, it's also possible to create a categ
 
 \end{definition}
 
+This definition is short but there's a lot going on in it.
+There's a whole extra layer of stuff to keep track of since we added a layer of abstraction.
+Let's get a better idea of what this definition captures by using a picture.\\
+
+%\vspace*{0.25in}
+
+\includegraphics*[scale=0.65]{NT2.png}\\
+
+Here we see two simple categories, $\mathcal{C}$ and $\mathcal{D}$, and two functors $F$ and $G$ between them.
+Let's dig into this picture a bit and pick apart the functors and the natural transformation.
+
+First, let's note all the important mappings of the functors and the component morphisms of the natural transformation.
+\begin{itemize}
+    \item $Fa=x$, $Fb=x$, $Fc=y$, $Ff=id_x$, $Fg=k$, $F(g\circ f)=k$
+    \item $Ga=x$, $Gb=y$, $Gc=y$, $Gf=k$, $Gg=id_y$, $G(g\circ f)=k$
+    \item $N_a:Fa\rightarrow Ga = id_x$
+    \item $N_b:Fb\rightarrow Gb = k$
+    \item $N_c:Fc\rightarrow Gc = id_y$
+\end{itemize}
+
+Next, let's check that the functors preserve composition.\footnote{You should be able to convince yourself that they preserve identities.}
+$$F(g\circ f) = k = k \circ id_x = Fg \circ Ff \ \ \ \ \checkmark$$
+$$G(g \circ f) = k = id_y \circ k = Gg \circ Gf \ \ \ \ \checkmark$$
+
+
+And now let's look at the natural transformation $N: F \Rightarrow G$ and make sure that it satisfies the naturality condition for the morphisms $f,g \in \mathcal{C}$.
+$$N_b \circ Ff = k \circ id_x = Gf \circ N_a \ \ \ \ \checkmark$$
+$$N_c \circ Fg = id_y \circ k = Gg \circ N_b \ \ \ \ \checkmark$$
+
+Everything is working as expected.
+Hopefully this helped to unpack some of the complexity behind the natural transformation definition.
+In a real example, our functors would be defined equationally and we'd prove these properties for arbitrary morphisms instead of proving them for each morphism individually like we did here.
+
+Categories, functors, and natural transformations are the core of category theory.
+We'll be using them a lot in the upcoming sections.
+First though, we're going to take a look at the kinds of structure that can exist inside an individual category.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Structure within Categories}
-\subsubsection*{Kinds of Morphisms}
+\section*{Structure within Categories: Duality, Universal Properties and (Co)Limits}
+\subsection*{Kinds of Morphisms}
 
 NOTE: Isomorphism in the category \textbf{Set} are bijective functions.
 \begin{definition}[Isomorphism]
