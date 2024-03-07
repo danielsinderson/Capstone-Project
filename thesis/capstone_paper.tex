@@ -248,7 +248,7 @@ Let $\mathcal{C}$ be the category below.
     \end{tikzcd}\]
 \\
 And that's it.
-The reason duality turns out to be so powerful is that it essentially doubles our effectiveness.
+One reason duality turns out to be so powerful is that it doubles our effectiveness.
 For every structure we find in the next section, we get the dual structure essentially for free.
 Duality also plays an important role in representability and the Yoneda embedding which are major features of category theory that we'll get to later.
 
@@ -260,15 +260,17 @@ Duality also plays an important role in representability and the Yoneda embeddin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Structure within Categories: Duality, Universal Properties and (Co)Limits}
 First though, we're going to take a look at the kinds of structure that can exist inside an individual category.
-We'll start with
-
+We'll start with three types of morphisms that tell us something about the objects the map between.
 
 
 \subsection*{Kinds of Morphisms}
-
-NOTE: Isomorphism in the category \textbf{Set} are bijective functions.
+The first and most important kind of morphism is an isomorphism.
+In the category of sets and functions these morphisms are exactly the bijective functions.
+More generally, the existence of an isomorphism between objects in a category tells us that it's possible to move from one object to the other and then back again without losing any information in the process.
+We say these two objects are the same up to isomorphism, or isomorphic.
+\color{black}
 \begin{definition}[Isomorphism]
-    We say that two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $g\circ f=id_b$ and $f\circ g=id_a$.
+    Two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $g\circ f=id_b$ and $f\circ g=id_a$.
     Such a morphism is called an isomorphism.
 \end{definition}
 
