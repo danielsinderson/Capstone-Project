@@ -116,13 +116,36 @@ That's it.
 Categories are honestly pretty simple.
 But from these humble beginnings we're going to climb very high.
 
-\color{blue}
+
+\subsubsection*{A Quick Note on Isomorphism}
+When most of us think of two things being ``the same'' in mathematics we think of equalities like $1 + 1 = 2$.
+Equality is not the only useful notion of sameness in mathematics though.
+When thinking about whether two objects in a category are meaningfully ``the same,'' a more useful notion than equality is that of isomorphism.
+An isomorphism between objects means that, while they may not be exactly the same, as in equality, there exists a way to move between the two objects without losing any information.
+
+\begin{definition}[Isomorphism]
+    Two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $f^{-1}\circ f=id_a$ and $f\circ f^{-1}=id_b$.
+    Such a morphism is called an isomorphism.
+    \[\begin{tikzcd}
+            a && b
+            \arrow["f", curve={height=-12pt}, from=1-1, to=1-3]
+            \arrow["{f^{-1}}", curve={height=-12pt}, from=1-3, to=1-1]
+        \end{tikzcd}\]
+\end{definition}
+
+Another way to think about isomorphism is as a renaming.
+Two objects are isomorphic if it's possible to represent one as the other by a simple, and reversible, relabeling.
+For instance, an example of two sets that are isomorphic are the sets $\{a, b, c\}$ and $\{1, 2, 3\}$.
+By relabeling $a \mapsto 1$, $b \mapsto 2$, and $c \mapsto 3$, we have represented the first set by means of the second set.
+Specifically, we've labeled the first three letters of the alphabet by the numbers $1$, $2$, and $3$.
+
+
 \subsection*{Functors and Categories of Categories}
 Most mathematical structures have some way of mapping one instance of that structure to another instance.
 Functions map sets to sets.
 Linear transformations map vector spaces to other vector spaces.
 And group homomorphisms map groups to other groups.
-Since categories are a mathematical structure, like groups or vector spaces, it makes sense to ask if there exists a way to map between them.
+Since categories are a mathematical structure, it makes sense to ask if there exists a way to map between them.
 Such a map would have to preserve all of the things that make a category a category: identity morphisms and composite morphisms, and the rules of unitality and associativity.
 We call such a map between categories a functor.
 \begin{definition}[Functor]
@@ -145,7 +168,7 @@ This ensures that our two rules, unitality and associativity, will be preserved 
 With functors in our toolbox, it's now possible to construct a category where the objects themselves are categories and the morphism between them are functors.
 This, along with our next step, will prove to be extremely powerful.
 
-\subsubsection*{Avoiding Paradox}
+\subsubsection*{A Quick Note on Avoiding Paradox}
 For anyone who has taken a course in logic or set theory, that last paragraph might be ringing some alarm bells.
 Whenever we have recursion in our structure like this, there's the opportunity for paradox to sneak in.
 The category of categories is no exception.
@@ -160,7 +183,7 @@ Functor categories are categories whose objects are functors and whose morphisms
 
 Since natural transformations map functors to other functors, we know that they must preserve the essential ``functor-ness'' of functors.
 This ``functor-ness'' is a bit harder to pin down than the ``category-ness'' that functors themselves preserve.
-We need to see what natural transformations do to functors, but also to what they do to the objects and arrows of the categories that the functors are acting on.
+We need to see what natural transformations do to functors, but also what they do to the objects and arrows of the categories that the functors are acting on.
 
 \begin{definition}[Natural Transformation]
     A natural transformation $\alpha :F\Rightarrow G$ is a map between functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{C}\rightarrow\mathcal{D}$ such that the following holds:
@@ -258,34 +281,17 @@ Duality also plays an important role in representability and the Yoneda embeddin
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section*{Structure within Categories: Duality, Universal Properties and (Co)Limits}
+\section*{Universal Properties: Structure within Categories}
 First though, we're going to take a look at the kinds of structure that can exist inside an individual category.
-We'll start with three types of morphisms that tell us something about the objects the map between.
+We'll start with three types of morphisms that tell us something about the objects that they map between.
 
 
-\subsection*{Kinds of Morphisms}
-The first and most important kind of morphism is an isomorphism.
-In the category of sets and functions these morphisms are exactly the bijective functions.
-More generally, the existence of an isomorphism between objects in a category tells us that it's possible to move from one object to the other and then back again without losing any information in the process.
-We say these two objects are the same up to isomorphism, or isomorphic.
-\color{black}
-\begin{definition}[Isomorphism]
-    Two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $g\circ f=id_b$ and $f\circ g=id_a$.
-    Such a morphism is called an isomorphism.
-\end{definition}
 
-NOTE: Monomorphism in the category \textbf{Set} are injective functions.
-\begin{definition}[Monomorphism]
-    A morphism $f:b\rightarrow c$ is a monomorphism if for any pair of parallel morphisms $g,h:a\rightarrow b$, $f\circ g=f\circ h$ implies that $g=h$.
-\end{definition}
 
-NOTE: Epimorphisms in the category \textbf{Set} are surjective functions.
-\begin{definition}[Epimorphism]
-    A morphism $f:b\rightarrow c$ is an epimorphism if for any pair of parallel morphisms $g,h:c\rightarrow d$, $g\circ f=h\circ f$ implies that $g=h$.
-\end{definition}
-
-\subsubsection*{Universal Properties}
-
+\subsubsection*{Universal Objects / Properties}
+Universal properties can be confusing the first time they're encountered.
+The easiest way to think of them is as a pattern or diagram that's contained in the category that is in some way the ``best'' or ``simplest'' example of that pattern: it contains exactly the information required and no more.
+The simplest such property is that of a terminal object.
 \begin{definition}[Terminal Object]
     Let $t\in\mathcal{C}$ be given. Then $t$ is a terminal object in $\mathcal{C}$ if the following hold:
     \begin{enumerate}
@@ -293,6 +299,9 @@ NOTE: Epimorphisms in the category \textbf{Set} are surjective functions.
         \item For any other object $t'$ in $\mathcal{C}$ that meets condition (1), there exists an unique isomorphism $g:t\rightarrow t'$.
     \end{enumerate}
 \end{definition}
+
+
+
 
 Dual to terminal objects are initial objects.
 \begin{definition}[Initial Object]

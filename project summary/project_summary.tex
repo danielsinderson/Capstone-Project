@@ -61,14 +61,14 @@ I've only just arrived, but the view is promising and, more importantly, its spe
 The first goal of my project was to get a working understanding of category theory up to and including the Yoneda Lemma.
 I split this material up into four section: the basics (categories, functors, and natural transformations), universal properties and limits, structure between categories (subcategories, representability, equivalence, natural isomorphism, adjunctions, and monads), and monoidal categories.
 As representative samples here are my definitions for a category and a monoidal category.
-
+\pagebreak
 \begin{definition}[Category]
     A category $\mathcal{C}$ is defined by the following:
     \begin{enumerate}
         \item $\mathcal{C}$ contains a collection of objects $ob(\mathcal{C})$. We'll denote that an object is in a category using set notation: $c\in\mathcal{C}$.
         \item For any two objects $a$, $b$ $\in \mathcal{C}$ there is a collection of morphisms, or arrows, between those objects $\mathcal{C}(a,b)$ called the homset. This is short for ``set of homomorphism." We'll denote an element $f\in\mathcal{C}(a,b)$ using function notation: $f:a\rightarrow b$.
         \item Every object $a\in \mathcal{C}$ has a morphism to itself $id_a:a\rightarrow a$ called its identity. This morphism doesn't do anything. It's like multiplying a number by 1.
-        \item For every two morphisms $f:a\rightarrow b$ and $g: b\rightarrow c$ there's a third morphism $g\circ f:a\rightarrow c$ that's their composition. The circle is the symbol for function composition and $g \circ f$ is read ``g after f."
+        \item For every two morphisms $f:a\rightarrow b$ and $g: b\rightarrow c$ there's a third morphism $g\circ f:a\rightarrow c$ that's their composition. The circle is the symbol for function composition and $g \circ f$ is read ``$g$ after $f$."
 
               \[\begin{tikzcd}
                       a && b \\
@@ -107,7 +107,7 @@ As representative samples here are my definitions for a category and a monoidal 
 
     \end{enumerate}
 \end{definition}
-
+\pagebreak
 \begin{definition}[Monoidal Categories]
     A category $\mathcal{C}$ is monoidal if the following exist.
     \begin{enumerate}
@@ -152,7 +152,7 @@ Explaining the ``what" and the ``why" of category theory in 20 minutes is hard.
 
 I'm still in the process of learning this material.
 The meat of it is all in monoidal categories and these constructions on top of them called lenses and charts.
-Lenses compose system specifications---how they update and what variables they exposes---while charts compose system behaviors like trajectories, steady states, and periodic orbits.
+Lenses compose system specifications---how they update and what variables they expose---while charts compose system behaviors like trajectories, steady states, and periodic orbits.
 Together they form the vertical and the horizontal compositions of the double category of arenas, a thing I don't actually understand.
 Because of this, and because I'm running out of time for research, I'll stick to lenses for the project and rely on simulation to peer into the systems' behaviors.
 
@@ -171,7 +171,7 @@ The objects in this category are called arenas and the morphisms between them ar
 \end{definition}
 
 For our purposes we'll be sticking to two such categories: the category of lenses over the category of sets and functions, $\textbf{Lens}_{\textbf{Set}}$, for discrete systems and the category of Euclidean spaces and smooth functions, $\textbf{Lens}_\textbf{Euc}$, for differential systems.
-
+\pagebreak
 \begin{definition}[The Category $\textbf{Lens}_\mathcal{C}$]
     Given the cartesian category $\mathcal{C}$, the category $\textbf{Lens}_{\mathcal{C}}$ has the following properties.
     \begin{enumerate}
