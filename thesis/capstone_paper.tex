@@ -1,6 +1,7 @@
-\documentclass{article}
+\documentclass[12pt]{article}
 
-
+\usepackage[margin=1in]{geometry}
+\linespread{1}
 
 \usepackage{amsthm}
 \usepackage{xcolor}
@@ -567,7 +568,7 @@ If we look at our full subcategory example from above, are $\mathcal{C}$ and $\m
         \arrow[from=3-7, to=3-8]
     \end{tikzcd}\]
 We know that $F$ is full and faithful by definition of a full subcategory.
-But it's not surjective on objects since there's no object in $\mathcal{C}$ that maps to $y$ in $\mathcal{D}$.
+But it's not surjective on objects since there's no object in $\mathcal{C}$ that maps to $y$, or anything isomorphic to $y$, in $\mathcal{D}$.
 Let's make a quick modification so that our two categories can be equivalent.
 \[\begin{tikzcd}
         & {\mathcal{C}} && {F:\mathcal{C}\rightarrow\mathcal{D}} && {\mathcal{D}} \\
@@ -645,51 +646,91 @@ You should be able to convince yourself that $\mathcal{D}\simeq\mathcal{E}$ and 
 
 Since categorical equivalence is reflexive, symmetric, and transitive we know that it does define an equivalence relation.
 
-\subsection*{Representability}
-
-NOTE: Play a huge role in category theory: i.e in the Yoneda lemma\\
-NOTE: Representable functors require that the source category $\mathcal{C}$ be locally small so that the collections of morphisms between objects in the category are sets.
-
-\begin{definition}[Covariant Representable]
-    A functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in\mathcal{C}$ such that the functor $\mathcal{C}(c,-):\mathcal{C}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
-\end{definition}
-
-
-\begin{definition}[Contravariant Representable]
-    A functor $F:\mathcal{C}^{op}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in\mathcal{C}$ such that the functor $\mathcal{C}(-,c):\mathcal{C}^{op}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
-\end{definition}
-
-\begin{definition}[The Yoneda Lemma]
-    The Yoneda lemma states that for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ where $\mathcal{C}$ is locally small and any object $c\in\mathcal{C}$, there is a bijection between the collection of natural transformations going from the functor $\mathcal{C}(c,-)$ to $F$ and the object $Fc\in\mathbf{Set}$.
-    \\\\Stated another way, this means that $Hom(\mathcal{C}(c,-), F)\cong Fc$ for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ and all objects $c\in\mathcal{C}$.
-
-\end{definition}
-
 
 
 \subsection*{Adjunctions}
+Another important relationship that can exist between categories is an adjunction.
+Adjunctions are a generalization of categorical equivalence.
+Where an equivalence requires natural isomorphisms, an adjunction gets by with natural transformations.
+What this means intuitively is that an adjunction is a way to encapsulate the notion of an imperfect inverse.
+In an isomorphism or equivalence it's possible to move from one category to the other and then back and return to where you started (up to isomorphism of objects).
+In an adjunction the guarantee is weaker: with each traversal an error accrues, but there is structure to it.
 
+Let's look at this with an examples using the two functions below.
+\[\begin{tikzcd}
+        {\mathbb{Z}} & {\mathbb{R}} && {\mathbb{R}} & {\mathbb{Z}} \\
+        x & 2x && x & {\big\lceil \frac{1}{2}x \big\rceil}
+        \arrow["f", from=1-1, to=1-2]
+        \arrow[maps to, from=2-1, to=2-2]
+        \arrow["g", from=1-4, to=1-5]
+        \arrow[maps to, from=2-4, to=2-5]
+    \end{tikzcd}\]
+Here $f$ multiplies by 2 and $g$ divides by two and then rounds up to the nearest integer.
+Let's throw in some values of $x$ and track it through our functions.
+\begin{align*}
+    g(f(3))=g(6)=3  &  & f(g(3))=f(2)=4 \\
+    g(f(4))=g(8)=4  &  & f(g(4))=f(2)=4 \\
+    g(f(5))=g(10)=5 &  & f(g(5))=f(3)=6
+\end{align*}
+Clearly these aren't a perfect isomorphism: $f(g(x))$ isn't always equal to $x$ or to $g(f(x))$.
+But the error is small and, more importantly, it's structured.
+For any $x\in\mathbb{Z}$ and any $y\in\mathbb{R}$, $f(x) \le y$ if and only if $x \le g(y)$.
+The specific structure here isn't important to us, only that there is one.
 
-\begin{definition}[Forgetful]
-    A forgetful functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is a functor that sends objects in a category of structures-on-sets, like groups or preorders, to the underlying sets themselves.
-    They ``forget'' the additional structure in the source category.
+Let's make this precise now.
+\begin{definition}[Adjunction]
+    An adjunction between two categories $\mathcal{C}$ and $\mathcal{D}$ exists, written $\mathcal{C} \dashv \mathcal{D}$, if there exist two functors $F:\mathcal{C} \rightarrow \mathcal{D}$ and $G:\mathcal{D} \rightarrow \mathcal{C}$ with natural transformations $\eta : \mathsf{id}_\mathcal{C} \Rightarrow G \circ F$ and $\epsilon: F \circ G \Rightarrow \mathsf{id}_\mathcal{D}$ such that the following diagrams commute.
+    \[\begin{tikzcd}
+            F && {F \circ G \circ F} & G && {G \circ F \circ G} \\
+            \\
+            && F &&& G
+            \arrow["{F \cdot \eta}", from=1-1, to=1-3]
+            \arrow["{\epsilon \cdot F}", from=1-3, to=3-3]
+            \arrow["{\mathsf{id}_F}"', from=1-1, to=3-3]
+            \arrow["{\eta \cdot G}", from=1-4, to=1-6]
+            \arrow["{G \cdot \epsilon}", from=1-6, to=3-6]
+            \arrow["{\mathsf{id}_G}"', from=1-4, to=3-6]
+        \end{tikzcd}\]
+\end{definition}
+You may have noticed there's something strange going on in the diagrams above.
+Each of the objects is a functor and each of the morphisms is a natural transformation, but many of the morphisms appear to be the result of some kind of composition of a functor and a natural transformation.
+This operation is called whiskering.
+Whiskering is important for understanding the adjunction definition above and for understanding monads in the next section, so we'll spend some time here to understand it.
+\begin{definition}[Whiskering on the Right]
+    Given functors $F,G: \mathcal{C} \rightarrow \mathcal{D}$ and $H:\mathcal{D} \rightarrow \mathcal{E}$ along with a natural transformation $\alpha:F \Rightarrow G$, if we whisker on the right we get a new natural transformation $H\cdot\alpha : (H \circ F) \Rightarrow (H \circ G)$ with components $(H\cdot\alpha)_a=H\alpha_a$.
 \end{definition}
 
-\begin{definition}[Free]
-    A free functor $F:\mathbf{Set}\rightarrow\mathcal{C}$ is a functor that sends sets to the free construction on that set, like the free group on the set.
-    They construct the desired structure on the set in a way that requires no choices.
+\begin{definition}[Whiskering on the Left]
+    Given functors $F: \mathcal{C} \rightarrow \mathcal{D}$ and $G,H:\mathcal{D} \rightarrow \mathcal{E}$ along with a natural transformation $\alpha:G \Rightarrow H$, if we whisker on the left we get a new natural transformation $\alpha\cdot F : (G \circ F) \Rightarrow (H \circ F)$ with components $(\alpha\cdot f)_a=\alpha_{Fa}$.
 \end{definition}
+The results of this operation are easy to see if we look at the triangle diagrams above with the identity functors put in.
+\[\begin{tikzcd}
+        {F\circ \mathsf{id}_\mathcal{C}} && {F \circ G \circ F} & {\mathsf{id}_\mathcal{C} \circ G} && {G \circ F \circ G} \\
+        \\
+        && {\mathsf{id}_\mathcal{D} \circ F} &&& {G \circ \mathsf{id}_\mathcal{D}}
+        \arrow["{F \cdot \eta}", from=1-1, to=1-3]
+        \arrow["{\epsilon \cdot F}", from=1-3, to=3-3]
+        \arrow["{\mathsf{id}_F}"', from=1-1, to=3-3]
+        \arrow["{\eta \cdot G}", from=1-4, to=1-6]
+        \arrow["{G \cdot \epsilon}", from=1-6, to=3-6]
+        \arrow["{\mathsf{id}_G}"', from=1-4, to=3-6]
+    \end{tikzcd}\]
 
-\begin{definition}[Adjunctions]
-    An adjunction is a pair of functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{D}\rightarrow\mathcal{C}$ such that for any object $c\in\mathcal{C}$ and any object $d\in\mathcal{D}$ there is an isomorphism between the sets of functions between them and their images under the functors that is natural.
-    In other words, that for every $c\in\mathcal{C}$ and $d\in\mathcal{D}$ there is a natural isomorphism $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$.\\\\
-    In this case, the functor $F$ is the left adjoint functor and the functor $G$ is the right adjoint functor.
-\end{definition}
+Let's contrast our definition of adjunction to our definition of an isomorphism to help us get some intuition about how they work.
+Given functors $F: \mathcal{C} \rightarrow \mathcal{D}$ and $G,H:\mathcal{D} \rightarrow \mathcal{E}$, we would have an isomorphism if $G \circ F = \mathsf{id}_\mathcal{C}$ and $F \circ G = \mathsf{id}_\mathcal{D}$.
+But we don't have this in an adjunction.
+Instead we have the natural transformations $\eta : \mathsf{id}_\mathcal{C} \Rightarrow G \circ F$ and $\epsilon: F \circ G \Rightarrow \mathsf{id}_\mathcal{D}$ and the triangle identities above.
+At a high level, these tell us that--while the compositions don't equal the identities--there is still a way to travel from the identities on our categories to our compositions of functors.
+This traveling accrues an error now though: it's no longer lossless.
+%\begin{definition}[Adjunctions]
+%    An adjunction between two categories $\mathcal{C}$ and $\mathcal{D}$ exists, written $\mathcal{C} \dashv \mathcal{D}$, if there exist two functors $F:\mathcal{C}\rightarrow\mathcal{D}$, the left adjoint functor, and $G:\mathcal{D}\rightarrow\mathcal{C}$, the right adjoint functor, such that for any object $c\in\mathcal{C}$ and any object $d\in\mathcal{D}$ there is a natural isomorphism $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$.
+%\end{definition}
+%In other words, $F$ and $G$ form an adjunction if the set of morphisms from $c$ to $Gd$ in $\mathcal{C}$ is isomorphic to the set of morphisms from $Fc$ to $d$ in $\mathcal{D}$.
 
 
 
 \subsection*{Monads}
-
+Our last
 \begin{definition}[Monad]
     Given a category $\mathcal{C}$, a monad on $\mathcal{C}$ is a functor $M:\mathcal{C}\rightarrow\mathcal{C}$ with the following two natural transformations:
     \begin{enumerate}
@@ -720,6 +761,32 @@ NOTE: Representable functors require that the source category $\mathcal{C}$ be l
         \end{tikzcd}\]
 
     These commutative diagrams with the natural transformations $\eta$ and $\mu$ create a kind of monoidal structure on the collection of endofunctors $M, M\circ M, M\circ M\circ M, etc.$.
+\end{definition}
+
+
+
+
+
+
+\pagebreak
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Representability}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{definition}[Covariant Representable]
+    A functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in\mathcal{C}$ such that the functor $\mathcal{C}(c,-):\mathcal{C}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
+\end{definition}
+
+\begin{definition}[Contravariant Representable]
+    A functor $F:\mathcal{C}^{op}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in\mathcal{C}$ such that the functor $\mathcal{C}(-,c):\mathcal{C}^{op}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
+\end{definition}
+
+\begin{definition}[The Yoneda Lemma]
+    The Yoneda lemma states that for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ where $\mathcal{C}$ is locally small and any object $c\in\mathcal{C}$, there is a bijection between the collection of natural transformations going from the functor $\mathcal{C}(c,-)$ to $F$ and the object $Fc\in\mathbf{Set}$.
+    \\\\Stated another way, this means that $Hom(\mathcal{C}(c,-), F)\cong Fc$ for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ and all objects $c\in\mathcal{C}$.
+
 \end{definition}
 
 
