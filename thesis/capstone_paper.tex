@@ -722,6 +722,7 @@ But we don't have this in an adjunction.
 Instead we have the natural transformations $\eta : \mathsf{id}_\mathcal{C} \Rightarrow G \circ F$ and $\epsilon: F \circ G \Rightarrow \mathsf{id}_\mathcal{D}$ and the triangle identities above.
 At a high level, these tell us that--while the compositions don't equal the identities--there is still a way to travel from the identities on our categories to our compositions of functors.
 This traveling accrues an error now though: it's no longer lossless.
+
 %\begin{definition}[Adjunctions]
 %    An adjunction between two categories $\mathcal{C}$ and $\mathcal{D}$ exists, written $\mathcal{C} \dashv \mathcal{D}$, if there exist two functors $F:\mathcal{C}\rightarrow\mathcal{D}$, the left adjoint functor, and $G:\mathcal{D}\rightarrow\mathcal{C}$, the right adjoint functor, such that for any object $c\in\mathcal{C}$ and any object $d\in\mathcal{D}$ there is a natural isomorphism $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$.
 %\end{definition}
@@ -730,7 +731,10 @@ This traveling accrues an error now though: it's no longer lossless.
 
 
 \subsection*{Monads}
-Our last
+Our last relationship between categories, the monad, is explicitly a functor from a category to itself\footnote{When the domain and codomain of a functor are the same category we often call it an endofunctor.} rather than a relationship between arbitrary categories.
+Like an adjunction though, a monad mutates the objects of the category it acts on in a non-reversible way: there's some loss of information that occurs that prevents an output from being uniquely identified with an input.
+The connection between adjunctions and monads is actually quite deep.
+But before we look into that, let's see the standard definition.
 \begin{definition}[Monad]
     Given a category $\mathcal{C}$, a monad on $\mathcal{C}$ is a functor $M:\mathcal{C}\rightarrow\mathcal{C}$ with the following two natural transformations:
     \begin{enumerate}
@@ -760,12 +764,19 @@ Our last
             \arrow["{\mathsf{id}_M}"', from=1-1, to=3-3]
         \end{tikzcd}\]
 
-    These commutative diagrams with the natural transformations $\eta$ and $\mu$ create a kind of monoidal structure on the collection of endofunctors $M, M\circ M, M\circ M\circ M, etc.$.
+    For those with some experience with algebraic structures, this creates a monoidal structure on the collection of endofunctors $\{M, M\circ M, M\circ M\circ M,\dots\}$ where the monoidal unit is $\eta$ and the monoidal product is $\mu$.\footnote{This is the reason for the oft maligned phrase that ``monads are just monoids in the category of endofunctors.''}
 \end{definition}
 
+As we mentioned before there's a deep connection between adjunctions and monads.
+Specifically, every adjunction gives rise to a monad $G \circ F: \mathcal{C} \rightarrow \mathcal{C}$ where $G$ is the right adjoint functor and $F$ is the left adjoint functor.
+We can think of this induced monad as the impression or shadow left by the adjunction.\footnote{Specifically the impression left on the codomain of the right adjoint.}
+Looking at this more rigorously we can construct an alternate definition.
+\begin{definition}[Monad Induced by an Adjunction]
+    Every adjunction $F \dashv G$ induces a monad $G \circ F: \mathcal{C} \rightarrow \mathcal{C}$ where the unit is the natural transformation $\eta : \mathsf{id}_\mathcal{C} \Rightarrow G \circ F$ and the multiplication is the whiskered natural transformation $G \cdot \epsilon \cdot F: G \circ F \circ F \circ F \Rightarrow G \circ F$.
+\end{definition}
 
-
-
+Monads often show up in applied settings when the notion of a side-effect or additional structure on outputs is required.
+We'll see them again in the context of monadic lenses in the section on categorical systems theory.
 
 
 \pagebreak
