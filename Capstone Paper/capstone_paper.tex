@@ -187,26 +187,26 @@ Let categories $\mathcal{C}$ and $\mathcal{D}$ and a functor $F:\mathcal{C} \rig
 To test that unitality is preserved by the functor, we'll start with the unitality definition in $\mathcal{C}$, that $f\circ \mathsf{id}_a=\mathsf{id}_b\circ f=f$ for objects $a,b\in\mathcal{C}$ and morphism $f:a \rightarrow b$, and show that this unitality condition remains true for the objects and morphism under the functor in $\mathcal{D}$.
 \begin{proof}
     Let a functor $F:\mathcal{C} \rightarrow \mathcal{D}$ be given, with objects $a,b\in\mathcal{C}$ and morphism $f:a \rightarrow b$.
-    \begin{align}
+    \begin{align*}
         F(\mathsf{id}_b \circ f) & = F\mathsf{id}_b \circ Ff   & \text{by the functor composition rule}   \\
                                  & = \mathsf{id}_{Fb} \circ Ff & \text{by the functor identity rule}      \\
                                  & = Ff                        & \text{by the definition of the identity} \\
                                  & = Ff \circ \mathsf{id}_{Fa} & \text{by the definition of the identity} \\
                                  & = Ff \circ F\mathsf{id}_a   & \text{by the functor identity rule}      \\
                                  & = F(f \circ \mathsf{id}_a)  & \text{by the functor composition rule}
-    \end{align}
+    \end{align*}
     Thus the functor preserves unitality, since $F(\mathsf{id}_b \circ f) = F(f \circ \mathsf{id}_a) = Ff$.
 \end{proof}
 Now let's check that associativity is preserved.
 \begin{proof}
     Let a functor $F:\mathcal{C} \rightarrow \mathcal{D}$ be given, with objects $a,b,c,d\in\mathcal{C}$ and morphisms $f:a \rightarrow b$, $g:b \rightarrow c$, and $h:c \rightarrow d$.
-    \begin{align}
+    \begin{align*}
         F(h \circ (g \circ f)) & = Fh \circ F(g \circ f)  & \text{by the functor composition rule}                \\
                                & = Fh \circ (Fg \circ Ff) & \text{by the functor composition rule}                \\
                                & = (Fh \circ Fg) \circ Ff & \text{by associativity in the category $\mathcal{D}$} \\
                                & = F(h \circ g) \circ Ff  & \text{by the functor composition rule}                \\
                                & = F((h \circ g) \circ f) & \text{by the functor composition rule}
-    \end{align}
+    \end{align*}
     Thus the functor preserves associativity, since $F(h \circ (g \circ f)) = F((h \circ g) \circ f)$.
 \end{proof}
 
@@ -358,6 +358,7 @@ Duality also plays an important role in representability and the Yoneda lemma wh
 
 
 \pagebreak
+\color{blue}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Structure between Categories}
@@ -366,7 +367,7 @@ Duality also plays an important role in representability and the Yoneda lemma wh
 A category in isolation, like a set in isolation, doesn't give us much.
 It's only when we begin adding relations and mappings between categories that the theory comes into its own.
 These will include categorical versions of some familiar structures, like embeddings, equivalence relations, and isomorphism.
-But it will also include some structures that might seem strange and perplexing at first: representability, adjunctions, and monads.
+But it will also include some structures that might seem strange and perplexing at first, like adjunctions and monads.
 
 
 \subsection*{Subcategories}
@@ -779,12 +780,20 @@ Monads often show up in applied settings when the notion of a side-effect or add
 We'll see them again in the context of monadic lenses in the section on categorical systems theory.
 
 
+
+
+\color{black}
 \pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Representability}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+In this section we're going to take a moment to cover one of the most important topics in category theory: representability.
+This section will get very abstract, but at its core it's about ways to represent an object or category inside of another, usually set.
+
+\subsection*{Respresentable Functors}
+
 
 \begin{definition}[Covariant Representable]
     A functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in\mathcal{C}$ such that the functor $\mathcal{C}(c,-):\mathcal{C}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
@@ -793,6 +802,11 @@ We'll see them again in the context of monadic lenses in the section on categori
 \begin{definition}[Contravariant Representable]
     A functor $F:\mathcal{C}^{op}\rightarrow\mathbf{Set}$ is representable if there is an object $c\in\mathcal{C}$ such that the functor $\mathcal{C}(-,c):\mathcal{C}^{op}\rightarrow \mathbf{Set}$ is naturally isomorphic to $F$.
 \end{definition}
+
+\subsection*{Yoneda Embeddings}
+
+
+
 
 \begin{definition}[The Yoneda Lemma]
     The Yoneda lemma states that for any functor $F:\mathcal{C}\rightarrow\mathbf{Set}$ where $\mathcal{C}$ is locally small and any object $c\in\mathcal{C}$, there is a bijection between the collection of natural transformations going from the functor $\mathcal{C}(c,-)$ to $F$ and the object $Fc\in\mathbf{Set}$.
@@ -811,6 +825,7 @@ We'll see them again in the context of monadic lenses in the section on categori
 \section*{Structure within Categories}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\color{blue}
 Now that we know the basics of category theory let's look at the kinds of structures that we can find within a category and the process we use to do so.
 A quick word of warning: this section is going to get very abstract, but as before, the underlying intuition is fairly simple.
 We can think of the structure that we're looking for inside a category as some subcategory\footnote{This is really just a category. It's only a subcategory if it actually does exist inside our main category. I went ahead and used subcategory here to avoid having to use nebulous terms like ``main category.''} of objects and morphisms, for example the one below.
@@ -837,31 +852,23 @@ Any cones that can be factorized via some unique morphism to one of these ``best
 Regardless of the diagram/cone, all of these limit objects will be the same up to a unique isomorphism.
 We then say that all of these objects have the universal property specified by the cone.
 
-Let's review this process with a picture before moving on to a more rigorous account.
+Let's review this process with a picture before moving on to a more rigorous and detailed account.
 \[\begin{tikzcd}
         {\text{subcategory}} && {\text{cone}} && {\text{cones and factorizations}} & {\text{limit objects}}
         \arrow["{\text{add vertex}}", dashed, from=1-1, to=1-3]
         \arrow["{\text{find examples}}", dashed, from=1-3, to=1-5]
         \arrow["{\text{filter}}", dashed, from=1-5, to=1-6]
     \end{tikzcd}\]
+\color{black}
+
+
+\subsection*{Indexing Categories and Diagrams}
 
 
 \subsection*{Cones}
-In this last part of the section we're going to discuss a generalization of all of the previous universal properties called cones and cocones.
-A cone consists of any finite collection of objects and morphisms between them, combined with an additional object $v$ called the vertex of the cone and morphisms from $v$ to all other objects in the collection.
-Such a cone is universal if for all other cones of that type in the category there is a unique morphisms from their vertex to $v$: i.e, $k:v'\rightarrow v$ exists and is unique.\\\\
-
-A cocone consists of any finite collection of objects and morphisms between them, combined with an additional object $v$ called the vertex of the cocone and morphisms from all other objects in the collection to $v$.
-Such a cocone is universal if for all other cocones of that type in the category there is a unique morphisms from $v$ to their vertex: i.e, $k:\rightarrow v'$ exists and is unique.\\\\
-
-Given any cone, if there is an instance of that cone for which all other instances have a unique morphism to it, that cone is the limit.
-Dually for cocones and colimits.
-In fact, it's possible to construct a category whose objects are the cones and whose morphisms are these unique factorizations.
-In this category, the limit is a terminal object.
-Dually for cocones and colimits again, except the colimit is an initial object in the constructed category of cocones instead of a terminal object.
 
 
-\subsection*{Categories of Cones and Comma Categories}
+\subsection*{Categories of Cones}
 
 
 \subsection*{Limits}
