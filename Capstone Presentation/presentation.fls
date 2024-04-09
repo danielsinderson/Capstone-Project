@@ -395,6 +395,12 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathker
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
+INPUT ./system_diagram_open.png
+INPUT ./system_diagram_open.png
+INPUT ./system_diagram_open.png
+INPUT ./system_diagram_open.png
+INPUT ./system_diagram_open.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmssbx10.tfm
 OUTPUT presentation.nav
 OUTPUT presentation.toc
 OUTPUT presentation.snm
