@@ -837,11 +837,28 @@ A product in a category is an object with morphisms from it to two other objects
 This is vague, but take the product of integers $3*5=15$ as an example.
 In this case $15$ is the simplest number such that both $3$ and $5$ are among its divisors.
 Contrast this to $45$ which also has $3$ and $5$ as divisors but contains an ``extra'' copy of $3$: this extra $3$ is superfluous and makes $45$ a worse candidate for $3*5$ than $15$.
-
+This is especially obvious in diagram form.
+\[\begin{tikzcd}
+        & 45 &&&& 15 \\
+        3 && 15 && 3 && 5 \\
+        & 3 && 5
+        \arrow[from=1-2, to=2-1]
+        \arrow[from=1-6, to=2-5]
+        \arrow[from=1-6, to=2-7]
+        \arrow[from=1-2, to=2-3]
+        \arrow[from=2-3, to=3-2]
+        \arrow[from=2-3, to=3-4]
+    \end{tikzcd}\]
 Now let's make this precise in the general case.
 
 \begin{definition}[Product]
     Let $a,b,v\in\mathcal{C}$ and morphisms $f:v\rightarrow a$ and $g:v\rightarrow b$ be given.
+    \[\begin{tikzcd}
+            & v \\
+            a && b
+            \arrow["f", from=1-2, to=2-1]
+            \arrow["g"', from=1-2, to=2-3]
+        \end{tikzcd}\]
     The object $v$ is a product of $a$ and $b$ if the following holds:
     \begin{enumerate}
         \item For any other object $x$ with morphisms $f':x\rightarrow a$ and $g':x\rightarrow b$, there is a unique morphism $k:x\rightarrow v$ such that $f\circ k=f'$ and $g\circ k=g'$.
@@ -863,8 +880,23 @@ Now let's make this precise in the general case.
 This conditions ensures that the object $v$ is the universal or canonical object satisfying the pattern, with the morphisms of any other such object being able to be written as a sort of embellishment of the morphisms from $v$.
 The morphisms $f'$ and $g'$ do project $v'$ to $a$ and $b$, but they're really just $f$ and $g$ with a little extra sauce on them.
 
-In $\textbf{Set}$ the categorical product is exactly the Cartesian product of sets $a \times b = \{(x, y) | x\in a \text{ and } y\in b\}$, and $f$ and $g$ are the projections $f: (x, y) \mapsto x$ and $g: (x, y) \mapsto y$.
-Like in our integer example above there are other candidates, say the object $a \times (b \times c)$, but all of these other candidates will have a unique factorization to the Cartesian product: they all have extra stuff.
+In $\textbf{Set}$ the categorical product is exactly the Cartesian product of sets $a \times b = \{(x, y) \ | \ x\in a \text{ and } y\in b\}$, and $f$ and $g$ are the projections $f: (x, y) \mapsto x$ and $g: (x, y) \mapsto y$.
+Like in our integer example above there are other candidates, say the object $(a \times b) \times c$, but all of these other candidates will have a unique factorization to the Cartesian product: they all have extra stuff.
+Again we can see the example of $(a \times b) \times c$ clearly in a diagram.
+\[\begin{tikzcd}
+        & {a\times b} &&&&& {(a\times b) \times c} \\
+        a && b &&& {a \times b} && c \\
+        &&&& a && b
+        \arrow[from=1-2, to=2-1]
+        \arrow[from=1-2, to=2-3]
+        \arrow[from=1-7, to=2-8]
+        \arrow[from=1-7, to=2-6]
+        \arrow[from=2-6, to=3-5]
+        \arrow[from=2-6, to=3-7]
+    \end{tikzcd}\]
+
+
+
 
 
 \pagebreak
@@ -910,28 +942,13 @@ If we do something similar and slightly more complicated to a category, we get a
             \arrow["{{\mathsf{id}_w\otimes \alpha_{x,y,z}}}"', from=5-1, to=5-3]
         \end{tikzcd}\]
 \end{definition}
-\begin{definition}[Symmetric Monoidal Category]
-    A monoidal category equipped with a natural isomorphism $\beta:a\otimes b\Rightarrow b\otimes a$, called its braiding, is symmetric if $\beta_{y,x}\circ\beta_{x,y}=\mathsf{id}_{x\otimes y}$ for all $x,y\in\mathcal{C}$
-    and if the following diagram, called the hexagon identity, commutes.
-    \[\begin{tikzcd}
-            {(x\otimes y)\otimes z} && {x \otimes (y \otimes z)} && {(y\otimes z)\otimes x} \\
-            \\
-            \\
-            {(y\otimes x)\otimes z} && {y\otimes (x\otimes z)} && {y\otimes (z\otimes x)}
-            \arrow["{\alpha_{x,y,z}}", from=1-1, to=1-3]
-            \arrow["{\beta_{x,y\otimes z}}", from=1-3, to=1-5]
-            \arrow["{\alpha_{y,z,x}}", from=1-5, to=4-5]
-            \arrow["{\beta_{x,y}\otimes \mathsf{id}_z}"', from=1-1, to=4-1]
-            \arrow["{\alpha_{y,x,z}}"', from=4-1, to=4-3]
-            \arrow["{\mathsf{id}_y \otimes \beta_{x,y}}"', from=4-3, to=4-5]
-        \end{tikzcd}\]
-\end{definition}
+We can create a special kind of monoidal category, called a cartesian category, with two additional properties.
 
 \begin{definition}[Cartesian Monoidal Category]
     A monoidal category $\mathcal{C}$ is cartesian when its monoidal product is its categorical product and its monoidal unit is its terminal object.
     This obviously means that $\mathcal{C}$ must contain all products and have a terminal object.
 \end{definition}
-An example of this would be \textbf{Set}, where the Cartesian product is the monoidal product and the singleton set is the monoidal unit.
+An example of this would be \textbf{Set}, where the monoidal product is the Cartesian product and the monoidal unit is the singleton set.
 
 
 
