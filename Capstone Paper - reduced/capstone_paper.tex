@@ -816,8 +816,8 @@ Note here that a terminal object in a category is unique up to unique isomorphis
 This is in fact the case in the category $\textbf{Set}$ of sets and functions where all singleton sets $\{*\}$ are terminal.
 If we think about this it should make sense.
 For any set $S$ there is exactly one function $f:S \rightarrow \{*\}$: the function that sends all elements in $S$ to $*$.
-This includes any other singleton set $\{--\}$.
-And since both singletons have the same cardinality of one and since $f$ is surjective we know that this one function, $f$, between them is an isomorphism.
+This includes any other singleton set $\{-\}$.
+And since both singletons have the same cardinality and since $f$ is surjective we know that this one function between them is an isomorphism.
 
 Also note that not every category has a terminal object.
 For instance the category below has no object that has a morphism to it from every other object.
@@ -827,7 +827,7 @@ For instance the category below has no object that has a morphism to it from eve
         \arrow[from=1-1, to=1-2]
         \arrow[from=2-1, to=2-2]
     \end{tikzcd}\]
-The existence of a terminal object is not a given in a category, but is structure that some categories have that tells us something about that category.
+The existence of a terminal object is not a given in a category, but is structure that some categories have that tells us something about them.
 The same is true for products.
 
 \subsection*{Products}
@@ -878,7 +878,6 @@ Now let's make this precise in the general case.
 
 \end{definition}
 This conditions ensures that the object $v$ is the universal or canonical object satisfying the pattern, with the morphisms of any other such object being able to be written as a sort of embellishment of the morphisms from $v$.
-The morphisms $f'$ and $g'$ do project $v'$ to $a$ and $b$, but they're really just $f$ and $g$ with a little extra sauce on them.
 
 In $\textbf{Set}$ the categorical product is exactly the Cartesian product of sets $a \times b = \{(x, y) \ | \ x\in a \text{ and } y\in b\}$, and $f$ and $g$ are the projections $f: (x, y) \mapsto x$ and $g: (x, y) \mapsto y$.
 Like in our integer example above there are other candidates, say the object $(a \times b) \times c$, but all of these other candidates will have a unique factorization to the Cartesian product: they all have extra stuff.
