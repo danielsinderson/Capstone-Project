@@ -4,6 +4,11 @@
 \usepackage{amsmath}
 \usepackage{bookmark}
 \usepackage{graphicx}
+\usepackage{tikz-cd}
+\usepackage{quiver}
+\usepackage{mathtools}
+\usepackage{bbm}
+
 
 \usetheme{metropolis}
 
@@ -77,31 +82,57 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
 \begin{frame}{What is a System?}
-    Probably the simplest way to think of a system is as a box with information coming in and information coming out, and with these two information streams being connected by feedback.
-    \vspace*{0.125in}
+    A system is a thing that changes. At it's simplest, a system consists of the following two things.
+
+    \begin{enumerate}
+        \item A set of states that the system can be in.
+        \item A map that updates the system's state based on the state that it's currently in.
+    \end{enumerate}
+
     \begin{center}
-        \includegraphics[scale=0.35]{system_diagram_open.png}
+        \includegraphics[scale=0.35]{system_diagram_closed.png}
     \end{center}
+
 \end{frame}
 
-\begin{frame}{What is a System?}
-    Let's make this more precise.
+
+\begin{frame}{Examples of Systems}
+    The set of natural numbers with the successor function is a system.
     \vspace*{0.125in}
-    \begin{definition}[System]
-        A system is a collection of states and a pair of functions on those states that
-        (1) expose some of the internal state to the outside world and
-        (2) update the system's state based on the system's current state and current inputs.
-    \end{definition}
+    \[
+        S: \mathbb{N} \rightarrow \mathbb{N}
+    \]
+    \[
+        \ \ \ \ \ \ \ \ \ n \mapsto n+1
+    \]
+\end{frame}
+
+
+\begin{frame}{Examples of Systems}
+    An ordinary differential equation is also a system.
+    \vspace*{0.125in}
+    \[
+        \frac{dx}{dt}=\kappa x
+    \]
+    Here the set of states is the set of real numbers $\mathbb{R}$ and the update map is the differential equation itself: given the current state, $x$, the differential equation tells us how to change it.
+\end{frame}
+
+
+\begin{frame}{What's the Problem}
+    The problem with these systems is that they're closed.
+
+    \vspace*{0.125in}
+    They don't interact with each other. And they don't interact with their environment.
+
+    \vspace*{0.125in}
+    So let's open them up with category theory.
 \end{frame}
 
 
 
 
-
-\begin{frame}{Example of a System}
-
-\end{frame}
 
 
 
@@ -111,15 +142,134 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Category Theory Basics}
+    Category theory is a theory of structure and composition.
+
+    \vspace*{0.25in}
+    It uses the mathematical object of a category to encapsulate the notion of associative composition.
+
+    \vspace*{0.25in}
+    With this alone it creates a language capable of formalizing all of mathematics.
+\end{frame}
 
 
+\begin{frame}{What is a Category?}
+    \begin{definition}[Category]
+        A category $\mathcal{C}$ is defined by the following:
+        \begin{enumerate}
+            \item $\mathcal{C}$ contains a collection of objects $\mathsf{ob}(\mathcal{C})$.
+            \item For any two objects $a$, $b$ $\in \mathcal{C}$ there is a collection of morphisms, $f:a \rightarrow b$, between those objects called the homset, $\mathcal{C}(a,b)$ .
+            \item Every object $a\in \mathcal{C}$ has a morphism to itself $\mathsf{id}_a:a\rightarrow a$ called its identity.
+            \item For every two morphisms $f:a\rightarrow b$ and $g: b\rightarrow c$ there's a third morphism $g\circ f:a\rightarrow c$ that's their composition.
+        \end{enumerate}
+    \end{definition}
+\end{frame}
+
+
+\begin{frame}[fragile]{What is a Category?}
+    These objects and morphisms are then under two constraints: unitality and associativity.
+    \begin{definition}[Category cont. Unitality]
+        Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ \mathsf{id}_a=\mathsf{id}_b\circ f=f$.
+        \[\begin{tikzcd}
+                a && b \\
+                \\
+                a && b
+                \arrow["f", from=1-1, to=1-3]
+                \arrow["{\mathsf{id}_a}"', from=1-1, to=3-1]
+                \arrow["{\mathsf{id}_b}", from=1-3, to=3-3]
+                \arrow["f"', from=3-1, to=3-3]
+            \end{tikzcd}\]
+    \end{definition}
+\end{frame}
+
+
+\begin{frame}[fragile]{What is a Category?}
+    These objects and morphisms are then under two constraints: unitality and associativity.
+    \begin{definition}[Category cont. Associativity]
+        For any morphisms $f:a\rightarrow b$, $g:b\rightarrow c$, and $h:c\rightarrow d$, $h\circ (g\circ f)=(h\circ g)\circ f$. Since it doesn't matter what order we apply the morphisms, we write this $h\circ g \circ f$.
+        \[\begin{tikzcd}
+                a & b & c & d
+                \arrow["f"', from=1-1, to=1-2]
+                \arrow["g"', from=1-2, to=1-3]
+                \arrow["h"', from=1-3, to=1-4]
+                \arrow["{{g\circ f}}", curve={height=-24pt}, from=1-1, to=1-3]
+                \arrow["{{h\circ g}}"', curve={height=24pt}, from=1-2, to=1-4]
+            \end{tikzcd}\]
+    \end{definition}
+\end{frame}
+
+\begin{frame}{Monoidal Categories}
+    To build systems compositionally we'll also need a way to place them in parallel.
+
+    \vspace*{0.125in}
+    Similar to a binary operation on a set, we can have a binary operation on a category.
+
+    \vspace*{0.125in}
+    This construction is captured in the notion of a monoidal category.
+\end{frame}
+
+
+\begin{frame}{Monoidal Categories}
+    \begin{definition}[Monoidal Categories]
+        A category $\mathcal{C}$ is monoidal if the following exist.
+        \begin{enumerate}
+            \item A functor $\otimes:\mathcal{C}\times\mathcal{C}\rightarrow\mathcal{C}$ called the monoidal product.
+            \item An object $\mathbbm{1}\in\mathcal{C}$ called the unit.
+            \item A natural isomorphism $\alpha : (a\otimes b)\otimes c\Rightarrow a\otimes (b\otimes c)$ called the associator, with components $\alpha_{x,y,z}: (x\otimes y)\otimes z\rightarrow x\otimes (y\otimes z)$.
+            \item A natural isomorphism $\lambda : \mathbbm{1}\otimes a\Rightarrow a$ called the left unitor with components $\lambda_x : \mathbbm{1}\otimes x\rightarrow x$.
+            \item A natural isomorphism $\rho : a\otimes \mathbbm{1}\Rightarrow a$ called the right unitor with components $\lambda_x : x\otimes \mathbbm{1}\rightarrow x$.
+        \end{enumerate}
+    \end{definition}
+\end{frame}
+
+\begin{frame}[fragile]{Monoidal Categories}
+    \begin{definition}[Monoidal Categories]
+        All of the above must exist such that the following two diagrams, called the triangle identity and the pentagon identity, commute.
+
+        \vspace*{0.5in}
+        \[\begin{tikzcd}
+                {(x\otimes\mathbbm{1})\otimes y} && {x\otimes(\mathbbm{1}\otimes y)} \\
+                \\
+                && {x\otimes y}
+                \arrow["{{\rho_x\otimes \mathsf{id}_y}}"', from=1-1, to=3-3]
+                \arrow["{{\mathsf{id}_x\otimes\lambda_y}}", from=1-3, to=3-3]
+                \arrow["{{\alpha_{x,y,z}}}", from=1-1, to=1-3]
+            \end{tikzcd}\]
+    \end{definition}
+\end{frame}
+
+\begin{frame}[fragile]{Monoidal Categories}
+    \begin{definition}[Monoidal Categories]
+        All of the above must exist such that the following two diagrams, called the triangle identity and the pentagon identity, commute.
+
+        \vspace*{0.125in}
+        \[\begin{tikzcd}
+                {((w\otimes x)\otimes y)\otimes z} && {(w\otimes x)\otimes(y\otimes z)} \\
+                \\
+                {(w\otimes (x\otimes y))\otimes z} \\
+                \\
+                {w\otimes ((x\otimes y)\otimes z)} && {w\otimes (x\otimes (y\otimes z))}
+                \arrow["{{\alpha_{w,x,(y\otimes z)}}}", from=1-3, to=5-3]
+                \arrow["{{\alpha_{(w\otimes x),y,z}}}", from=1-1, to=1-3]
+                \arrow["{{\alpha_{w,x,y}\otimes \mathsf{id}_z}}"', from=1-1, to=3-1]
+                \arrow["{{\alpha_{w,(x\otimes y),z}}}"', from=3-1, to=5-1]
+                \arrow["{{\mathsf{id}_w\otimes \alpha_{x,y,z}}}"', from=5-1, to=5-3]
+            \end{tikzcd}\]
+    \end{definition}
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Composing Systems}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+\begin{frame}{What is a Open System?}
+    An open system is as a system with information coming in and information coming out, and with these two information streams being connected by feedback.
+    \vspace*{0.125in}
+    \begin{center}
+        \includegraphics[scale=0.35]{system_diagram_open.png}
+    \end{center}
+\end{frame}
 
 
 
