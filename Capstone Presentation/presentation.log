@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  14 APR 2024 16:46
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  15 APR 2024 17:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -884,40 +884,18 @@ Package pdftex.def Info: system_diagram_closed.png  used on input line 98.
 ] [16
 
 ]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 223.
- (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
-File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [17
-
-]
-\openout4 = `presentation.vrb'.
-
- (./presentation.vrb) [18
-
-]
-\openout4 = `presentation.vrb'.
-
- (./presentation.vrb)
-Overfull \vbox (7.89185pt too high) detected at line 259
- []
-
-[19
-
-] [20
-
-]
-<system_diagram_open.png, id=141, 594.22pt x 258.9675pt>
+<system_diagram_open.png, id=116, 594.22pt x 258.9675pt>
 File: system_diagram_open.png Graphic file (type png)
 <use system_diagram_open.png>
 Package pdftex.def Info: system_diagram_open.png  used on input line 272.
 (pdftex.def)             Requested size: 207.98012pt x 90.63997pt.
- [21
+ [17
 
- <./system_diagram_open.png>] [22
+ <./system_diagram_open.png>] [18
 
-] [23
+] [19
 
-] [24
+] [20
 
 ]
 \tf@nav=\write5
@@ -936,18 +914,18 @@ L3 programming layer <2024-02-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 27643 strings out of 474142
- 573510 string characters out of 5744617
- 1940995 words of memory out of 5000000
- 49355 multiletter control sequences out of 15000+600000
- 566709 words of font info for 68 fonts, out of 8000000 for 9000
+ 27511 strings out of 474142
+ 570478 string characters out of 5744617
+ 1939995 words of memory out of 5000000
+ 49241 multiletter control sequences out of 15000+600000
+ 566313 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,18n,123p,1946b,1367s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm10.657pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (24 pages, 160236 bytes).
+ 128i,18n,123p,1946b,1361s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (20 pages, 127348 bytes).
 PDF statistics:
- 261 PDF objects out of 1000 (max. 8388607)
- 198 compressed objects within 2 object streams
- 56 named destinations out of 1000 (max. 500000)
+ 219 PDF objects out of 1000 (max. 8388607)
+ 167 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 500000)
  109 words of extra memory for PDF output out of 10000 (max. 10000000)
 
