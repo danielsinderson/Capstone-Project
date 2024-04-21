@@ -264,7 +264,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{What is a Open System?}
-    An open system is as a system with information coming in and information coming out, and with these two information streams being connected by feedback.
+    An open system is as a system with an interface.
+
     \vspace*{0.125in}
     \begin{center}
         \includegraphics[scale=0.35]{system_diagram_open.png}
@@ -272,6 +273,52 @@
 \end{frame}
 
 
+\begin{frame}{Lenses and Arenas}
+    To model this mathematically we'll use objects called arenas and morphisms called lenses.
+
+    \vspace*{0.125in}
+    \begin{definition}[Arenas]
+        An arena is a pair of objects $\begin{pmatrix}A \\ B\end{pmatrix}$ from an underlying category.
+    \end{definition}
+
+    \begin{definition}
+        A lens is a morphism between arenas made from a pair of morphisms from the underlying category
+        $$\begin{pmatrix}f \\ g\end{pmatrix}: \begin{pmatrix}A \\ B\end{pmatrix} \leftrightarrows \begin{pmatrix}C \\ D\end{pmatrix}$$
+        where $f:B\rightarrow D$ is the output map and $g:B\times C \rightarrow A$ is the update map.
+    \end{definition}
+\end{frame}
+
+
+\begin{frame}{What this Gives Us}
+    Arenas and lenses between them form a monoidal category.
+
+    \vspace*{0.125in}
+    This means that we can compose lenses and multiply them.
+
+    \vspace*{0.125in}
+    By modeling our open systems as lenses, composition of lenses lets us place systems in series and multiplication of lenses lets us place systems in parallel.
+\end{frame}
+
+
+\begin{frame}{Systems in Series and Parallel}
+    \begin{center}
+        Systems in Series:
+        $\begin{pmatrix}g^\# \\ g\end{pmatrix} \circ \begin{pmatrix}f^\# \\ f\end{pmatrix}$
+
+        \includegraphics[scale=0.25]{Systems_Series.png}
+
+        \vspace*{0.25in}
+        Systems in Parallel:
+        $\begin{pmatrix}g^\# \\ g\end{pmatrix} \otimes \begin{pmatrix}f^\# \\ f\end{pmatrix}$
+
+        \includegraphics[scale=0.25]{Systems_Parallel.png}
+
+    \end{center}
+
+
+
+
+\end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

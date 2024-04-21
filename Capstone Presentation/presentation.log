@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  20 APR 2024 20:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  21 APR 2024 07:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -887,36 +887,57 @@ Package pdftex.def Info: system_diagram_closed.png  used on input line 98.
 <system_diagram_open.png, id=116, 594.22pt x 258.9675pt>
 File: system_diagram_open.png Graphic file (type png)
 <use system_diagram_open.png>
-Package pdftex.def Info: system_diagram_open.png  used on input line 272.
+Package pdftex.def Info: system_diagram_open.png  used on input line 273.
 (pdftex.def)             Requested size: 207.98012pt x 90.63997pt.
  [17
 
- <./system_diagram_open.png>] [18
+ <./system_diagram_open.png>]
+Overfull \vbox (8.2888pt too high) detected at line 289
+ []
+
+[18
+
+] [19
 
 ]
-<multioutput_FFL_color.png, id=130, 408.52625pt x 435.6275pt>
+<Systems_Series.png, id=136, 444.66125pt x 92.345pt>
+File: Systems_Series.png Graphic file (type png)
+<use Systems_Series.png>
+Package pdftex.def Info: Systems_Series.png  used on input line 321.
+(pdftex.def)             Requested size: 111.16504pt x 23.08618pt.
+<Systems_Parallel.png, id=137, 260.975pt x 228.855pt>
+File: Systems_Parallel.png Graphic file (type png)
+<use Systems_Parallel.png>
+Package pdftex.def Info: Systems_Parallel.png  used on input line 321.
+(pdftex.def)             Requested size: 65.24359pt x 57.21361pt.
+ [20
+
+ <./Systems_Series.png> <./Systems_Parallel.png>] [21
+
+]
+<multioutput_FFL_color.png, id=152, 408.52625pt x 435.6275pt>
 File: multioutput_FFL_color.png Graphic file (type png)
 <use multioutput_FFL_color.png>
-Package pdftex.def Info: multioutput_FFL_color.png  used on input line 286.
+Package pdftex.def Info: multioutput_FFL_color.png  used on input line 333.
 (pdftex.def)             Requested size: 102.1313pt x 108.9066pt.
- [19
+ [22
 
  <./multioutput_FFL_color.png>]
-<motor_flagella.png, id=138, 1606.0pt x 803.0pt>
+<motor_flagella.png, id=160, 1606.0pt x 803.0pt>
 File: motor_flagella.png Graphic file (type png)
 <use motor_flagella.png>
-Package pdftex.def Info: motor_flagella.png  used on input line 292.
+Package pdftex.def Info: motor_flagella.png  used on input line 339.
 (pdftex.def)             Requested size: 321.19432pt x 160.59715pt.
 
-Overfull \hbox (13.90445pt too wide) in paragraph at lines 292--292
+Overfull \hbox (13.90445pt too wide) in paragraph at lines 339--339
  [] 
  []
 
-[20
+[23
 
- <./motor_flagella.png>] [21
+ <./motor_flagella.png>] [24
 
-] [22
+] [25
 
 ]
 \tf@nav=\write5
@@ -935,18 +956,18 @@ L3 programming layer <2024-02-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 27533 strings out of 474142
- 570945 string characters out of 5744617
+ 27561 strings out of 474142
+ 571470 string characters out of 5744617
  1939995 words of memory out of 5000000
- 49259 multiletter control sequences out of 15000+600000
+ 49281 multiletter control sequences out of 15000+600000
  566313 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,18n,123p,1946b,1361s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (22 pages, 380436 bytes).
+</usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on presentation.pdf (25 pages, 408940 bytes).
 PDF statistics:
- 234 PDF objects out of 1000 (max. 8388607)
- 176 compressed objects within 2 object streams
- 52 named destinations out of 1000 (max. 500000)
- 119 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 265 PDF objects out of 1000 (max. 8388607)
+ 196 compressed objects within 2 object streams
+ 58 named destinations out of 1000 (max. 500000)
+ 129 words of extra memory for PDF output out of 10000 (max. 10000000)
 

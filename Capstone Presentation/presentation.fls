@@ -442,6 +442,16 @@ INPUT ./system_diagram_open.png
 INPUT ./system_diagram_open.png
 INPUT ./system_diagram_open.png
 INPUT ./system_diagram_open.png
+INPUT ./Systems_Series.png
+INPUT ./Systems_Series.png
+INPUT ./Systems_Series.png
+INPUT ./Systems_Series.png
+INPUT ./Systems_Series.png
+INPUT ./Systems_Parallel.png
+INPUT ./Systems_Parallel.png
+INPUT ./Systems_Parallel.png
+INPUT ./Systems_Parallel.png
+INPUT ./Systems_Parallel.png
 INPUT ./multioutput_FFL_color.png
 INPUT ./multioutput_FFL_color.png
 INPUT ./multioutput_FFL_color.png
@@ -456,6 +466,7 @@ OUTPUT presentation.nav
 OUTPUT presentation.toc
 OUTPUT presentation.snm
 INPUT presentation.aux
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb
@@ -464,4 +475,5 @@ INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb

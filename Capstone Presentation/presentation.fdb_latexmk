@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1713670841.62261 "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" "presentation.pdf" "presentation" 1713670844.78855 0
-  "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" 1713670841.37485 12363 155e2b30d707f58c883293b1e5bf3ba7 ""
+["pdflatex"] 1713711428.98938 "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" "presentation.pdf" "presentation" 1713711432.07164 0
+  "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" 1713711425.5003 13828 c171f115483c028c07e5a4689d3d8a6c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -22,6 +22,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi10.tfm" 1336178347 1696 aaa5bbd1f47f001247d42218ce371101 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm" 1336178347 1676 fb6c6a335484692abff897d6e8965829 ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb" 1248133631 24457 5cbb7bdf209d5d1ce9892a9b80a307cc ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb" 1248133631 24420 52dbb8e8aa0069a1b987309557f8d303 ""
@@ -30,6 +31,7 @@
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb" 1248133631 25168 33771b85f45c82138dd7745db7092d1c ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
+  "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb" 1248133631 31764 459c573c03a4949a528c2cc7f557e217 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1248133631 34694 ad62b13721ee8eda1dcc8993c8bd7041 ""
   "/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2023/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
@@ -229,12 +231,14 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1708220011.18237 5472569 99e72973af7bd41132687409b8c9c95e ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1708220214 8219562 be5e5260b50c82eafa7627dc9446a448 ""
   "/usr/local/texlive/2023/texmf.cnf" 1708220003.31006 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
+  "Systems_Parallel.png" 1713710940.65573 7062 26d617bc70ac0e1b2dbf069127ef21ce ""
+  "Systems_Series.png" 1713710853.22075 5838 8cdcb6dcde57a69bba1d64ae1b0d48d7 ""
   "motor_flagella.png" 1713670317.21299 237600 d83d623c373a7d1cd0b8d5ecebbe8890 ""
   "multioutput_FFL_color.png" 1713670782.72825 33509 6414a9a6dec55ae657e41140e26f8732 ""
-  "presentation.aux" 1713670844.63499 6847 d84aa9c1cf6cfa9a35ad8424d78f95bc "pdflatex"
-  "presentation.nav" 1713670844.63899 3351 a3bd0b1d310c307a0ea3748ad4915fb9 "pdflatex"
-  "presentation.tex" 1713670841.37485 12363 155e2b30d707f58c883293b1e5bf3ba7 ""
-  "presentation.vrb" 1713670843.74295 799 f4d2d476e76f6b612c17c0639276eabb "pdflatex"
+  "presentation.aux" 1713711431.90851 7231 a78e74bc494a85d59e3e14a3b09cacef "pdflatex"
+  "presentation.nav" 1713711431.91252 3627 6e2297ce5d81f6dba11f4e15f16a3a90 "pdflatex"
+  "presentation.tex" 1713711425.5003 13828 c171f115483c028c07e5a4689d3d8a6c ""
+  "presentation.vrb" 1713711431.04449 799 f4d2d476e76f6b612c17c0639276eabb "pdflatex"
   "system_diagram_closed.png" 1712940076.08533 15992 11da209b3087e6da07433baf59773c69 ""
   "system_diagram_open.png" 1712941487.29413 20855 ae286901bc9043ef2fc16d762ab1409d ""
   (generated)
