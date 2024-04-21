@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  15 APR 2024 17:55
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  20 APR 2024 20:40
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -893,9 +893,30 @@ Package pdftex.def Info: system_diagram_open.png  used on input line 272.
 
  <./system_diagram_open.png>] [18
 
-] [19
+]
+<multioutput_FFL_color.png, id=130, 408.52625pt x 435.6275pt>
+File: multioutput_FFL_color.png Graphic file (type png)
+<use multioutput_FFL_color.png>
+Package pdftex.def Info: multioutput_FFL_color.png  used on input line 286.
+(pdftex.def)             Requested size: 102.1313pt x 108.9066pt.
+ [19
 
-] [20
+ <./multioutput_FFL_color.png>]
+<motor_flagella.png, id=138, 1606.0pt x 803.0pt>
+File: motor_flagella.png Graphic file (type png)
+<use motor_flagella.png>
+Package pdftex.def Info: motor_flagella.png  used on input line 292.
+(pdftex.def)             Requested size: 321.19432pt x 160.59715pt.
+
+Overfull \hbox (13.90445pt too wide) in paragraph at lines 292--292
+ [] 
+ []
+
+[20
+
+ <./motor_flagella.png>] [21
+
+] [22
 
 ]
 \tf@nav=\write5
@@ -914,18 +935,18 @@ L3 programming layer <2024-02-13>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 27511 strings out of 474142
- 570478 string characters out of 5744617
+ 27533 strings out of 474142
+ 570945 string characters out of 5744617
  1939995 words of memory out of 5000000
- 49241 multiletter control sequences out of 15000+600000
+ 49259 multiletter control sequences out of 15000+600000
  566313 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,18n,123p,1946b,1361s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (20 pages, 127348 bytes).
+Output written on presentation.pdf (22 pages, 380436 bytes).
 PDF statistics:
- 219 PDF objects out of 1000 (max. 8388607)
- 167 compressed objects within 2 object streams
- 48 named destinations out of 1000 (max. 500000)
- 109 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 234 PDF objects out of 1000 (max. 8388607)
+ 176 compressed objects within 2 object streams
+ 52 named destinations out of 1000 (max. 500000)
+ 119 words of extra memory for PDF output out of 10000 (max. 10000000)
 

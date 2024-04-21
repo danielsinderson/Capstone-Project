@@ -6,7 +6,7 @@ using LabelledArrays
 using OrdinaryDiffEq, Plots, Plots.PlotMeasures
 
 # Define the primitive systems
-signal(u, x, p, t) = [(t < 5) - (8 < t < 13)]
+signal(u, x, p, t) = [0.4 * (2 < t < 3) - 0.4 * (3 < t < 3.9) + 0.4 * (5 < t < 8) - 0.4 * (12 < t < 14.75)]
 flhDC(u, x, p, t) = [p.β1 * (x[1] > p.κ1) - p.α1 * u[1]]
 fliA(u, x, p, t) = [p.β2 * (x[1] > p.κ2) - p.α2 * u[1]]
 fliL(u, x, p, t) = [p.β3 * (x[1] > p.κ3 || x[2] > p.κ4) - p.α3 * u[1]]
@@ -56,7 +56,7 @@ motor_diagram = WiringDiagram([], [
     :Z10_level,
     :Z11_level,
     :Z12_level,
-    #    :signal,
+    :signal,
     #    :X_level,
     #    :Y_level
 ])
@@ -109,7 +109,7 @@ add_wires!(motor_diagram, [
     (geneY, 1) => (geneZ10, 2),
     (geneY, 1) => (geneZ11, 2),
     (geneY, 1) => (geneZ12, 2),
-    #(signal_generator, 1) => (output_id(motor_diagram), 13),
+    (signal_generator, 1) => (output_id(motor_diagram), 13),
     #(geneX, 1) => (output_id(motor_diagram), 14),
     #(geneY, 1) => (output_id(motor_diagram), 15),
     (geneZ1, 1) => (output_id(motor_diagram), 1),
@@ -134,23 +134,25 @@ system = oapply(motor_diagram, [s, X, Y, Z1, Z2, Z3, Z4, Z5, Z6, Z7, Z8, Z9, Z10
 # Solve and plot
 # x0 = LVector(X_signal=0)
 u0 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+a = 10
+b = 10
 params = LVector(
-    β1=15, κ1=1, α1=1,
-    β2=15, κ2=7, α2=1,
-    β3=1, κ3=1, κ4=12, α3=1,
-    β4=1, κ5=2, κ6=11, α4=1,
-    β5=1, κ7=3, κ8=10, α5=1,
-    β6=1, κ9=4, κ10=9, α6=1,
-    β7=1, κ11=5, κ12=8, α7=1,
-    β8=1, κ13=6, κ14=7, α8=1,
-    β9=1, κ15=8, κ16=6, α9=1,
-    β10=1, κ17=9, κ18=5, α10=1,
-    β11=1, κ19=10, κ20=4, α11=1,
-    β12=1, κ21=11, κ22=3, α12=1,
-    β13=1, κ23=12, κ24=2, α13=1,
-    β14=1, κ25=13, κ26=1, α14=1
+    β1=a * 13 + b + 1, κ1=1, α1=1,
+    β2=2 * a * 13 + b, κ2=7, α2=1,
+    β3=1, κ3=a * 1 + b, κ4=a * 12 + b, α3=1,
+    β4=1, κ5=a * 2 + b, κ6=a * 11 + b, α4=1,
+    β5=1, κ7=a * 3 + b, κ8=a * 10 + b, α5=1,
+    β6=1, κ9=a * 4 + b, κ10=a * 9 + b, α6=1,
+    β7=1, κ11=a * 5 + b, κ12=a * 8 + b, α7=1,
+    β8=1, κ13=a * 6 + b, κ14=a * 7 + b, α8=1,
+    β9=1, κ15=a * 8 + b, κ16=a * 6 + b, α9=1,
+    β10=1, κ17=a * 9 + b, κ18=a * 5 + b, α10=1,
+    β11=1, κ19=a * 10 + b, κ20=a * 4 + b, α11=1,
+    β12=1, κ21=a * 11 + b, κ22=a * 3 + b, α12=1,
+    β13=1, κ23=a * 12 + b, κ24=a * 2 + b, α13=1,
+    β14=1, κ25=a * 13 + b, κ26=a * 1 + b, α14=1
 )
-tspan = (0.0, 20.0)
+tspan = (0.0, 25.0)
 
 # problem = ODEProblem(final system, u0, tspan, params)
 # solution = solve(problem, Tsit5())
@@ -164,7 +166,8 @@ solution = solve(problem, Tsit5())
 
 plot(solution, system, params,
     lw=2, title="Motor Flagella Network",
-    xlabel="time", ylabel="Presence of Transcription Factors Z"
+    xlabel="time", ylabel="Presence of Transcription Factors Z",
+    size=(2000, 1000)
 )
 
 

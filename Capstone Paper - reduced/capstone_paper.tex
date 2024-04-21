@@ -13,6 +13,7 @@
 \usepackage{stmaryrd}
 \usepackage{graphicx}
 \usepackage{amssymb}
+\usepackage{svg}
 
 
 
@@ -657,7 +658,7 @@ What this means intuitively is that an adjunction is a way to encapsulate the no
 In an isomorphism or equivalence it's possible to move from one category to the other and then back and return to where you started (up to isomorphism of objects).
 In an adjunction the guarantee is weaker: with each traversal an error accrues, but there is structure to it.
 
-Let's look at this with an examples using the two functions below.
+Let's look at this with an example using the two functions below.
 \[\begin{tikzcd}
         {\mathbb{Z}} & {\mathbb{R}} && {\mathbb{R}} & {\mathbb{Z}} \\
         x & 2x && x & {\big\lceil \frac{1}{2}x \big\rceil}
@@ -970,6 +971,10 @@ We need them to be able to accept inputs that shape the way they evolve, and we 
 This is the gift that category theory will give us.
 By opening our systems up, we open them to the power of composition.
 We can connect them.
+
+
+
+
 \subsection*{The Category $\textbf{Lens}_{\mathcal{C}}$}
 Given a cartesian category, it's possible to construct a new category of systems whose states are drawn from the objects of your base category and whose rules for updating their state are drawn from the morphism of your base category.
 We call this category $\textbf{Lens}_{\mathcal{C}}$, where $\mathcal{C}$ is the base category.
@@ -982,7 +987,7 @@ The objects in this category are called arenas and the morphisms between them ar
     \]
 \end{definition}
 
-For our purposes we'll be sticking to two such categories: the category of lenses over the category of sets and functions, $\textbf{Lens}_{\textbf{Set}}$, for discrete systems and the category of Euclidean spaces and smooth functions, $\textbf{Lens}_\textbf{Euc}$, for differential systems.
+For our purposes we'll be sticking to two such categories: the category of lenses over the category of sets and functions, $\textbf{Lens}_{\textbf{Set}}$, for discrete systems and the category of Euclidean spaces and smooth functions, $\textbf{Lens}_\textbf{Euc}$, for continuous systems.
 
 \begin{definition}[The Category $\textbf{Lens}_\mathcal{C}$]
     Given the cartesian category $\mathcal{C}$, the category $\textbf{Lens}_{\mathcal{C}}$ has the following properties.
@@ -1004,9 +1009,28 @@ For our purposes we'll be sticking to two such categories: the category of lense
               and $\begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}C^-\\C^+\end{pmatrix}\leftrightarrows\begin{pmatrix}D^-\\D^+\end{pmatrix}$, the monoidal product
               $$\begin{pmatrix}f^{\#}\\f\end{pmatrix} \otimes \begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}A^- \times C^-\\A^+ \times C^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^- \times D^-\\B^+ \times D^+\end{pmatrix}$$
               such that the passforward map is defined as $(a^+, c^+) \mapsto (f(a^+), g(c^+))$ and the passback map is defined as $((a^+, c^+), (b^-, d^-)) \mapsto ((f^\#(a^+, b^-)), g^\#(c^+, d^-))$.
-
     \end{enumerate}
+
+    Note that since $\mathcal{C}$ is cartesian, this means that $1$ is the terminal object in $\mathcal{C}$ and $A^- \times C^-$ is the categorical product of objects $A^-$ and $C^-$ in $\mathcal{C}$.
 \end{definition}
+
+
+
+
+
+\section*{Case Study: Modeling Transcription Networks}
+To test out this formalism with a real world example, we'll be modeling a small portion of the transcription network of the \textit{e. coli} bacterium.
+Specifically we'll be modeling the multi-output feed forward loop that's responsible for the production of proteins that create a nanometer-scale motor and flagella propeller that the bacteria produce to move themselves away from stressful environments.
+
+\begin{center}
+    \includegraphics*[scale=0.35]{multioutput_FFL.png}
+\end{center}
+
+\begin{center}
+    \includegraphics*[scale=0.25]{motor_flagella.png}
+\end{center}
+
+
 
 
 \nocite{*}

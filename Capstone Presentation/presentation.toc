@@ -3,5 +3,5 @@
 \beamer@sectionintoc {3}{Categories}{11}{0}{3}
 \beamer@sectionintoc {4}{Composing Systems}{16}{0}{4}
 \beamer@sectionintoc {5}{Case Study}{18}{0}{5}
-\beamer@sectionintoc {6}{Results}{19}{0}{6}
-\beamer@sectionintoc {7}{Conclusion}{20}{0}{7}
+\beamer@sectionintoc {6}{Results}{21}{0}{6}
+\beamer@sectionintoc {7}{Conclusion}{22}{0}{7}

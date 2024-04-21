@@ -1,5 +1,5 @@
 # Fdb version 4
-["bibtex capstone_paper"] 0 "capstone_paper.aux" "capstone_paper.bbl" "capstone_paper" 1713174211.5772 0
+["bibtex capstone_paper"] 0 "capstone_paper.aux" "capstone_paper.bbl" "capstone_paper" 1713670401.50715 0
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/annotate/annotate.bst" 1573944596 22212 bece18b76e638fabfa9a9ad5aea4a748 ""
   "capstone_paper.aux" 0 -1 0 "pdflatex"
   "references.bib" 0 -1 0 ""
@@ -7,9 +7,9 @@
   "capstone_paper.bbl"
   "capstone_paper.blg"
   (rewritten before read)
-["pdflatex"] 1713174206.72593 "/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex" "capstone_paper.pdf" "capstone_paper" 1713174211.57746 0
+["pdflatex"] 1713670395.94244 "/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex" "capstone_paper.pdf" "capstone_paper" 1713670401.50752 0
   "/home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk" 1712102205.09019 8424 6cf4df07c4abd034dbcd5a24c834b030 ""
-  "/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex" 1713174206.4958 60441 d6440f3f32cc1a98f8af7bad35bded13 ""
+  "/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex" 1713670395.66006 61295 0f050f8a8625a1390a67f7e72a075687 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -179,6 +179,10 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/nameref.sty" 1705871765 11026 182c63f139a71afd30a28e5f1ed2cd1c ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/pd1enc.def" 1705871765 14249 e67cb186717b7ab18d14a4875e7e98b5 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/hyperref/puenc.def" 1705871765 117112 05831178ece2cad4d9629dcf65099b11 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrbase.sty" 1688762466 100856 24b70029ad44c2ee829db2529cf4ee23 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlfile-hook.sty" 1688762466 11185 15c86b5a61db19da88ab941ca5b70a12 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlfile.sty" 1688762466 3328 3d5fc41a419bf18130ce17d90a23c295 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/koma-script/scrlogo.sty" 1688762466 2162 418e29bcf2b8059e8a9ee1ea4d0d0c87 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/kvoptions/kvoptions.sty" 1655478651 22555 6d8e155cfef6d82c3d5c742fea7c992e ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/kvsetkeys/kvsetkeys.sty" 1665067230 13815 760b0c02f691ea230f5359c4e1de23a7 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def" 1704491087 30006 57b07afb710ee2f649c65cfbafda39c1 ""
@@ -200,18 +204,25 @@
   "/usr/local/texlive/2023/texmf-dist/tex/latex/rerunfilecheck/rerunfilecheck.sty" 1657483315 9714 ba3194bd52c8499b3f1e3eb91d409670 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd" 1137110872 1766 216b0f832c406513647608b5bb9bb8ff ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/stmaryrd.sty" 1302307949 11080 aa7f81da60ce104f0dbb8b827dd14383 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/svg/svg.sty" 1606428179 43468 671ae75b3a15019004495eff4c0911e8 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tikz-cd/tikz-cd.sty" 1620507957 823 2375f30bf77af9357d3b4834b054bf52 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/calc.sty" 1698869629 10214 547fd4d29642cb7c80bf54b49d447f01 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/tools/shellesc.sty" 1698869629 4121 f96144e646260251ded7f19bcb6f4e71 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/transparent/transparent-nometadata.sty" 1667073146 4212 8da4873548cbd3f1cdb053c708e8aa7e ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/transparent/transparent.sty" 1667073146 1918 c8d1ecb3722721d6f624992cbc042b70 ""
+  "/usr/local/texlive/2023/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1253232110 1380 971a51b00a14503ddf754cab24c3f209 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/local/texlive/2023/texmf-dist/tex/latex/xcolor/xcolor.sty" 1700082560 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "/usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf" 1697057529 41009 84b61f42d16d06bedb915f57aa2374cf ""
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1708220011.18237 5472569 99e72973af7bd41132687409b8c9c95e ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1708220214 8219562 be5e5260b50c82eafa7627dc9446a448 ""
   "/usr/local/texlive/2023/texmf.cnf" 1708220003.31006 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "capstone_paper.aux" 1713174211.06794 217 61c753e987ba6953259febe9806bc957 "pdflatex"
+  "capstone_paper.aux" 1713670400.96427 311 857551f944a2dccca43d4026f9bed68c "pdflatex"
   "capstone_paper.bbl" 0 -1 0 "bibtex capstone_paper"
-  "capstone_paper.out" 1713174207.96784 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "capstone_paper.tex" 1713174206.4958 60441 d6440f3f32cc1a98f8af7bad35bded13 ""
+  "capstone_paper.out" 1713670397.75214 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "capstone_paper.tex" 1713670395.66006 61295 0f050f8a8625a1390a67f7e72a075687 ""
+  "motor_flagella.png" 1713670317.21299 237600 d83d623c373a7d1cd0b8d5ecebbe8890 ""
+  "multioutput_FFL.png" 1713668852.07076 32675 56f1204d549511e942a13402505eb39c ""
   (generated)
   "capstone_paper.aux"
   "capstone_paper.log"

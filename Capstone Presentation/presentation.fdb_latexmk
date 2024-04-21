@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1713228900.93022 "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" "presentation.pdf" "presentation" 1713228903.43979 0
-  "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" 1713228897.71255 12058 2c081397c536ba1c47b8e7f0fb2afdcf ""
+["pdflatex"] 1713670841.62261 "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" "presentation.pdf" "presentation" 1713670844.78855 0
+  "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" 1713670841.37485 12363 155e2b30d707f58c883293b1e5bf3ba7 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -229,10 +229,12 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1708220011.18237 5472569 99e72973af7bd41132687409b8c9c95e ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1708220214 8219562 be5e5260b50c82eafa7627dc9446a448 ""
   "/usr/local/texlive/2023/texmf.cnf" 1708220003.31006 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "presentation.aux" 1713228903.24075 6591 34649c89ed7ee3f137b52143f6beb182 "pdflatex"
-  "presentation.nav" 1713228903.24476 3167 60b33c3ad28df070ab0b106917e31c01 "pdflatex"
-  "presentation.tex" 1713228897.71255 12058 2c081397c536ba1c47b8e7f0fb2afdcf ""
-  "presentation.vrb" 1713228902.97274 799 f4d2d476e76f6b612c17c0639276eabb "pdflatex"
+  "motor_flagella.png" 1713670317.21299 237600 d83d623c373a7d1cd0b8d5ecebbe8890 ""
+  "multioutput_FFL_color.png" 1713670782.72825 33509 6414a9a6dec55ae657e41140e26f8732 ""
+  "presentation.aux" 1713670844.63499 6847 d84aa9c1cf6cfa9a35ad8424d78f95bc "pdflatex"
+  "presentation.nav" 1713670844.63899 3351 a3bd0b1d310c307a0ea3748ad4915fb9 "pdflatex"
+  "presentation.tex" 1713670841.37485 12363 155e2b30d707f58c883293b1e5bf3ba7 ""
+  "presentation.vrb" 1713670843.74295 799 f4d2d476e76f6b612c17c0639276eabb "pdflatex"
   "system_diagram_closed.png" 1712940076.08533 15992 11da209b3087e6da07433baf59773c69 ""
   "system_diagram_open.png" 1712941487.29413 20855 ae286901bc9043ef2fc16d762ab1409d ""
   (generated)
