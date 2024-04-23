@@ -6,7 +6,7 @@ using LabelledArrays
 using OrdinaryDiffEq, Plots, Plots.PlotMeasures
 
 # Define the primitive systems
-signal(u, x, p, t) = [0.4 * (2 < t < 3) - 0.4 * (3 < t < 3.9) + 0.4 * (5 < t < 8) - 0.4 * (12 < t < 14.75)]
+signal(u, x, p, t) = [0.4 * (2 < t < 5) - 0.4 * (8 < t < 9) + 0.4 * (9 < t < 10.1) - 0.4 * (11 < t < 12) + 0.4 * (12 < t < 13.05) - 0.4 * (14 < t < 17)]
 flhDC(u, x, p, t) = [p.β1 * (x[1] > p.κ1) - p.α1 * u[1]]
 fliA(u, x, p, t) = [p.β2 * (x[1] > p.κ2) - p.α2 * u[1]]
 fliL(u, x, p, t) = [p.β3 * (x[1] > p.κ3 || x[2] > p.κ4) - p.α3 * u[1]]
@@ -138,7 +138,7 @@ a = 10
 b = 10
 params = LVector(
     β1=a * 13 + b + 1, κ1=1, α1=1,
-    β2=2 * a * 13 + b, κ2=7, α2=1,
+    β2=2 * a * 13 + b, κ2=a * 7 + b, α2=1,
     β3=1, κ3=a * 1 + b, κ4=a * 12 + b, α3=1,
     β4=1, κ5=a * 2 + b, κ6=a * 11 + b, α4=1,
     β5=1, κ7=a * 3 + b, κ8=a * 10 + b, α5=1,

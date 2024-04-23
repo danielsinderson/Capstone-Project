@@ -4,7 +4,7 @@
 \linespread{1.4}
 
 \usepackage{amsthm}
-\usepackage{xcolor}
+\usepackage{color}
 \usepackage{tikz-cd}
 \usepackage{quiver}
 \usepackage{mathtools}
@@ -15,10 +15,43 @@
 \usepackage{amssymb}
 \usepackage{svg}
 
+\usepackage[theorems]{tcolorbox}
+\tcbuselibrary{breakable, theorems, skins}
 
 
-\theoremstyle{definition}
-\newtheorem{definition}{Definition}
+
+
+
+
+
+
+
+%\theoremstyle{definition}
+%\newtheorem{definition}{Definition}
+
+%\newtheorem{theorem}{Theorem}[section]
+
+
+\definecolor{dodgerblue}{rgb}{0.12, 0.56, 1.0}
+\newcounter{examp}
+
+\newtcbtheorem{example}{Example}{
+    enhanced, before title={\stepcounter{examp}}, colback=blue!10, colframe=blue!35!black,
+    fonttitle=\bfseries, before skip = 16pt, after skip = 16pt, attach boxed title to top left = {xshift=5mm, yshift*=-\tcboxedtitleheight/2},
+    boxed title style = {colback=blue!35!black}}
+{example}
+
+\newtcbtheorem{theorem}{Theorem}{
+    enhanced, before title={\stepcounter{examp}}, colback=dodgerblue!10, colframe=dodgerblue!35!black,
+    fonttitle=\bfseries, before skip = 16pt, after skip = 16pt, attach boxed title to top left = {xshift=5mm, yshift*=-\tcboxedtitleheight/2},
+    boxed title style = {colback=dodgerblue!35!black}}
+{theorem}
+
+\newtcbtheorem{definition}{Definition}{
+    enhanced, before title={\stepcounter{examp}}, colback=dodgerblue!10, colframe=dodgerblue!35!black,
+    fonttitle=\bfseries, before skip = 16pt, after skip = 16pt, attach boxed title to top left = {xshift=5mm, yshift*=-\tcboxedtitleheight/2},
+    boxed title style = {colback=dodgerblue!35!black}}
+{definition}
 
 
 
@@ -28,10 +61,6 @@
 
 \begin{document}
 \maketitle
-
-
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -70,7 +99,7 @@ and designing models for complex systems.
 
 
 
-\pagebreak
+%\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Category Theory Basics}
@@ -80,7 +109,7 @@ The first step to understanding category theory is to understand what a category
 If you're new to higher mathematics it's time to take a deep breath.
 This will seem like a lot.
 
-\begin{definition}[Category]
+\begin{definition}{Category}{}
     A category $\mathcal{C}$ is defined by the following:
     \begin{enumerate}
         \item $\mathcal{C}$ contains a collection of objects $\mathsf{ob}(\mathcal{C})$. We'll denote that an object is in a category using set notation: $c\in\mathcal{C}$.
@@ -98,6 +127,8 @@ This will seem like a lot.
                   \end{tikzcd}\]
 
     \end{enumerate}
+\end{definition}
+\begin{definition*}{}{}
     These objects and morphisms are then under the following two constraints:
     \begin{enumerate}
         \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ \mathsf{id}_a=\mathsf{id}_b\circ f=f$. This makes the following diagram commute. What this means is that both paths from $a$ to $b$ here are equivalent.
@@ -124,7 +155,7 @@ This will seem like a lot.
                   \end{tikzcd}\]
 
     \end{enumerate}
-\end{definition}
+\end{definition*}
 
 Let's break this down a little bit.
 We have a collection of objects with connections between them, and a couple of rules.
@@ -141,7 +172,7 @@ Equality is not the only useful notion of sameness in mathematics though.
 When thinking about whether two objects in a category are meaningfully ``the same,'' a more useful notion than equality is that of isomorphism.
 An isomorphism between objects means that, while they may not be exactly the same, as in equality, there exists a way to move between the two objects without losing any information.
 
-\begin{definition}[Isomorphism]
+\begin{definition}{Isomorphism}{}
     Two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $f^{-1}\circ f=\mathsf{id}_a$ and $f\circ f^{-1}=\mathsf{id}_b$.
     Such a morphism is called an isomorphism.
     \[\begin{tikzcd}
@@ -166,7 +197,7 @@ And group homomorphisms map groups to other groups.
 Since categories are a mathematical structure, it makes sense to ask if there exists a way to map between them.
 Such a map would have to preserve all of the things that make a category a category: identity morphisms and composite morphisms, and the rules of unitality and associativity.
 We call such a map between categories a functor.
-\begin{definition}[Functor]
+\begin{definition}{Functor}{}
     A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is a map between categories $\mathcal{C}$ and $\mathcal{D}$ such that the following hold:
     \begin{enumerate}
         \item For any object $a\in\mathcal{C}$ there is an object $Fa\in\mathcal{D}$.
@@ -231,7 +262,7 @@ Since natural transformations map functors to other functors, we know that they 
 This ``functor-ness'' is a bit harder to pin down than the ``category-ness'' that functors themselves preserve.
 We need to see what natural transformations do to functors, but also what they do to the objects and arrows of the categories that the functors are acting on.
 
-\begin{definition}[Natural Transformation]
+\begin{definition}{Natural Transformation}{}
     A natural transformation $\alpha :F\Rightarrow G$ is a map between functors $F:\mathcal{C}\rightarrow\mathcal{D}$ and $G:\mathcal{C}\rightarrow\mathcal{D}$ such that the following holds:
     \begin{enumerate}
         \item For each object $c\in\mathcal{C}$, there is a morphism $\alpha_c:Fc\rightarrow Gc$ in $\mathcal{D}$.
@@ -358,7 +389,7 @@ Duality also plays an important role in representability and the Yoneda lemma wh
 
 
 
-\pagebreak
+%\pagebreak
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -377,7 +408,7 @@ Like any of the other ``sub-'' relations from other fields of mathematics, the s
 This means that the pattern of objects and morphisms that make up the subcategory are faithfully present in the other category.
 Our first step will be to define this ``faithfulness.''
 
-\begin{definition}[Faithful Functor]
+\begin{definition}{Faithful Functor}{}
     A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is faithful if for each $x,y\in\mathcal{C}$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is injective.
 \end{definition}
 In other words, when a functor between categories is faithful, it means that every morphism between objects $x,y$ in the source category $\mathcal{C}$ is mapped to exactly one morphism between $Fx, Fy$ in the target category $\mathcal{D}$.
@@ -387,13 +418,13 @@ All of them are ``there.''
 However, this doesn't mean that objects can't be collapsed.
 For that we need another condition on our functor.
 
-\begin{definition}[Injective on Objects]
+\begin{definition}{Injective on Objects}{}
     A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is injective on objects if for each $x\in\mathcal{C}$, there is a unique $y\in\mathcal{D}$ such that $y=Fx$.
 \end{definition}
 
 With these two conditions we can define our subcategory relation.
 
-\begin{definition}[Subcategory]
+\begin{definition}{Subcategory}{}
     A category $\mathcal{C}$ with a functor $F:\mathcal{C}\rightarrow\mathcal{D}$ that is both faithful and injective on objects is a subcategory of the category $\mathcal{D}$.
     A functor $F$ of this type is called an \textbf{embedding} of $\mathcal{C}$ into $\mathcal{D}$.
 \end{definition}
@@ -423,13 +454,13 @@ As expected we get injectivity on morphisms and objects.
 But what if we also have surjectivity on morphisms?
 To look into this lets define another property that a functor can have.
 
-\begin{definition}[Full Functor]
+\begin{definition}{Full Functor}{}
     A functor $F:\mathcal{C}\rightarrow\mathcal{D}$ is full if for each $x,y\in\mathcal{C}$, the map $\mathcal{C}(x, y)\rightarrow\mathcal{D}(Fx,Fy)$ is surjective.
 \end{definition}
 
 This gives us a stronger version of the subcategory relation called a full subcategory that rejects any extraneous morphisms in the target category.
 
-\begin{definition}[Full Subcategory]
+\begin{definition}{Full Subcategory}{}
     A category $\mathcal{C}$ with a functor $F:\mathcal{C}\rightarrow\mathcal{D}$ that is full, faithful, and injective on objects is a full subcategory of the domain $\mathcal{D}$.
     A functor $F$ of this type is called a \textbf{full embedding} of $\mathcal{C}$ into $\mathcal{D}$.
 \end{definition}
@@ -461,11 +492,11 @@ In order of strictest to loosest these are equality, isomorphism, and equivalenc
 Equality and isomorphism are actually quite simple.
 Unfortunately they're both mostly useless in practice.
 
-\begin{definition}[Equality of Categories]
+\begin{definition}{Equality of Categories}{}
     Two categories are equal if they contain exactly the same objects and morphism.
 \end{definition}
 
-\begin{definition}[Isomorphism of Categories -- Subcategories]
+\begin{definition}{Isomorphism of Categories -- Subcategories}{}
     Two categories are isomorphic is they're both subcategories of each other.
 \end{definition}
 This is similar to the situation with sets where mutual subsets define an equality of sets.
@@ -473,7 +504,7 @@ By ensuring that every object and morphism in the source has a unique object and
 we ensure that our mappings between sets and objects are bijective and that our categories are isomorphic.
 
 Another way to define an isomorphism between categories is as an isomorphism in the category of categories and functors.
-\begin{definition}[Isomorphism of Categories -- Category of Categories]
+\begin{definition}{Isomorphism of Categories -- Category of Categories}{}
     Given two categories $\mathcal{C}, \mathcal{D} \in \textbf{Cat}$ and a pair of functors $F:\mathcal{C} \rightarrow \mathcal{D}$ and $G:\mathcal{D} \rightarrow \mathcal{C}$,
     $\mathcal{C}$ and $\mathcal{D}$ are isomorphic if $G \circ F = \mathsf{id_\mathcal{C}}$ and $F \circ G = \mathsf{id_\mathcal{D}}$.
 \end{definition}
@@ -481,7 +512,7 @@ Another way to define an isomorphism between categories is as an isomorphism in 
 
 More useful than these is the notion of categorical equivalence and the notion of natural isomorphism that it relies on.
 
-\begin{definition}[Natural Isomorphism]
+\begin{definition}{Natural Isomorphism}{}
     A natural isomorphism is a natural transformation $\alpha:F\Rightarrow G$ where all of the c-components of the transformation $\alpha_{c}:Fc\rightarrow Gc$ are isomorphisms.
 \end{definition}
 
@@ -536,17 +567,17 @@ Let's make a small addition and try again.
 With this new diagram we've explicitly added an inverse of $k$, making it an isomorphism.
 Since every component morphism of $\alpha$ is now an isomorphism, $\alpha$ itself is now a natural isomorphism.
 With natural isomorphisms in hand we can define an equivalence between categories.
-\begin{definition}[Categorical Equivalence]
+\begin{definition}{Categorical Equivalence}{}
     Two categories $\mathcal{C}$ and $\mathcal{D}$ are equivalent, written $\mathcal{C} \simeq \mathcal{D}$, if there exist two functors $F:\mathcal{C} \rightarrow \mathcal{D}$ and $G:\mathcal{D} \rightarrow \mathcal{C}$ with natural isomorphisms $\eta$ and $\epsilon$ such that $\eta : \mathsf{id}_\mathcal{C} \cong G \circ F$ and $\epsilon: \mathsf{id}_\mathcal{D} \cong F \circ G$.
 \end{definition}
 It might seem difficult to understand what's going on beneath this definition.
 Let's try again using another property on functors.
 
-\begin{definition}[Essentially Surjective Functor]
+\begin{definition}{Essentially Surjective Functor}{}
     A functor $F:\mathcal{C} \rightarrow \mathcal{D}$ is essentially surjective on objects if for every object $y \in \mathcal{D}$ there exists an object $x \in \mathcal{C}$ such that $Fx \cong y$.
 \end{definition}
 
-\begin{definition}[Categorical Equivalence, revisited]
+\begin{definition}{Categorical Equivalence, revisited}{}
     Two categories $\mathcal{C}$ and $\mathcal{D}$ are equivalent if there exists a functor $F$ between them that is faithful, full, and essentially surjective on objects.
 \end{definition}
 
@@ -680,7 +711,7 @@ For any $x\in\mathbb{Z}$ and any $y\in\mathbb{R}$, $f(x) \le y$ if and only if $
 The specific structure here isn't important to us, only that there is one.
 
 Let's make this precise now.
-\begin{definition}[Adjunction]
+\begin{definition}{Adjunction}{}
     An adjunction between two categories $\mathcal{C}$ and $\mathcal{D}$ exists, written $\mathcal{C} \dashv \mathcal{D}$, if there exist two functors $F:\mathcal{C} \rightarrow \mathcal{D}$ and $G:\mathcal{D} \rightarrow \mathcal{C}$ with natural transformations $\eta : \mathsf{id}_\mathcal{C} \Rightarrow G \circ F$ and $\epsilon: F \circ G \Rightarrow \mathsf{id}_\mathcal{D}$ such that the following diagrams commute.
     \[\begin{tikzcd}
             F && {F \circ G \circ F} & G && {G \circ F \circ G} \\
@@ -698,11 +729,11 @@ You may have noticed there's something strange going on in the diagrams above.
 Each of the objects is a functor and each of the morphisms is a natural transformation, but many of the morphisms appear to be the result of some kind of composition of a functor and a natural transformation.
 This operation is called whiskering.
 Whiskering is important for understanding the adjunction definition above and for understanding monads in the next section, so we'll spend some time here to understand it.
-\begin{definition}[Whiskering on the Right]
+\begin{definition}{Whiskering on the Right}{}
     Given functors $F,G: \mathcal{C} \rightarrow \mathcal{D}$ and $H:\mathcal{D} \rightarrow \mathcal{E}$ along with a natural transformation $\alpha:F \Rightarrow G$, if we whisker on the right we get a new natural transformation $H\cdot\alpha : (H \circ F) \Rightarrow (H \circ G)$ with components $(H\cdot\alpha)_a=H\alpha_a$.
 \end{definition}
 
-\begin{definition}[Whiskering on the Left]
+\begin{definition}{Whiskering on the Left}{}
     Given functors $F: \mathcal{C} \rightarrow \mathcal{D}$ and $G,H:\mathcal{D} \rightarrow \mathcal{E}$ along with a natural transformation $\alpha:G \Rightarrow H$, if we whisker on the left we get a new natural transformation $\alpha\cdot F : (G \circ F) \Rightarrow (H \circ F)$ with components $(\alpha\cdot f)_a=\alpha_{Fa}$.
 \end{definition}
 The results of this operation are easy to see if we look at the triangle diagrams above with the identity functors put in.
@@ -737,7 +768,7 @@ Our last relationship between categories, the monad, is explicitly a functor fro
 Like an adjunction though, a monad mutates the objects of the category it acts on in a non-reversible way: there's some loss of information that occurs that prevents an output from being uniquely identified with an input.
 The connection between adjunctions and monads is actually quite deep.
 But before we look into that, let's see the standard definition.
-\begin{definition}[Monad]
+\begin{definition}{Monad}{}
     Given a category $\mathcal{C}$, a monad on $\mathcal{C}$ is a functor $M:\mathcal{C}\rightarrow\mathcal{C}$ with the following two natural transformations:
     \begin{enumerate}
         \item $\eta : \mathsf{id}_{\mathcal{C}} \Rightarrow M$ called the unit.
@@ -773,8 +804,8 @@ As we mentioned before there's a deep connection between adjunctions and monads.
 Specifically, every adjunction gives rise to a monad $G \circ F: \mathcal{C} \rightarrow \mathcal{C}$ where $G$ is the right adjoint functor and $F$ is the left adjoint functor.
 We can think of this induced monad as the impression or shadow left by the adjunction.\footnote{Specifically the impression left on the codomain of the right adjoint.}
 Looking at this more rigorously we can construct an alternate definition.
-\begin{definition}[Monad Induced by an Adjunction]
-    Every adjunction $F \dashv G$ induces a monad $G \circ F: \mathcal{C} \rightarrow \mathcal{C}$ where the unit is the natural transformation $\eta : \mathsf{id}_\mathcal{C} \Rightarrow G \circ F$ and the multiplication is the whiskered natural transformation $G \cdot \epsilon \cdot F: G \circ F \circ F \circ F \Rightarrow G \circ F$.
+\begin{definition}{Monad Induced by an Adjunction}{}
+    Every adjunction $F \dashv G$ induces a monad $G \circ F: \mathcal{C} \rightarrow \mathcal{C}$ where the unit is the natural transformation $\eta : \mathsf{id}_\mathcal{C} \Rightarrow G \circ F$ and the multiplication is the whiskered natural transformation $G \cdot \epsilon \cdot F: G \circ F \circ G \circ F \Rightarrow G \circ F$.
 \end{definition}
 
 Monads often show up in applied settings when the notion of a side-effect or additional structure on outputs is required.
@@ -790,7 +821,7 @@ We'll see them again in the context of monadic lenses in the section on categori
 
 
 
-\pagebreak
+%\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Structure within Categories}
@@ -806,7 +837,7 @@ Instead we'll focus on two specific examples of a universal property that are im
 A terminal object in a category is an object that has a morphism to it from every other object in the category.
 It's the Rome of a category: all roads lead to it.
 
-\begin{definition}[Terminal Object]
+\begin{definition}{Terminal Object}{}
     Let $t\in\mathcal{C}$ be given. Then $t$ is a terminal object in $\mathcal{C}$ if the following hold:
     \begin{enumerate}
         \item For all $x\in\mathcal{C}$, there is exactly one morphism $f:x\rightarrow t$.
@@ -852,7 +883,7 @@ This is especially obvious in diagram form.
     \end{tikzcd}\]
 Now let's make this precise in the general case.
 
-\begin{definition}[Product]
+\begin{definition}{Product}{}
     Let $a,b,v\in\mathcal{C}$ and morphisms $f:v\rightarrow a$ and $g:v\rightarrow b$ be given.
     \[\begin{tikzcd}
             & v \\
@@ -878,7 +909,7 @@ Now let's make this precise in the general case.
         \end{tikzcd}\]
 
 \end{definition}
-This conditions ensures that the object $v$ is the universal or canonical object satisfying the pattern, with the morphisms of any other such object being able to be written as a sort of embellishment of the morphisms from $v$.
+This condition ensures that the object $v$ is the universal or canonical object satisfying the pattern, with the morphisms of any other such object being able to be written as a sort of embellishment of the morphisms from $v$.
 
 In $\textbf{Set}$ the categorical product is exactly the Cartesian product of sets $a \times b = \{(x, y) \ | \ x\in a \text{ and } y\in b\}$, and $f$ and $g$ are the projections $f: (x, y) \mapsto x$ and $g: (x, y) \mapsto y$.
 Like in our integer example above there are other candidates, say the object $(a \times b) \times c$, but all of these other candidates will have a unique factorization to the Cartesian product: they all have extra stuff.
@@ -899,7 +930,7 @@ Again we can see the example of $(a \times b) \times c$ clearly in a diagram.
 
 
 
-\pagebreak
+%\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Adding Structure to Categories}
@@ -910,7 +941,7 @@ Much like we can add additional structure on a set, we can do the same with a ca
 For instance, if we take a set $S$ and add a binary operation $*:S \times S \rightarrow S$ that's associative and has a unit we get a structure called a monoid.
 If we do something similar and slightly more complicated to a category, we get a monoidal category.
 
-\begin{definition}[Monoidal Categories]
+\begin{definition}{Monoidal Categories}{}
     A category $\mathcal{C}$ is monoidal if the following exist.
     \begin{enumerate}
         \item A functor $\otimes:\mathcal{C}\times\mathcal{C}\rightarrow\mathcal{C}$ called the monoidal product.
@@ -928,7 +959,8 @@ If we do something similar and slightly more complicated to a category, we get a
             \arrow["{{\mathsf{id}_x\otimes\lambda_y}}", from=1-3, to=3-3]
             \arrow["{{\alpha_{x,y,z}}}", from=1-1, to=1-3]
         \end{tikzcd}\]
-
+\end{definition}
+\begin{definition*}{}{}
     \[\begin{tikzcd}
             {((w\otimes x)\otimes y)\otimes z} && {(w\otimes x)\otimes(y\otimes z)} \\
             \\
@@ -941,10 +973,10 @@ If we do something similar and slightly more complicated to a category, we get a
             \arrow["{{\alpha_{w,(x\otimes y),z}}}"', from=3-1, to=5-1]
             \arrow["{{\mathsf{id}_w\otimes \alpha_{x,y,z}}}"', from=5-1, to=5-3]
         \end{tikzcd}\]
-\end{definition}
+\end{definition*}
 We can create a special kind of monoidal category, called a cartesian category, with two additional properties.
 
-\begin{definition}[Cartesian Monoidal Category]
+\begin{definition}{Cartesian Monoidal Category}{}
     A monoidal category $\mathcal{C}$ is cartesian when its monoidal product is its categorical product and its monoidal unit is its terminal object.
     This obviously means that $\mathcal{C}$ must contain all products and have a terminal object.
 \end{definition}
@@ -955,7 +987,7 @@ An example of this would be \textbf{Set}, where the monoidal product is the Cart
 
 
 
-\pagebreak
+%\pagebreak
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Categorical System Theory}
@@ -980,7 +1012,7 @@ Given a cartesian category, it's possible to construct a new category of systems
 We call this category $\textbf{Lens}_{\mathcal{C}}$, where $\mathcal{C}$ is the base category.
 The objects in this category are called arenas and the morphisms between them are called lenses.
 
-\begin{definition}[Lenses]
+\begin{definition}{Lenses}{}
     Given a cartesian category $\mathcal{C}$ and objects $A^-, A^+, B^-, B^+ \in\mathcal{C}$, a lens consists of a passforward map $f:A^+\rightarrow B^+$ and a passback map $f^\#:A^+ \times B^- \rightarrow A^-$ between two arenas as follows:
     \[
         \begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}
@@ -989,12 +1021,18 @@ The objects in this category are called arenas and the morphisms between them ar
 
 For our purposes we'll be sticking to two such categories: the category of lenses over the category of sets and functions, $\textbf{Lens}_{\textbf{Set}}$, for discrete systems and the category of Euclidean spaces and smooth functions, $\textbf{Lens}_\textbf{Euc}$, for continuous systems.
 
-\begin{definition}[The Category $\textbf{Lens}_\mathcal{C}$]
+\begin{definition}{The Category $\textbf{Lens}_\mathcal{C}$}{}
     Given the cartesian category $\mathcal{C}$, the category $\textbf{Lens}_{\mathcal{C}}$ has the following properties.
     \begin{enumerate}
         \item A collection of objects called arenas. An arena $\begin{pmatrix}A^-\\A^+\end{pmatrix}$ is a pair of objects in $\mathcal{C}$.
         \item For each pair of arenas a collection of morphisms $\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$ called lenses.
         \item For each arena an identity lens $\begin{pmatrix}\pi_2\\\mathsf{id}_{A^+}\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}A^-\\A^+\end{pmatrix}$ where the passback map $\pi_2$ is the projection $\pi_2:A^+ \times A^- \rightarrow A^-$.
+    \end{enumerate}
+\end{definition}
+
+
+\begin{definition*}{}{}
+    \begin{enumerate}
         \item For any two compatible lenses a composite lens as follows:
               $$\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$$
               $$\begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}B^-\\B^+\end{pmatrix}\leftrightarrows\begin{pmatrix}C^-\\C^+\end{pmatrix}$$
@@ -1012,7 +1050,7 @@ For our purposes we'll be sticking to two such categories: the category of lense
     \end{enumerate}
 
     Note that since $\mathcal{C}$ is cartesian, this means that $1$ is the terminal object in $\mathcal{C}$ and $A^- \times C^-$ is the categorical product of objects $A^-$ and $C^-$ in $\mathcal{C}$.
-\end{definition}
+\end{definition*}
 
 
 
@@ -1035,7 +1073,7 @@ Specifically we'll be modeling the multi-output feed forward loop that's respons
 
 \nocite{*}
 
-\pagebreak
+%\pagebreak
 
 \bibliography{references}
 \bibliographystyle{annotate}

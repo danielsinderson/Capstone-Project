@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1713711428.98938 "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" "presentation.pdf" "presentation" 1713711432.07164 0
-  "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" 1713711425.5003 13828 c171f115483c028c07e5a4689d3d8a6c ""
+["pdflatex"] 1713809493.13883 "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" "presentation.pdf" "presentation" 1713809496.82185 0
+  "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" 1713793258.5187 13829 2227e2728df17695c70962de639da71f ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -233,12 +233,12 @@
   "/usr/local/texlive/2023/texmf.cnf" 1708220003.31006 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
   "Systems_Parallel.png" 1713710940.65573 7062 26d617bc70ac0e1b2dbf069127ef21ce ""
   "Systems_Series.png" 1713710853.22075 5838 8cdcb6dcde57a69bba1d64ae1b0d48d7 ""
-  "motor_flagella.png" 1713670317.21299 237600 d83d623c373a7d1cd0b8d5ecebbe8890 ""
+  "motor_flagella.png" 1713809454.70287 270666 ae2eb0b108e639eb2f25b5b69655c4d9 ""
   "multioutput_FFL_color.png" 1713670782.72825 33509 6414a9a6dec55ae657e41140e26f8732 ""
-  "presentation.aux" 1713711431.90851 7231 a78e74bc494a85d59e3e14a3b09cacef "pdflatex"
-  "presentation.nav" 1713711431.91252 3627 6e2297ce5d81f6dba11f4e15f16a3a90 "pdflatex"
-  "presentation.tex" 1713711425.5003 13828 c171f115483c028c07e5a4689d3d8a6c ""
-  "presentation.vrb" 1713711431.04449 799 f4d2d476e76f6b612c17c0639276eabb "pdflatex"
+  "presentation.aux" 1713809496.64044 7231 a78e74bc494a85d59e3e14a3b09cacef "pdflatex"
+  "presentation.nav" 1713809496.64444 3627 6e2297ce5d81f6dba11f4e15f16a3a90 "pdflatex"
+  "presentation.tex" 1713793258.5187 13829 2227e2728df17695c70962de639da71f ""
+  "presentation.vrb" 1713809495.64841 799 f4d2d476e76f6b612c17c0639276eabb "pdflatex"
   "system_diagram_closed.png" 1712940076.08533 15992 11da209b3087e6da07433baf59773c69 ""
   "system_diagram_open.png" 1712941487.29413 20855 ae286901bc9043ef2fc16d762ab1409d ""
   (generated)
