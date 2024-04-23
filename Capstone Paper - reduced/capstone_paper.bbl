@@ -1,0 +1,64 @@
+\begin{thebibliography}{10}
+
+\bibitem{alon2019introduction}
+{\sc Alon, U.}
+\newblock {\em An introduction to systems biology: design principles of biological circuits}.
+\newblock Chapman and Hall/CRC, 2019.
+
+\bibitem{cheng2022joy}
+{\sc Cheng, E.}
+\newblock {\em The joy of abstraction: an exploration of math, category theory, and life}.
+\newblock Cambridge University Press, 2022.
+
+\bibitem{fong2019invitation}
+{\sc Fong, B., and Spivak, D.~I.}
+\newblock {\em An invitation to applied category theory: seven sketches in compositionality}.
+\newblock Cambridge University Press, 2019.
+
+\bibitem{goldblatt2014topoi}
+{\sc Goldblatt, R.}
+\newblock {\em Topoi: the categorial analysis of logic}.
+\newblock Elsevier, 2014.
+
+\bibitem{lawvere2003sets}
+{\sc Lawvere, F.~W., and Rosebrugh, R.}
+\newblock {\em Sets for mathematics}.
+\newblock Cambridge University Press, 2003.
+
+\bibitem{leinster2014basic}
+{\sc Leinster, T.}
+\newblock {\em Basic category theory}, vol.~143.
+\newblock Cambridge University Press, 2014.
+
+\bibitem{mac2013categories}
+{\sc Mac~Lane, S.}
+\newblock {\em Categories for the working mathematician}, vol.~5.
+\newblock Springer Science \& Business Media, 2013.
+
+\bibitem{milewski2018category}
+{\sc Milewski, B.}
+\newblock {\em Category theory for programmers}.
+\newblock Blurb, 2018.
+
+\bibitem{myers2022categorical}
+{\sc Myers, D.~J.}
+\newblock Categorical systems theory.
+\newblock {\em Manuscript in preparation\/} (2022).
+
+\bibitem{nlab:symmetric_monoidal_category}
+{\sc {nLab authors}}.
+\newblock symmetric monoidal category.
+\newblock \url{https://ncatlab.org/nlab/show/symmetric+monoidal+category}, Feb. 2024.
+\newblock \href{https://ncatlab.org/nlab/revision/symmetric+monoidal+category/54}{Revision 54}.
+
+\bibitem{riehl2017category}
+{\sc Riehl, E.}
+\newblock {\em Category theory in context}.
+\newblock Courier Dover Publications, 2017.
+
+\bibitem{rosiak2022sheaf}
+{\sc Rosiak, D.}
+\newblock {\em Sheaf theory through examples}.
+\newblock MIT Press, 2022.
+
+\end{thebibliography}

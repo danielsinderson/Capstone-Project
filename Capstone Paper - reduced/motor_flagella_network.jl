@@ -1,6 +1,6 @@
 using AlgebraicDynamics
 using AlgebraicDynamics.DWDDynam
-using Catlab
+using Catlab.WiringDiagrams, Catlab.Programs
 
 using LabelledArrays
 using OrdinaryDiffEq, Plots, Plots.PlotMeasures
@@ -125,9 +125,6 @@ add_wires!(motor_diagram, [
     (geneZ11, 1) => (output_id(motor_diagram), 11),
     (geneZ12, 1) => (output_id(motor_diagram), 12)
 ])
-
-
-to_graphviz(motor_diagram)
 
 
 # final system = oapply(d::WiringDiagram, ms::Vector{M}) where {M<:AbstractMachine}

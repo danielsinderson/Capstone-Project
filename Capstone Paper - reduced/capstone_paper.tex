@@ -15,6 +15,9 @@
 \usepackage{amssymb}
 \usepackage{svg}
 
+\usepackage{listings}
+\usepackage{jlcode}
+
 \usepackage[theorems]{tcolorbox}
 \tcbuselibrary{breakable, theorems, skins}
 
@@ -1059,10 +1062,67 @@ For our purposes we'll be sticking to two such categories: the category of lense
 \section*{Case Study: Modeling Transcription Networks}
 To test out this formalism with a real world example, we'll be modeling a small portion of the transcription network of the \textit{e. coli} bacterium.
 Specifically we'll be modeling the multi-output feed forward loop that's responsible for the production of proteins that create a nanometer-scale motor and flagella propeller that the bacteria produce to move themselves away from stressful environments.
+Before we dig into that though, let's review the basics of how gene transcription works.
+
+\subsection*{Gene Transcription}
+Gene transcription is the process by which genes in a cell's DNA produce proteins.
+At a high-level, the process consists of environmental signals, transcription factors, promoters and genes, mRNA, and response proteins.
+When an environmental signal activates a related transcription factor, this activated transcription factor interacts with the promoter region of a gene as either an activator or a repressor for the gene.
+This activation or repression then leads to the increased or decreased production of mRNA from that gene and, therefore, an increase or decrease in the production of the gene's related proteins.
+
+The activation or repression curve of the interaction of a transcription factor and the promoter region of a gene can be modeled by either a Hill function (sigmoidal curve ranging from $\beta_0$ to $\beta$) or, more simply, as a logic step function.
+This is how we'll model them in this case study.
+$$\text{Activator: } \ f(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
+$$\text{Repressor: } \ f(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
+
+Activation functions can also be multivariate, with a promoter responding to multiple transcription factors. These multivariate functions can have take many forms, with some acting similar to logic gates or behaving additively.
+$$f(X^*, Y^*)=\beta*P(X^* > K_x \land Y^* > K_y)$$
+$$f(X^*, Y^*)=\beta*P(X^* > K_x \lor Y^* > K_y)$$
+$$f(X^*, Y^*)=\beta_x X^* + \beta_y Y^*$$
+
+The dynamics of transcription networks, the way that the system responds to input signals, are well modeled by the following differential equation, where $Y$ is the resulting protein concentration, $\beta$ is the maximal activity, and $\alpha=\alpha_{\text{deg}} + \alpha_{\text{dil}}$ is the combined protein degradation and dilution rates.
+$$\frac{dY}{dt}=\beta - \alpha Y$$
+
+It's common for the product of a gene to be a transcription factor for other genes.
+By connecting all of these relations together into a graph we get a gene transcription network.
+
+
+
+\subsection*{The \textit{e. coli} Motor Flagella Network}
+The transcription network that we'll be modeling is the motor flagella network of \textit{e. coli} bacteria.
+This network is a graph with $14$ nodes and $25$ edges arranged in a common subgraph called a multi-output feed forward loop shown below.
 
 \begin{center}
     \includegraphics*[scale=0.35]{multioutput_FFL.png}
 \end{center}
+
+In this multi-output FFL every edge represents an activator relationship, and all of the activation functions of the output genes $Z1$, $Z2$, \dots, $Z12$ mix their input signals as a logical $\mathsf{OR}$ gate.
+\footnote{In reality they're combined as a weighted sum. We're using $\mathsf{OR}$ gates since they simplify the computations while retaining the underlying behavior.}
+
+This subgraph architecture has several features that are very important to the purpose it serves.
+First, the feed forward relation between genes $X$ and $Y$ and the $\mathsf{OR}$ gate mixing in the output genes' activation functions create a sign-sensitive filter to short fluctuations in the input signal.
+This ensures that the process is robust to signal noise and is unlikely to stop prematurely.
+Second, the activation thresholds for $X$ and $Y$ on the output genes can be tuned to ensure that the output genes activate in the proper order: the first output genes to activate are also the first to deactivate.\footnote{This is called first-in-first-out, or FIFO, order.}
+This ordering is impossible without the mediating effect of gene $Y$.
+
+
+\subsection*{Simulation Results}
+To simulate this network we used the excellent AlgebraicDynamics library for the Julia programming language.
+Full code for the simulation can be found in the appendix.
+Using the formalism above for wiring open systems together with lenses, we can represent our composed system as the following wiring diagram.
+
+\begin{center}
+    \includegraphics*[scale=0.5]{motor_flagella_network.png}
+\end{center}
+
+Here each node is a ``continuous machine"---i.e. a differential system---based on the transcription network dynamics below.
+
+$$\text{Genes X and Y: } \ \ \frac{dY}{dx} = [\beta*P(x > \kappa) - \alpha * Y]$$
+$$\text{Output Genes $Z1$ \dots $Z12$: } \ \ \frac{dY}{dx} = [\beta*P(x_1 > \kappa_{x_1} \ \mathsf{OR} \ x_2 > \kappa_{x_2}) - \alpha * Y]$$
+
+The signal node is a contrived signal used to test the dynamics of the model.
+It's output is included in the graph below of the simulation's results.
+Let's take a look at that now.
 
 \begin{center}
     \includegraphics*[scale=0.25]{motor_flagella.png}
@@ -1073,10 +1133,14 @@ Specifically we'll be modeling the multi-output feed forward loop that's respons
 
 \nocite{*}
 
-%\pagebreak
-
+\pagebreak
+\bibliographystyle{acm}
 \bibliography{references}
-\bibliographystyle{annotate}
+
+\pagebreak
+\section*{Appendix A: Simulation Code}
+\jlinputlisting{motor_flagella_network.jl}
+
 \end{document}
 
 

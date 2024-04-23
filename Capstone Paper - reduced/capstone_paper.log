@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  23 APR 2024 06:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  23 APR 2024 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -543,29 +543,219 @@ Package shellesc Info: Restricted shell escape enabled on input line 77.
 Package: transparent 2022-10-27 v1.5 Transparency with color stacks
  (/usr/local/texlive/2023/texmf-dist/tex/latex/transparent/transparent-nometadata.sty
 Package: transparent-nometadata 2022-10-27 v1.5 Transparency via pdfTeX's color stack (HO)
-)) (/usr/local/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+)) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count317
+\lst@gtempboxa=\box67
+\lst@token=\toks43
+\lst@length=\count318
+\lst@currlwidth=\dimen291
+\lst@column=\count319
+\lst@pos=\count320
+\lst@lostspace=\dimen292
+\lst@width=\dimen293
+\lst@newlines=\count321
+\lst@lineno=\count322
+\lst@maxwidth=\dimen294
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
+\c@lstnumber=\count323
+\lst@skipnumbers=\count324
+\lst@framebox=\box68
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2023/02/27 1.9 listings configuration
+))
+Package: listings 2023/02/27 1.9 (Carsten Heinz)
+ (./jlcode.sty
+-- Package: `jlcode' 6.1.4 <2023/07/20> --
+Package: jlcode 2023/07/20 6.1.4
+(/usr/local/texlive/2023/texmf-dist/tex/latex/base/textcomp.sty
+Package: textcomp 2020/02/02 v2.0n Standard LaTeX package
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/eurosym/eurosym.sty
+Package: eurosym 1998/08/06 v1.1 European currency symbol ``Euro''
+\@eurobox=\box69
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/pmboxdraw/pmboxdraw.sty
+Package: pmboxdraw 2019/12/05 v1.4 Poor man's box drawing characters (HO)
+Now handling font encoding pmboxdraw ...
+... processing UTF-8 mapping file for font encoding pmboxdraw
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/pmboxdraw/pmboxdrawenc.dfu
+File: pmboxdrawenc.dfu 2019/12/05 v1.4 UTF-8 support for box drawing characters
+   defining Unicode char U+2500 (decimal 9472)
+   defining Unicode char U+2501 (decimal 9473)
+   defining Unicode char U+2502 (decimal 9474)
+   defining Unicode char U+2503 (decimal 9475)
+   defining Unicode char U+250C (decimal 9484)
+   defining Unicode char U+250D (decimal 9485)
+   defining Unicode char U+250E (decimal 9486)
+   defining Unicode char U+250F (decimal 9487)
+   defining Unicode char U+2510 (decimal 9488)
+   defining Unicode char U+2511 (decimal 9489)
+   defining Unicode char U+2512 (decimal 9490)
+   defining Unicode char U+2513 (decimal 9491)
+   defining Unicode char U+2514 (decimal 9492)
+   defining Unicode char U+2515 (decimal 9493)
+   defining Unicode char U+2516 (decimal 9494)
+   defining Unicode char U+2517 (decimal 9495)
+   defining Unicode char U+2518 (decimal 9496)
+   defining Unicode char U+2519 (decimal 9497)
+   defining Unicode char U+251A (decimal 9498)
+   defining Unicode char U+251B (decimal 9499)
+   defining Unicode char U+251C (decimal 9500)
+   defining Unicode char U+251D (decimal 9501)
+   defining Unicode char U+251E (decimal 9502)
+   defining Unicode char U+251F (decimal 9503)
+   defining Unicode char U+2520 (decimal 9504)
+   defining Unicode char U+2521 (decimal 9505)
+   defining Unicode char U+2522 (decimal 9506)
+   defining Unicode char U+2523 (decimal 9507)
+   defining Unicode char U+2524 (decimal 9508)
+   defining Unicode char U+252C (decimal 9516)
+   defining Unicode char U+252D (decimal 9517)
+   defining Unicode char U+252E (decimal 9518)
+   defining Unicode char U+252F (decimal 9519)
+   defining Unicode char U+2530 (decimal 9520)
+   defining Unicode char U+2531 (decimal 9521)
+   defining Unicode char U+2532 (decimal 9522)
+   defining Unicode char U+2533 (decimal 9523)
+   defining Unicode char U+2534 (decimal 9524)
+   defining Unicode char U+2535 (decimal 9525)
+   defining Unicode char U+2536 (decimal 9526)
+   defining Unicode char U+2537 (decimal 9527)
+   defining Unicode char U+2538 (decimal 9528)
+   defining Unicode char U+2539 (decimal 9529)
+   defining Unicode char U+253A (decimal 9530)
+   defining Unicode char U+253B (decimal 9531)
+   defining Unicode char U+253C (decimal 9532)
+   defining Unicode char U+253D (decimal 9533)
+   defining Unicode char U+253E (decimal 9534)
+   defining Unicode char U+253F (decimal 9535)
+   defining Unicode char U+2540 (decimal 9536)
+   defining Unicode char U+2541 (decimal 9537)
+   defining Unicode char U+2542 (decimal 9538)
+   defining Unicode char U+2543 (decimal 9539)
+   defining Unicode char U+2544 (decimal 9540)
+   defining Unicode char U+2545 (decimal 9541)
+   defining Unicode char U+2546 (decimal 9542)
+   defining Unicode char U+2547 (decimal 9543)
+   defining Unicode char U+2548 (decimal 9544)
+   defining Unicode char U+2549 (decimal 9545)
+   defining Unicode char U+254A (decimal 9546)
+   defining Unicode char U+254B (decimal 9547)
+   defining Unicode char U+2550 (decimal 9552)
+   defining Unicode char U+2551 (decimal 9553)
+   defining Unicode char U+2552 (decimal 9554)
+   defining Unicode char U+2553 (decimal 9555)
+   defining Unicode char U+2554 (decimal 9556)
+   defining Unicode char U+2555 (decimal 9557)
+   defining Unicode char U+2556 (decimal 9558)
+   defining Unicode char U+2557 (decimal 9559)
+   defining Unicode char U+2558 (decimal 9560)
+   defining Unicode char U+2559 (decimal 9561)
+   defining Unicode char U+255A (decimal 9562)
+   defining Unicode char U+255B (decimal 9563)
+   defining Unicode char U+255C (decimal 9564)
+   defining Unicode char U+255D (decimal 9565)
+   defining Unicode char U+255E (decimal 9566)
+   defining Unicode char U+255F (decimal 9567)
+   defining Unicode char U+2560 (decimal 9568)
+   defining Unicode char U+2561 (decimal 9569)
+   defining Unicode char U+2562 (decimal 9570)
+   defining Unicode char U+2563 (decimal 9571)
+   defining Unicode char U+2564 (decimal 9572)
+   defining Unicode char U+2565 (decimal 9573)
+   defining Unicode char U+2566 (decimal 9574)
+   defining Unicode char U+2567 (decimal 9575)
+   defining Unicode char U+2568 (decimal 9576)
+   defining Unicode char U+2569 (decimal 9577)
+   defining Unicode char U+256A (decimal 9578)
+   defining Unicode char U+256B (decimal 9579)
+   defining Unicode char U+256C (decimal 9580)
+   defining Unicode char U+2574 (decimal 9588)
+   defining Unicode char U+2575 (decimal 9589)
+   defining Unicode char U+2576 (decimal 9590)
+   defining Unicode char U+2577 (decimal 9591)
+   defining Unicode char U+2578 (decimal 9592)
+   defining Unicode char U+2579 (decimal 9593)
+   defining Unicode char U+257A (decimal 9594)
+   defining Unicode char U+257B (decimal 9595)
+   defining Unicode char U+257C (decimal 9596)
+   defining Unicode char U+257D (decimal 9597)
+   defining Unicode char U+257E (decimal 9598)
+   defining Unicode char U+257F (decimal 9599)
+   defining Unicode char U+2580 (decimal 9600)
+   defining Unicode char U+2581 (decimal 9601)
+   defining Unicode char U+2582 (decimal 9602)
+   defining Unicode char U+2583 (decimal 9603)
+   defining Unicode char U+2584 (decimal 9604)
+   defining Unicode char U+2585 (decimal 9605)
+   defining Unicode char U+2586 (decimal 9606)
+   defining Unicode char U+2587 (decimal 9607)
+   defining Unicode char U+2588 (decimal 9608)
+   defining Unicode char U+2589 (decimal 9609)
+   defining Unicode char U+258A (decimal 9610)
+   defining Unicode char U+258B (decimal 9611)
+   defining Unicode char U+258C (decimal 9612)
+   defining Unicode char U+258D (decimal 9613)
+   defining Unicode char U+258E (decimal 9614)
+   defining Unicode char U+258F (decimal 9615)
+   defining Unicode char U+2590 (decimal 9616)
+   defining Unicode char U+2591 (decimal 9617)
+   defining Unicode char U+2592 (decimal 9618)
+   defining Unicode char U+2593 (decimal 9619)
+   defining Unicode char U+2594 (decimal 9620)
+   defining Unicode char U+2595 (decimal 9621)
+   defining Unicode char U+2596 (decimal 9622)
+   defining Unicode char U+2597 (decimal 9623)
+   defining Unicode char U+2598 (decimal 9624)
+   defining Unicode char U+2599 (decimal 9625)
+   defining Unicode char U+259A (decimal 9626)
+   defining Unicode char U+259B (decimal 9627)
+   defining Unicode char U+259C (decimal 9628)
+   defining Unicode char U+259D (decimal 9629)
+   defining Unicode char U+259E (decimal 9630)
+   defining Unicode char U+259F (decimal 9631)
+)
+\pmbd@W=\dimen295
+\pmbd@H=\dimen296
+\pmbd@L=\dimen297
+\pmbd@Thin=\dimen298
+\pmbd@Thick=\dimen299
+\pmbd@Sep=\dimen300
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/base/fontenc.sty
+Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/relsize/relsize.sty
+Package: relsize 2013/03/29 ver 4.1
+)
+\bfem=\skip61
+\xmrgn=\skip62
+LaTeX Font Info:    Trying to load font information for T1+pcr on input line 558.
+ (/usr/local/texlive/2023/texmf-dist/tex/latex/psnfss/t1pcr.fd
+File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
+)
+\MDo@unit=\dimen301
+\jlinlem=\skip63
+) (/usr/local/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
  (/usr/local/texlive/2023/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks43
-\verbatim@line=\toks44
+\every@verbatim=\toks44
+\verbatim@line=\toks45
 \verbatim@in@stream=\read3
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
 )
-\tcb@titlebox=\box67
-\tcb@upperbox=\box68
-\tcb@lowerbox=\box69
-\tcb@phantombox=\box70
-\c@tcbbreakpart=\count317
-\c@tcblayer=\count318
-\c@tcolorbox@number=\count319
-\l__tcobox_tmpa_box=\box71
-\l__tcobox_tmpa_dim=\dimen291
-\tcb@temp=\box72
-\tcb@temp=\box73
-\tcb@temp=\box74
+\tcb@titlebox=\box70
+\tcb@upperbox=\box71
+\tcb@lowerbox=\box72
+\tcb@phantombox=\box73
+\c@tcbbreakpart=\count325
+\c@tcblayer=\count326
+\c@tcolorbox@number=\count327
+\l__tcobox_tmpa_box=\box74
+\l__tcobox_tmpa_dim=\dimen302
 \tcb@temp=\box75
+\tcb@temp=\box76
+\tcb@temp=\box77
+\tcb@temp=\box78
  (/usr/local/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
@@ -574,9 +764,9 @@ Library (tcolorbox): 'tcbbreakable.code.tex' version '6.2.0'
 Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
 )
 Package pdfcol Info: New color stack `tcb@breakable' = 2 on input line 23.
-\tcb@testbox=\box76
-\tcb@totalupperbox=\box77
-\tcb@totallowerbox=\box78
+\tcb@testbox=\box79
+\tcb@totalupperbox=\box80
+\tcb@totallowerbox=\box81
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
 (/usr/local/texlive/2023/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
@@ -585,39 +775,41 @@ Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
 Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
 File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
-\l__tikzfill_img_box=\box79
+\l__tikzfill_img_box=\box82
 )) (/usr/local/texlive/2023/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
 ))
-\c@examp=\count320
-\c@tcb@cnt@example=\count321
-\c@tcb@cnt@theorem=\count322
-\c@tcb@cnt@definition=\count323
+\c@examp=\count328
+\c@tcb@cnt@example=\count329
+\c@tcb@cnt@theorem=\count330
+\c@tcb@cnt@definition=\count331
  (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count324
-\l__pdf_internal_box=\box80
+\l__color_backend_stack_int=\count332
+\l__pdf_internal_box=\box83
 ) (./capstone_paper.aux)
 \openout1 = `capstone_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 62.
-LaTeX Font Info:    ... okay on input line 62.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for pmboxdraw/pmboxdraw/m/n on input line 65.
+LaTeX Font Info:    ... okay on input line 65.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -655,72 +847,79 @@ LaTeX Font Info:    ... okay on input line 62.
 
 (/usr/local/texlive/2023/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count325
-\scratchdimen=\dimen292
-\scratchbox=\box81
-\nofMPsegments=\count326
-\nofMParguments=\count327
-\everyMPshowfont=\toks45
-\MPscratchCnt=\count328
-\MPscratchDim=\dimen293
-\MPnumerator=\count329
-\makeMPintoPDFobject=\count330
-\everyMPtoPDFconversion=\toks46
+\scratchcounter=\count333
+\scratchdimen=\dimen303
+\scratchbox=\box84
+\nofMPsegments=\count334
+\nofMParguments=\count335
+\everyMPshowfont=\toks46
+\MPscratchCnt=\count336
+\MPscratchDim=\dimen304
+\MPnumerator=\count337
+\makeMPintoPDFobject=\count338
+\everyMPtoPDFconversion=\toks47
 ) (/usr/local/texlive/2023/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 62.
+Package hyperref Info: Link coloring OFF on input line 65.
  (./capstone_paper.out) (./capstone_paper.out)
 \@outlinefile=\write4
 \openout4 = `capstone_paper.out'.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 64.
+\c@lstlisting=\count339
+LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 64.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 64.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 67.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 287--289
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4] [5] [6]
+Underfull \hbox (badness 10000) in paragraph at lines 290--292
 
  []
 
 [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 351--356
+Underfull \hbox (badness 10000) in paragraph at lines 354--359
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--369
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
 
  []
 
 [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 948.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 951.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [24] [25] [26] [27]
-<multioutput_FFL.png, id=234, 408.52625pt x 435.6275pt>
+) [24] [25] [26] [27] [28]
+<multioutput_FFL.png, id=244, 408.52625pt x 435.6275pt>
 File: multioutput_FFL.png Graphic file (type png)
 <use multioutput_FFL.png>
-Package pdftex.def Info: multioutput_FFL.png  used on input line 1064.
+Package pdftex.def Info: multioutput_FFL.png  used on input line 1096.
 (pdftex.def)             Requested size: 142.98633pt x 152.47191pt.
-<motor_flagella.png, id=237, 1606.0pt x 803.0pt>
+ [29 <./multioutput_FFL.png>]
+<motor_flagella_network.png, id=260, 819.863pt x 253.748pt>
+File: motor_flagella_network.png Graphic file (type png)
+<use motor_flagella_network.png>
+Package pdftex.def Info: motor_flagella_network.png  used on input line 1115.
+(pdftex.def)             Requested size: 409.9305pt x 126.87367pt.
+<motor_flagella.png, id=262, 1606.0pt x 803.0pt>
 File: motor_flagella.png Graphic file (type png)
 <use motor_flagella.png>
-Package pdftex.def Info: motor_flagella.png  used on input line 1068.
+Package pdftex.def Info: motor_flagella.png  used on input line 1128.
 (pdftex.def)             Requested size: 401.49902pt x 200.74951pt.
-
-No file capstone_paper.bbl.
-[28 <./multioutput_FFL.png> <./motor_flagella.png>] (./capstone_paper.aux)
+ [30 <./motor_flagella_network.png> <./motor_flagella.png>] (./capstone_paper.bbl) [31{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1142.
+ (./motor_flagella_network.jl [32] [33] [34]) [35] (./capstone_paper.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
@@ -729,18 +928,18 @@ Package rerunfilecheck Info: File `capstone_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30070 strings out of 474142
- 626872 string characters out of 5744617
- 1959995 words of memory out of 5000000
- 51810 multiletter control sequences out of 15000+600000
- 574101 words of font info for 100 fonts, out of 8000000 for 9000
+ 36070 strings out of 474142
+ 700141 string characters out of 5744617
+ 2999995 words of memory out of 5000000
+ 57549 multiletter control sequences out of 15000+600000
+ 587297 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,19n,121p,621b,1440s stack positions out of 10000i,1000n,20000p,200000b,200000s
- </home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on capstone_paper.pdf (28 pages, 613163 bytes).
+ 116i,19n,121p,621b,5286s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ </home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
+Output written on capstone_paper.pdf (35 pages, 878846 bytes).
 PDF statistics:
- 368 PDF objects out of 1000 (max. 8388607)
- 284 compressed objects within 3 object streams
- 111 named destinations out of 1000 (max. 500000)
- 35 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 697 PDF objects out of 1000 (max. 8388607)
+ 578 compressed objects within 6 object streams
+ 309 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
