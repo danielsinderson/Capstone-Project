@@ -1128,6 +1128,20 @@ Let's take a look at that now.
     \includegraphics*[scale=0.25]{motor_flagella.png}
 \end{center}
 
+The simulation results above stay true to almost all of the expected dynamics of the network.
+It's robust to signal noise and, other than a couple exceptions, it activates and deactivates the genes in the correct order.
+The reason for the errors in the ordering is the lack of real activation thresholds for the genes: all activation thresholds in the simulation were tuned by hand using only the crude heuristic that $\kappa_{z_n} < \kappa_{z_{n+1}}$ for the $X$ activation and $\kappa_{z_n} > \kappa_{z_{n+1}}$ for the $Y$ activation.
+
+In future modeling work it should be possible to find real-world data with more time and journal access for secondary research.
+With more time it would also be possible to define a loss function based on the expected dynamics and tune the model's parameters algorithmically using genetic programming or some other form of heuristic search.
+Lastly, it might also improve the accuracy of the model if we removed the logical approximations in it.
+We could replace the step functions with hill functions and the $\mathsf{OR}$ gates in the output genes' activation functions for a weighted sum.
+
+
+
+
+
+\section*{Conclusion and Future Work}
 
 
 

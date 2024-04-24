@@ -326,27 +326,46 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\begin{frame}{Gene Transcription}
+    Gene transcription is the process by which genes in a cell’s DNA produce proteins.
+
+    \vspace*{0.125in}
+    The dynamics of this process for a single gene are well modeled by the following differential equation, where $f(X^*)$ is the activation function of the gene.
+    $$\frac{dY}{dt}=\beta*f(X^*) - \alpha Y$$
+
+    $$\text{Activator: } \ f(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
+    $$\text{Repressor: } \ f(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
+\end{frame}
+
 \begin{frame}{Motor Flagella Network}
+    Gene transcription network are connected networks of genes whose products act as transcription factors for other genes.
+
+    \vspace*{0.125in}
+    Below is the motor flagella network of \textit{e. coli} bacteria.
+
     \begin{center}
         \includegraphics[scale=0.25]{multioutput_FFL_color.png}
+        \hspace*{0.25in}
+        \includegraphics[scale=0.35]{Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg}
     \end{center}
 \end{frame}
 
-\begin{frame}{Motor Flagella Network Simulation}
+
+\begin{frame}{Motor Flagella Network Model}
+    Using lenses we can wire together the transcription factor dynamics as differential systems and then simulate the results.
+
+    \begin{center}
+        \includegraphics[scale=0.35]{motor_flagella_network.png}
+    \end{center}
+
+\end{frame}
+
+\begin{frame}{Motor Flagella Network Simulation Results}
+
     \begin{center}
         \includegraphics[scale=0.20]{motor_flagella.png}
     \end{center}
 \end{frame}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Results}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -354,6 +373,27 @@
 \section{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{References}
+    \begin{thebibliography}{10}
+
+        \bibitem{alon2019introduction}
+        {\sc Alon, U.}
+        \newblock {\em An introduction to systems biology: design principles of biological circuits}.
+        \newblock Chapman and Hall/CRC, 2019.
+
+        \bibitem{fong2019invitation}
+        {\sc Fong, B., and Spivak, D.~I.}
+        \newblock {\em An invitation to applied category theory: seven sketches in compositionality}.
+        \newblock Cambridge University Press, 2019.
+
+        \bibitem{myers2022categorical}
+        {\sc Myers, D.~J.}
+        \newblock Categorical systems theory.
+        \newblock {\em Manuscript in preparation\/} (2022).
+    \end{thebibliography}
+\end{frame}
 
 
 
