@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  24 APR 2024 10:16
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  29 APR 2024 13:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -920,20 +920,24 @@ Package pdftex.def Info: Systems_Parallel.png  used on input line 321.
 <multioutput_FFL_color.png, id=159, 408.52625pt x 435.6275pt>
 File: multioutput_FFL_color.png Graphic file (type png)
 <use multioutput_FFL_color.png>
-Package pdftex.def Info: multioutput_FFL_color.png  used on input line 351.
+Package pdftex.def Info: multioutput_FFL_color.png  used on input line 353.
 (pdftex.def)             Requested size: 102.1313pt x 108.9066pt.
 <Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg, id=160, 321.2pt x 321.2pt>
 File: Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg Graphic file (type jpg)
 <use Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg>
-Package pdftex.def Info: Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg  used on input line 351.
+Package pdftex.def Info: Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg  used on input line 353.
 (pdftex.def)             Requested size: 112.42168pt x 112.42168pt.
- [23
+
+Overfull \vbox (0.95255pt too high) detected at line 353
+ []
+
+[23
 
  <./multioutput_FFL_color.png> <./Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg>]
 <motor_flagella_network.png, id=168, 819.863pt x 253.748pt>
 File: motor_flagella_network.png Graphic file (type png)
 <use motor_flagella_network.png>
-Package pdftex.def Info: motor_flagella_network.png  used on input line 361.
+Package pdftex.def Info: motor_flagella_network.png  used on input line 363.
 (pdftex.def)             Requested size: 286.95634pt x 88.81311pt.
  [24
 
@@ -941,10 +945,10 @@ Package pdftex.def Info: motor_flagella_network.png  used on input line 361.
 <motor_flagella.png, id=175, 1606.0pt x 803.0pt>
 File: motor_flagella.png Graphic file (type png)
 <use motor_flagella.png>
-Package pdftex.def Info: motor_flagella.png  used on input line 368.
+Package pdftex.def Info: motor_flagella.png  used on input line 370.
 (pdftex.def)             Requested size: 321.19432pt x 160.59715pt.
 
-Overfull \hbox (13.90445pt too wide) in paragraph at lines 368--368
+Overfull \hbox (13.90445pt too wide) in paragraph at lines 370--370
  [] 
  []
 
@@ -955,11 +959,11 @@ Overfull \hbox (13.90445pt too wide) in paragraph at lines 368--368
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 396.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 398.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 396.
+(Font)              using `OT1/cmss/bx/n' instead on input line 398.
 
 [27
 
@@ -992,7 +996,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  128i,18n,123p,1946b,1361s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (27 pages, 533297 bytes).
+Output written on presentation.pdf (27 pages, 533450 bytes).
 PDF statistics:
  298 PDF objects out of 1000 (max. 8388607)
  215 compressed objects within 3 object streams

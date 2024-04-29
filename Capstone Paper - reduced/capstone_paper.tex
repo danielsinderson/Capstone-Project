@@ -36,6 +36,7 @@
 
 
 \definecolor{dodgerblue}{rgb}{0.12, 0.56, 1.0}
+\definecolor{heliotrope}{rgb}{0.88,0.30,1.00}
 \newcounter{examp}
 
 \newtcbtheorem{example}{Example}{
@@ -44,17 +45,17 @@
     boxed title style = {colback=blue!35!black}}
 {example}
 
-\newtcbtheorem{theorem}{Theorem}{
-    enhanced, before title={\stepcounter{examp}}, colback=dodgerblue!10, colframe=dodgerblue!35!black,
-    fonttitle=\bfseries, before skip = 16pt, after skip = 16pt, attach boxed title to top left = {xshift=5mm, yshift*=-\tcboxedtitleheight/2},
-    boxed title style = {colback=dodgerblue!35!black}}
-{theorem}
-
 \newtcbtheorem{definition}{Definition}{
     enhanced, before title={\stepcounter{examp}}, colback=dodgerblue!10, colframe=dodgerblue!35!black,
     fonttitle=\bfseries, before skip = 16pt, after skip = 16pt, attach boxed title to top left = {xshift=5mm, yshift*=-\tcboxedtitleheight/2},
     boxed title style = {colback=dodgerblue!35!black}}
 {definition}
+
+\newtcbtheorem{proofbox}{Proof}{
+    enhanced, before title={\stepcounter{examp}}, colback=heliotrope!10, colframe=heliotrope!35!black,
+    fonttitle=\bfseries, before skip = 16pt, after skip = 16pt, attach boxed title to top left = {xshift=5mm, yshift*=-\tcboxedtitleheight/2},
+    boxed title style = {colback=heliotrope!35!black}}
+{proofbox}
 
 
 
@@ -220,7 +221,7 @@ Let's check that these rules are enough to preserve unitality and associativity.
 Let categories $\mathcal{C}$ and $\mathcal{D}$ and a functor $F:\mathcal{C} \rightarrow \mathcal{D}$ between them be given.
 
 To test that unitality is preserved by the functor, we'll start with the unitality definition in $\mathcal{C}$, that $f\circ \mathsf{id}_a=\mathsf{id}_b\circ f=f$ for objects $a,b\in\mathcal{C}$ and morphism $f:a \rightarrow b$, and show that this unitality condition remains true for the objects and morphism under the functor in $\mathcal{D}$.
-\begin{proof}
+\begin{proofbox}{Preservation of Unitality}{}
     Let a functor $F:\mathcal{C} \rightarrow \mathcal{D}$ be given, with objects $a,b\in\mathcal{C}$ and morphism $f:a \rightarrow b$.
     \begin{align*}
         F(\mathsf{id}_b \circ f) & = F\mathsf{id}_b \circ Ff   & \text{by the functor composition rule}   \\
@@ -231,9 +232,9 @@ To test that unitality is preserved by the functor, we'll start with the unitali
                                  & = F(f \circ \mathsf{id}_a)  & \text{by the functor composition rule}
     \end{align*}
     Thus the functor preserves unitality, since $F(\mathsf{id}_b \circ f) = F(f \circ \mathsf{id}_a) = Ff$.
-\end{proof}
+\end{proofbox}
 Now let's check that associativity is preserved.
-\begin{proof}
+\begin{proofbox}{Preservation of Associativity}{}
     Let a functor $F:\mathcal{C} \rightarrow \mathcal{D}$ be given, with objects $a,b,c,d\in\mathcal{C}$ and morphisms $f:a \rightarrow b$, $g:b \rightarrow c$, and $h:c \rightarrow d$.
     \begin{align*}
         F(h \circ (g \circ f)) & = Fh \circ F(g \circ f)  & \text{by the functor composition rule}                \\
@@ -243,7 +244,7 @@ Now let's check that associativity is preserved.
                                & = F((h \circ g) \circ f) & \text{by the functor composition rule}
     \end{align*}
     Thus the functor preserves associativity, since $F(h \circ (g \circ f)) = F((h \circ g) \circ f)$.
-\end{proof}
+\end{proofbox}
 
 With functors in our toolbox, it's now possible to construct a category where the objects themselves are categories and the morphism between them are functors.
 This, along with our next step, will prove to be extremely powerful.
@@ -646,7 +647,7 @@ But is it still full and faithful?
 Naively we might think they aren't, since $\mathsf{id}_y$, $\mathsf{id}_z$, and both parts of the isomorphism between $y$ and $z$ all get mapped to $\mathsf{id}_{Gy}$, which certainly doesn't seem injective.
 But $G$ is full and faithful.
 Double checking that this is the case is a great opportunity to see why full and faithful functors are defined in terms of homsets.
-\begin{proof}
+\begin{proofbox}{$F$ is Full and Faithful}{}
     Given a functor $G: \mathcal{D} \rightarrow \mathcal{C}$ as defined above, for $G$ to be full and faithful there must be a bijection between the homset of any two objects in $\mathcal{D}$ and the homset of their images in $\mathcal{C}$.
     Since most of the objects and morphisms we're concerned with above obviously meet this requirement by inspection, let's focus on $y,z \in \mathcal{D}$ and the isomorphism between them, which we'll call $f:y\rightarrow z$ and $f^{-1}:z\rightarrow y$, and their images.
     Listing them out, we have the following homsets.
@@ -655,7 +656,7 @@ Double checking that this is the case is a great opportunity to see why full and
     $$\mathcal{D}(y, z) = \{f\} \cong \{\mathsf{id}_{Gy}\} = \mathcal{C}(Gy, Gz)$$
     $$\mathcal{D}(z, y) = \{f^{-1}\} \cong \{\mathsf{id}_{Gz}\} = \mathcal{C}(Gz, Gy)$$
     So even though we have four morphisms that are all getting mapped to a single identity, each of the homsets individually is a singleton set in both the source and the target categories, meaning that they're all isomorphic, so our functor $G$ is indeed full and faithful.
-\end{proof}
+\end{proofbox}
 
 So we now know that categorical equivalence is reflexive and symmetric, but is it transitive?
 To test this we'll need another small category and another functor.
@@ -1035,7 +1036,7 @@ For our purposes we'll be sticking to two such categories: the category of lense
 
 
 \begin{definition*}{}{}
-    \begin{enumerate}
+    \begin{enumerate}\addtocounter{enumi}{3}
         \item For any two compatible lenses a composite lens as follows:
               $$\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$$
               $$\begin{pmatrix}g^{\#}\\g\end{pmatrix}:\begin{pmatrix}B^-\\B^+\end{pmatrix}\leftrightarrows\begin{pmatrix}C^-\\C^+\end{pmatrix}$$
@@ -1115,10 +1116,11 @@ Using the formalism above for wiring open systems together with lenses, we can r
     \includegraphics*[scale=0.5]{motor_flagella_network.png}
 \end{center}
 
-Here each node is a ``continuous machine"---i.e. a differential system---based on the transcription network dynamics below.
+Here each node is a ``continuous machine''---i.e. a differential system---based on the transcription network dynamics below.
 
-$$\text{Genes X and Y: } \ \ \frac{dY}{dx} = [\beta*P(x > \kappa) - \alpha * Y]$$
-$$\text{Output Genes $Z1$ \dots $Z12$: } \ \ \frac{dY}{dx} = [\beta*P(x_1 > \kappa_{x_1} \ \mathsf{OR} \ x_2 > \kappa_{x_2}) - \alpha * Y]$$
+$$\text{Genes X: } \ \ \frac{dX}{dt} = [\beta*P(X^* > \kappa_{X^*}) - \alpha * Y]$$
+$$\text{Genes Y: } \ \ \frac{dY}{dt} = [\beta*P(Y^* > \kappa_{Y^*}) - \alpha * Y]$$
+$$\text{Output Genes $Z1$ \dots $Z12$: } \ \ \frac{dZ1}{dt} = [\beta*P(Z1 > \kappa_{Z_1} \ \mathsf{OR} \ x_2 > \kappa_{x_2}) - \alpha * Y]$$
 
 The signal node is a contrived signal used to test the dynamics of the model.
 It's output is included in the graph below of the simulation's results.
@@ -1142,6 +1144,17 @@ We could replace the step functions with hill functions and the $\mathsf{OR}$ ga
 
 
 \section*{Conclusion and Future Work}
+You may have noticed that there wasn't actually much category theory in the case study section.
+We didn't even explicitly use any lenses or arenas but kept them hidden inside the wiring diagrams.
+This was on purpose.
+
+This pattern repeats in much of applied category theory.
+The category theory itself is used to find the right abstraction over the domain and define what it means to compose whatever the atomic objects end up being (and often what it means to multiply them as well).
+On top of this theory then is created a visual and diagrammatic language that encapsulates the abstraction.
+This visual language is what we work with.
+
+The benefits of this is that the visuals are usually easier to work with and, crucially, are more intellectually tractable for any stakeholders that don't have (as much) mathematical training.
+
 
 
 

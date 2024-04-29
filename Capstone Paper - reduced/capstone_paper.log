@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  24 APR 2024 07:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  29 APR 2024 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -781,8 +781,8 @@ Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
 ))
 \c@examp=\count328
 \c@tcb@cnt@example=\count329
-\c@tcb@cnt@theorem=\count330
-\c@tcb@cnt@definition=\count331
+\c@tcb@cnt@definition=\count330
+\c@tcb@cnt@proofbox=\count331
  (/usr/local/texlive/2023/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count332
@@ -790,26 +790,26 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (./capstone_paper.aux)
 \openout1 = `capstone_paper.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
-LaTeX Font Info:    Checking defaults for pmboxdraw/pmboxdraw/m/n on input line 65.
-LaTeX Font Info:    ... okay on input line 65.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
+LaTeX Font Info:    Checking defaults for pmboxdraw/pmboxdraw/m/n on input line 66.
+LaTeX Font Info:    ... okay on input line 66.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -864,62 +864,62 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 48
  (/usr/local/texlive/2023/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-Package hyperref Info: Link coloring OFF on input line 65.
+Package hyperref Info: Link coloring OFF on input line 66.
  (./capstone_paper.out) (./capstone_paper.out)
 \@outlinefile=\write4
 \openout4 = `capstone_paper.out'.
 
 \c@lstlisting=\count339
-LaTeX Font Info:    Trying to load font information for U+msa on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 68.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 67.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 68.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+stmry on input line 67.
+LaTeX Font Info:    Trying to load font information for U+stmry on input line 68.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
-{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 290--292
+{/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4] [5] [6] [7]
+Underfull \hbox (badness 10000) in paragraph at lines 291--293
 
  []
 
-[7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 354--359
+[8] [9]
+Underfull \hbox (badness 10000) in paragraph at lines 355--360
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 370--372
+Underfull \hbox (badness 10000) in paragraph at lines 371--373
 
  []
 
-[9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 951.
+[10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24]
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 952.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
-) [24] [25] [26] [27] [28]
-<multioutput_FFL.png, id=244, 408.52625pt x 435.6275pt>
+) [25] [26] [27] [28] [29]
+<multioutput_FFL.png, id=251, 408.52625pt x 435.6275pt>
 File: multioutput_FFL.png Graphic file (type png)
 <use multioutput_FFL.png>
-Package pdftex.def Info: multioutput_FFL.png  used on input line 1096.
+Package pdftex.def Info: multioutput_FFL.png  used on input line 1097.
 (pdftex.def)             Requested size: 142.98633pt x 152.47191pt.
- [29 <./multioutput_FFL.png>]
-<motor_flagella_network.png, id=260, 819.863pt x 253.748pt>
+ [30 <./multioutput_FFL.png>]
+<motor_flagella_network.png, id=267, 819.863pt x 253.748pt>
 File: motor_flagella_network.png Graphic file (type png)
 <use motor_flagella_network.png>
-Package pdftex.def Info: motor_flagella_network.png  used on input line 1115.
+Package pdftex.def Info: motor_flagella_network.png  used on input line 1116.
 (pdftex.def)             Requested size: 409.9305pt x 126.87367pt.
-<motor_flagella.png, id=262, 1606.0pt x 803.0pt>
+<motor_flagella.png, id=269, 1606.0pt x 803.0pt>
 File: motor_flagella.png Graphic file (type png)
 <use motor_flagella.png>
-Package pdftex.def Info: motor_flagella.png  used on input line 1128.
+Package pdftex.def Info: motor_flagella.png  used on input line 1130.
 (pdftex.def)             Requested size: 401.49902pt x 200.74951pt.
- [30 <./motor_flagella_network.png> <./motor_flagella.png>] [31] (./capstone_paper.bbl) [32{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1156.
- (./motor_flagella_network.jl [33] [34] [35]) [36] (./capstone_paper.aux)
+ [31 <./motor_flagella_network.png> <./motor_flagella.png>] [32] (./capstone_paper.bbl) [33{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}]
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1169.
+ (./motor_flagella_network.jl [34] [35] [36]) [37] (./capstone_paper.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
@@ -928,18 +928,18 @@ Package rerunfilecheck Info: File `capstone_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36072 strings out of 474142
- 700159 string characters out of 5744617
+ 36083 strings out of 474142
+ 700363 string characters out of 5744617
  2999995 words of memory out of 5000000
- 57549 multiletter control sequences out of 15000+600000
+ 57556 multiletter control sequences out of 15000+600000
  587297 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,19n,121p,621b,5286s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on capstone_paper.pdf (36 pages, 881126 bytes).
+Output written on capstone_paper.pdf (37 pages, 881740 bytes).
 PDF statistics:
- 702 PDF objects out of 1000 (max. 8388607)
- 582 compressed objects within 6 object streams
- 311 named destinations out of 1000 (max. 500000)
+ 713 PDF objects out of 1000 (max. 8388607)
+ 592 compressed objects within 6 object streams
+ 315 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
