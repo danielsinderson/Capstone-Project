@@ -331,7 +331,7 @@
 
     \vspace*{0.125in}
     The dynamics of this process for a single gene are well modeled by the following differential equation, where $f(X^*)$ is the activation function of the gene.
-    $$\frac{dY}{dt}=\beta*f(X^*) - \alpha Y$$
+    $$\frac{dY}{dt}=\beta f(X^*) - \alpha Y$$
 
     $$\text{Activator: } \ f(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
     $$\text{Repressor: } \ f(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
@@ -349,7 +349,9 @@
         \includegraphics[scale=0.35]{Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg}
     \end{center}
 
-    NEED REFERENCE for the image
+    \begin{footnotesize}
+        \hspace*{\fill}Image from \textit{Bacterial Chemotaxis} by Michael Eisenbach
+    \end{footnotesize}
 \end{frame}
 
 
@@ -375,6 +377,41 @@
 \section{Conclusion}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{frame}{Where did all the Category Theory Go?}
+
+    It's inside the visual formalism of the wiring diagrams.
+
+    \vspace*{0.5in}
+    Diagrammatic languages are more intellectually tractable.
+
+    \vspace*{0.5in}
+    They are easier to reason about for both the designer or modeler and those they are designing or modeling for.
+
+\end{frame}
+
+
+\begin{frame}{What's Next?}
+    Lenses over other cartesian categories: $\textbf{Set}$, $\textbf{Man}$
+
+    \vspace*{0.5in}
+    Adding monads for nondeterministic systems: MDP, SDE
+
+    \vspace*{0.5in}
+    Using charts and double categories to compose system behavior as well as specification
+\end{frame}
+
+
+
+
+\begin{frame}{}
+    \begin{center}
+        \begin{Huge}
+            Thank You!
+        \end{Huge}
+    \end{center}
+\end{frame}
 
 
 \begin{frame}{References}

@@ -1082,7 +1082,7 @@ $$f(X^*, Y^*)=\beta*P(X^* > K_x \lor Y^* > K_y)$$
 $$f(X^*, Y^*)=\beta_x X^* + \beta_y Y^*$$
 
 The dynamics of transcription networks, the way that the system responds to input signals, are well modeled by the following differential equation, where $Y$ is the resulting protein concentration, $\beta$ is the maximal activity, and $\alpha=\alpha_{\text{deg}} + \alpha_{\text{dil}}$ is the combined protein degradation and dilution rates.
-$$\frac{dY}{dt}=\beta - \alpha Y$$
+$$\frac{dY}{dt}=\beta f(X^*) - \alpha Y$$
 
 It's common for the product of a gene to be a transcription factor for other genes.
 By connecting all of these relations together into a graph we get a gene transcription network.
@@ -1118,9 +1118,9 @@ Using the formalism above for wiring open systems together with lenses, we can r
 
 Here each node is a ``continuous machine''---i.e. a differential system---based on the transcription network dynamics below.
 
-$$\text{Genes X: } \ \ \frac{dX}{dt} = [\beta*P(X^* > \kappa_{X^*}) - \alpha * Y]$$
-$$\text{Genes Y: } \ \ \frac{dY}{dt} = [\beta*P(Y^* > \kappa_{Y^*}) - \alpha * Y]$$
-$$\text{Output Genes $Z1$ \dots $Z12$: } \ \ \frac{dZ1}{dt} = [\beta*P(Z1 > \kappa_{Z_1} \ \mathsf{OR} \ x_2 > \kappa_{x_2}) - \alpha * Y]$$
+$$\text{Genes X: } \ \ \frac{dX}{dt} = [\beta*P(S > \kappa_S) - \alpha * X]$$
+$$\text{Genes Y: } \ \ \frac{dY}{dt} = [\beta*P(X* > \kappa_X) - \alpha * Y]$$
+$$\text{Output Genes $Z1$ \dots $Z12$: } \ \ \frac{dZ_i}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_i]$$
 
 The signal node is a contrived signal used to test the dynamics of the model.
 It's output is included in the graph below of the simulation's results.
@@ -1131,7 +1131,7 @@ Let's take a look at that now.
 \end{center}
 
 The simulation results above stay true to almost all of the expected dynamics of the network.
-It's robust to signal noise and, other than a couple exceptions, it activates and deactivates the genes in the correct order.
+It's robust to signal noise and, other than a few exceptions, it activates and deactivates the genes in the correct order.
 The reason for the errors in the ordering is the lack of real activation thresholds for the genes: all activation thresholds in the simulation were tuned by hand using only the crude heuristic that $\kappa_{z_n} < \kappa_{z_{n+1}}$ for the $X$ activation and $\kappa_{z_n} > \kappa_{z_{n+1}}$ for the $Y$ activation.
 
 In future modeling work it should be possible to find real-world data with more time and journal access for secondary research.
@@ -1153,7 +1153,7 @@ The category theory itself is used to find the right abstraction over the domain
 On top of this theory then is created a visual and diagrammatic language that encapsulates the abstraction.
 This visual language is what we work with.
 
-The benefits of this is that the visuals are usually easier to work with and, crucially, are more intellectually tractable for any stakeholders that don't have (as much) mathematical training.
+The benefits of this is that the visuals are usually easier to work with and, crucially, are more intellectually tractable for any stakeholders that don't have mathematical training.
 
 
 
