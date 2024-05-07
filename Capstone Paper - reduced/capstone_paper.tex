@@ -59,7 +59,7 @@
 
 
 
-\title{Designing and Modeling Complex Systems with Category Theory}
+\title{Modeling Open Systems with Category Theory}
 \author{Daniel Sinderson}
 \date{May 2024}
 
@@ -217,7 +217,7 @@ There are some things to note here.
 The first is that, like sets and functions, the mapping of objects from one category to another is unique.
 Every object in the source category is mapped to exactly one object in the target category.
 The same goes for morphisms.
-The second is that identity morphisms get mapped to identity morphisms and compositions get mapped to compositions.
+The second thing to note is that identity morphisms get mapped to identity morphisms and compositions get mapped to compositions.
 
 Let's check that these rules are enough to preserve unitality and associativity.
 We'll check unitality first.
@@ -231,7 +231,7 @@ We'll check unitality first.
                                  & = Ff \circ F\mathsf{id}_a   & \text{by the functor identity rule}      \\
                                  & = F(f \circ \mathsf{id}_a)  & \text{by the functor composition rule}
     \end{align*}
-    Thus the functor preserves unitality, since $F(\mathsf{id}_b \circ f) = F(f \circ \mathsf{id}_a) = Ff$.
+    Thus the functor preserves unitality, since $F(\mathsf{id}_b \circ f) = F(f \circ \mathsf{id}_a) = Ff$. $\square$
 \end{proofbox}
 Now let's check that associativity is preserved.
 \begin{proofbox}{Preservation of Associativity}{}
@@ -243,7 +243,7 @@ Now let's check that associativity is preserved.
                                & = F(h \circ g) \circ Ff  & \text{by the functor composition rule}                \\
                                & = F((h \circ g) \circ f) & \text{by the functor composition rule}
     \end{align*}
-    Thus the functor preserves associativity, since $F(h \circ (g \circ f)) = F((h \circ g) \circ f)$.
+    Thus the functor preserves associativity, since $F(h \circ (g \circ f)) = F((h \circ g) \circ f)$. $\square$
 \end{proofbox}
 
 With functors in our toolbox, it's now possible to construct a category where the objects themselves are categories and the morphism between them are functors.
@@ -297,7 +297,7 @@ Let's get a better idea of what this definition captures by using a picture.\\
 \[\begin{tikzcd}
         {\mathcal{C}} &&& {\mathcal{D}} \\
         c &&& y && {F:\mathcal{C} \rightarrow \mathcal{D} } \\
-        &&&&& {G: \mathcal{D} \rightarrow \mathcal{C}} \\
+        &&&&& {G: \mathcal{C} \rightarrow \mathcal{D}} \\
         b &&& x && {\alpha:F \Rightarrow G } \\
         \\
         a
@@ -368,7 +368,7 @@ Let $\mathcal{C}$ be the category below.
         \arrow[from=1-3, to=1-5]
         \arrow[from=1-5, to=3-5]
     \end{tikzcd}\]
-\\\\It's dual category then we write as $\mathcal{C}^{op}$ and define as follows.
+\\\\It's dual category, $\mathcal{C}^{op}$, is the following.
 \[\mathcal{C}^{op} := \begin{tikzcd}
         a && b && c \\
         \\
@@ -407,7 +407,7 @@ But it will also include some structures that might seem strange and perplexing 
 
 \subsection*{Subcategories}
 Let's start with the simplest structure first, that of a subcategory relation.
-Like any of the other ``sub-'' relations from other fields of mathematics, the subcategory relation encapsulates a notion of one category being in some way contained inside of another.
+Like any of the other ``sub-'' relations from other fields of mathematics, the subcategory relation encapsulates the notion of one category being in some way contained inside of another.
 This means that the pattern of objects and morphisms that make up the subcategory are faithfully present in the other category.
 Our first step will be to define this ``faithfulness.''
 
@@ -654,7 +654,7 @@ Double checking that this is the case is a great opportunity to see why full and
     $$\mathcal{D}(z, z) = \{\mathsf{id}_z\} \cong \{\mathsf{id}_{Gz}\} = \mathcal{C}(Gz, Gz)$$
     $$\mathcal{D}(y, z) = \{f\} \cong \{\mathsf{id}_{Gy}\} = \mathcal{C}(Gy, Gz)$$
     $$\mathcal{D}(z, y) = \{f^{-1}\} \cong \{\mathsf{id}_{Gz}\} = \mathcal{C}(Gz, Gy)$$
-    So even though we have four morphisms that are all getting mapped to a single identity, each of the homsets individually is a singleton set in both the source and the target categories, meaning that they're all isomorphic, so our functor $G$ is indeed full and faithful.
+    So even though we have four morphisms that are all getting mapped to a single identity, each of the homsets individually is a singleton set in both the source and the target categories, meaning that they're all isomorphic, so our functor $G$ is indeed full and faithful. $\square$
 \end{proofbox}
 
 So we now know that categorical equivalence is reflexive and symmetric, but is it transitive?
@@ -734,12 +734,34 @@ This operation is called whiskering.
 Whiskering is important for understanding the adjunction definition above and for understanding monads in the next section, so we'll spend some time here to understand it.
 \begin{definition}{Whiskering on the Right}{}
     Given functors $F,G: \mathcal{C} \rightarrow \mathcal{D}$ and $H:\mathcal{D} \rightarrow \mathcal{E}$ along with a natural transformation $\alpha:F \Rightarrow G$, if we whisker on the right we get a new natural transformation $H\cdot\alpha : (H \circ F) \Rightarrow (H \circ G)$ with components $(H\cdot\alpha)_a=H\alpha_a$.
+    \[\begin{tikzcd}
+            {\mathcal{C}} && {\mathcal{D}} & {\mathcal{E}} && {\mathcal{C}} &&& {\mathcal{E}}
+            \arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-24pt}, from=1-1, to=1-3]
+            \arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=24pt}, from=1-1, to=1-3]
+            \arrow["H", from=1-3, to=1-4]
+            \arrow[""{name=2, anchor=center, inner sep=0}, "{{H\circ F}}", curve={height=-24pt}, from=1-6, to=1-9]
+            \arrow[""{name=3, anchor=center, inner sep=0}, "{{H \circ G}}"', curve={height=24pt}, from=1-6, to=1-9]
+            \arrow["\alpha", shorten <=6pt, shorten >=6pt, Rightarrow, from=0, to=1]
+            \arrow["H\cdot\alpha", shorten <=6pt, shorten >=6pt, Rightarrow, from=2, to=3]
+        \end{tikzcd}\]
 \end{definition}
 
+
+
 \begin{definition}{Whiskering on the Left}{}
-    Given functors $F: \mathcal{C} \rightarrow \mathcal{D}$ and $G,H:\mathcal{D} \rightarrow \mathcal{E}$ along with a natural transformation $\alpha:G \Rightarrow H$, if we whisker on the left we get a new natural transformation $\alpha\cdot F : (G \circ F) \Rightarrow (H \circ F)$ with components $(\alpha\cdot f)_a=\alpha_{Fa}$.
+    Given functors $F: \mathcal{C} \rightarrow \mathcal{D}$ and $G,H:\mathcal{D} \rightarrow \mathcal{E}$ along with a natural transformation $\alpha:G \Rightarrow H$, if we whisker on the left we get a new natural transformation $\alpha\cdot F : (G \circ F) \Rightarrow (H \circ F)$ with components $(\alpha\cdot F)_a=\alpha_{Fa}$.
+    \[\begin{tikzcd}
+            {\mathcal{C}} & {\mathcal{D}} && {\mathcal{E}} && {\mathcal{C}} &&& {\mathcal{E}}
+            \arrow["F", from=1-1, to=1-2]
+            \arrow[""{name=0, anchor=center, inner sep=0}, "H"', curve={height=24pt}, from=1-2, to=1-4]
+            \arrow[""{name=1, anchor=center, inner sep=0}, "G", curve={height=-24pt}, from=1-2, to=1-4]
+            \arrow[""{name=2, anchor=center, inner sep=0}, "{G\circ F}", curve={height=-24pt}, from=1-6, to=1-9]
+            \arrow[""{name=3, anchor=center, inner sep=0}, "{H \circ F}"', curve={height=24pt}, from=1-6, to=1-9]
+            \arrow["\alpha", shorten <=6pt, shorten >=6pt, Rightarrow, from=1, to=0]
+            \arrow["{\alpha \cdot F}", shorten <=6pt, shorten >=6pt, Rightarrow, from=2, to=3]
+        \end{tikzcd}\]
 \end{definition}
-The results of this operation are easy to see if we look at the triangle diagrams above with the identity functors put in.
+The results of this operation are easier to see if we look at the triangle diagrams above with the identity functors put in.
 \[\begin{tikzcd}
         {F\circ \mathsf{id}_\mathcal{C}} && {F \circ G \circ F} & {\mathsf{id}_\mathcal{C} \circ G} && {G \circ F \circ G} \\
         \\
@@ -966,7 +988,7 @@ If we do something similar and slightly more complicated to a category, we get a
             \arrow["{{\alpha_{x,y,z}}}", from=1-1, to=1-3]
         \end{tikzcd}\]
 \end{definition}
-\begin{definition*}{}{}
+\begin{definition*}{Monoidal Categories, cont.}{}
     \[\begin{tikzcd}
             {((w\otimes x)\otimes y)\otimes z} && {(w\otimes x)\otimes(y\otimes z)} \\
             \\
@@ -1037,7 +1059,7 @@ For our purposes we'll be sticking to one such cartesian category: the category 
 \end{definition}
 
 
-\begin{definition*}{}{}
+\begin{definition*}{The Category $\textbf{Lens}_\mathcal{C}$, cont.}{}
     \begin{enumerate}\addtocounter{enumi}{3}
         \item For any two compatible lenses a composite lens as follows:
               $$\begin{pmatrix}f^{\#}\\f\end{pmatrix}:\begin{pmatrix}A^-\\A^+\end{pmatrix}\leftrightarrows\begin{pmatrix}B^-\\B^+\end{pmatrix}$$
@@ -1168,11 +1190,9 @@ We could've changed the underlying Cartesian category of our lenses from the cat
 With this we could compose and multiply finite state machines and design deterministic, mission critical software.
 Then we could change the lenses to monadic lenses and start composing and multiplying nondeterministic systems like Markov decision processes to model and design decision-making processes under uncertainty.
 
-
-\vspace*{1in}
-\begin{Huge}
-    NOT FINISHED YET
-\end{Huge}
+The ability to capture such disparate processes within a single formalism is the gift of abstraction.
+Learning this general, common language has helped us organize our thoughts about what systems are and how we use them to model phenomena in the world.
+We hope it has also helped us share them.
 
 
 

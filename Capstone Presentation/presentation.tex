@@ -37,41 +37,42 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}
-    \frametitle{Scope of the Project}
-    My objective for this project was to learn about the brand new field of categorical systems theory
-    , which applies the pure math field of category theory to the study of arbitrary systems
-    , and then use the tools that I learned to model a complex real-world system.
-
-    \vspace*{0.25in}
-
-    But I didn't know category theory or any complex systems...
+    \frametitle{Goal of the Project}
+    \begin{large}
+        My objective for this project was to learn about the brand new field of categorical systems theory,
+        which applies the pure math field of category theory to the study of arbitrary systems,
+        and then use what I learned to model a real-world system.
+    \end{large}
 \end{frame}
 
 \begin{frame}
-    \frametitle{The Actual Scope of the Project}
-    \begin{enumerate}
-        \item Learn Category Theory
-        \item Learn Categorical Systems Theory
-        \item Learn about a real world system (Transcription Networks)
-        \item Learn how to use the AlgebraicDynamics library written in the Julia programming language
-        \item Model it and simulate the results
-        \item Live to tell you all about it
-    \end{enumerate}
+    \frametitle{The Scope of the Project}
+    \begin{large}
+        \begin{enumerate}
+            \item Learn category theory
+            \item Learn categorical systems theory
+            \item Learn about a real world system
+                  \\(transcription networks)
+            \item Learn how to model and numerically solve it
+                  \\(Julia language)
+            \item Live to tell you all about it
+        \end{enumerate}
+    \end{large}
+
 \end{frame}
 
 \begin{frame}
     \frametitle{Scope of this Presentation}
-    Keep things high-level and descriptive and move fast.
+    \begin{large}
+        \begin{enumerate}
+            \item Tell you what a system is.
+            \item Tell you what a category is.
+            \item Tell you how they can work together.
+            \item Show you a system and how I modeled it.
+            \item Talk about the simulated results.
+        \end{enumerate}
+    \end{large}
 
-    \vspace*{0.125in}
-
-    \begin{enumerate}
-        \item Tell you what a system is.
-        \item Tell you what a category is.
-        \item Tell you how they can work together.
-        \item Show you a complex system and how I modeled it.
-        \item Talk about the simulation results.
-    \end{enumerate}
 \end{frame}
 
 
@@ -84,12 +85,15 @@
 
 
 \begin{frame}{What is a System?}
-    A system is a thing that changes. At it's simplest, a system consists of the following two things.
+    \begin{large}
+        A system is a thing that changes. At it's simplest, a system consists of the following two things.
 
-    \begin{enumerate}
-        \item A set of states that the system can be in.
-        \item A map that updates the system's state based on the state that it's currently in.
-    \end{enumerate}
+        \begin{enumerate}
+            \item A set of states that the system can be in.
+            \item A map that updates the system's state based on the state that it's currently in.
+        \end{enumerate}
+    \end{large}
+
 
     \begin{center}
         \includegraphics[scale=0.35]{system_diagram_closed.png}
@@ -99,35 +103,44 @@
 
 
 \begin{frame}{Examples of Systems}
-    The set of natural numbers with the successor function is a system.
-    \vspace*{0.125in}
-    \[
-        S: \mathbb{N} \rightarrow \mathbb{N}
-    \]
-    \[
-        \ \ \ \ \ \ \ \ \ n \mapsto n+1
-    \]
+    \begin{large}
+        The set of natural numbers with the successor function is a system.
+        \vspace*{0.125in}
+        \[
+            S: \mathbb{N} \rightarrow \mathbb{N}
+        \]
+        \[
+            \ \ \ \ \ \ \ \ \ n \mapsto n+1
+        \]
+    \end{large}
 \end{frame}
 
 
 \begin{frame}{Examples of Systems}
-    An ordinary differential equation is also a system.
-    \vspace*{0.125in}
-    \[
-        \frac{dx}{dt}=\kappa x
-    \]
-    Here the set of states is the set of real numbers $\mathbb{R}$ and the update map is the differential equation itself: given the current state, $x$, the differential equation tells us how to change it.
+    \begin{large}
+        An ordinary differential equation is also a system.
+        \vspace*{0.125in}
+        \[
+            \frac{dx}{dt}=\kappa x
+        \]
+        Here the set of states is the set of real numbers $\mathbb{R}$ and the update map is the differential equation itself: given the current state, $x$, the differential equation tells us how to change it.
+
+    \end{large}
+
 \end{frame}
 
 
 \begin{frame}{What's the Problem}
-    The problem with these systems is that they're closed.
+    \begin{large}
+        The problem with these systems is that they're closed.
 
-    \vspace*{0.125in}
-    They don't interact with each other. And they don't interact with their environment.
+        \vspace*{0.25in}
+        They don't interact with each other, and they don't interact with their environment.
 
-    \vspace*{0.125in}
-    So let's open them up with category theory.
+        \vspace*{0.25in}
+        So let's open them up with category theory.
+    \end{large}
+
 \end{frame}
 
 
@@ -143,13 +156,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Category Theory Basics}
-    Category theory is a theory of structure and composition.
+    \begin{large}
+        Category theory is a theory of associative composition.
 
-    \vspace*{0.25in}
-    It uses the mathematical object of a category to encapsulate the notion of associative composition.
+        \vspace*{0.25in}
+        It's very general, and this generality allows it to encapsulate much of the high level structure in other theories.
 
-    \vspace*{0.25in}
-    With this alone it creates a language capable of formalizing all of mathematics.
+        \vspace*{0.25in}
+        This gives us a common formalism for working with the abstract structural features found across a multitude of diverse phenomena, both inside and outside of pure mathematics.
+
+    \end{large}
+
 \end{frame}
 
 
@@ -264,9 +281,12 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{frame}{What is a Open System?}
-    An open system is as a system with an interface.
+    \begin{large}
+        An open system is as a system with an interface.
 
-    \vspace*{0.125in}
+    \end{large}
+
+    \vspace*{0.25in}
     \begin{center}
         \includegraphics[scale=0.35]{system_diagram_open.png}
     \end{center}
@@ -274,7 +294,10 @@
 
 
 \begin{frame}{Lenses and Arenas}
-    To model this mathematically we'll use objects called arenas and morphisms called lenses.
+    \begin{large}
+        To model this mathematically we'll use objects called arenas and morphisms called lenses.
+
+    \end{large}
 
     \vspace*{0.125in}
     \begin{definition}[Arenas]
@@ -290,29 +313,34 @@
 
 
 \begin{frame}{What this Gives Us}
-    Arenas and lenses between them form a monoidal category.
+    \begin{large}
+        Arenas and lenses between them form a monoidal category.
 
-    \vspace*{0.125in}
-    This means that we can compose systems and multiply them.
+        \vspace*{0.125in}
+        This means that we can compose systems and multiply them.
 
-    \vspace*{0.125in}
-    By modeling our open systems as lenses, composition of lenses lets us place systems in series and multiplication of lenses lets us place systems in parallel.
+        \vspace*{0.125in}
+        By modeling our open systems as lenses, composition of lenses lets us place systems in series and multiplication of lenses lets us place systems in parallel.
+
+    \end{large}
+
 \end{frame}
 
 
 \begin{frame}{Systems in Series and Parallel}
     \begin{center}
-        Systems in Series:
-        $\begin{pmatrix}g^\# \\ g\end{pmatrix} \circ \begin{pmatrix}f^\# \\ f\end{pmatrix}$
+        \begin{large}
+            Systems in Series:
+            $\begin{pmatrix}g^\# \\ g\end{pmatrix} \circ \begin{pmatrix}f^\# \\ f\end{pmatrix}$
 
-        \includegraphics[scale=0.25]{Systems_Series.png}
+            \includegraphics[scale=0.25]{Systems_Series.png}
 
-        \vspace*{0.25in}
-        Systems in Parallel:
-        $\begin{pmatrix}g^\# \\ g\end{pmatrix} \otimes \begin{pmatrix}f^\# \\ f\end{pmatrix}$
+            \vspace*{0.25in}
+            Systems in Parallel:
+            $\begin{pmatrix}g^\# \\ g\end{pmatrix} \otimes \begin{pmatrix}f^\# \\ f\end{pmatrix}$
 
-        \includegraphics[scale=0.25]{Systems_Parallel.png}
-
+            \includegraphics[scale=0.25]{Systems_Parallel.png}
+        \end{large}
     \end{center}
 
 
@@ -327,21 +355,27 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{frame}{Gene Transcription}
-    Gene transcription is the process by which genes in a cell’s DNA produce proteins.
+    \begin{large}
+        Gene transcription is the process by which genes in a cell’s DNA produce proteins.
 
-    \vspace*{0.125in}
-    The dynamics of this process for a single gene are well modeled by the following differential equation, where $f(X^*)$ is the activation function of the gene.
-    $$\frac{dY}{dt}=\beta f(X^*) - \alpha Y$$
+        \vspace*{0.125in}
+        The dynamics of this process for a single gene are well modeled by the following differential equation, where $f(X^*)$ is the activation function of the gene.
+        $$\frac{dY}{dt}=\beta f(X^*) - \alpha Y$$
 
-    $$\text{Activator: } \ f(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
-    $$\text{Repressor: } \ f(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
+        $$\text{Activator: } \ f(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
+        $$\text{Repressor: } \ f(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
+
+    \end{large}
 \end{frame}
 
 \begin{frame}{Motor Flagella Network}
-    Gene transcription network are connected networks of genes whose products act as transcription factors for other genes.
+    \begin{large}
+        Gene transcription network are connected networks of genes whose products act as transcription factors for other genes.
 
-    \vspace*{0.125in}
-    Below is the motor flagella network of \textit{e. coli} bacteria.
+        \vspace*{0.125in}
+        Below is the motor flagella network of \textit{e. coli} bacteria.
+    \end{large}
+
 
     \begin{center}
         \includegraphics[scale=0.25]{multioutput_FFL_color.png}
@@ -356,7 +390,10 @@
 
 
 \begin{frame}{Motor Flagella Network Model}
-    Using lenses we can wire together the transcription factor dynamics as differential systems and then simulate the results.
+    \begin{large}
+        Using lenses we can wire together the transcription factor dynamics as differential systems and then simulate the results.
+
+    \end{large}
 
     \begin{center}
         \includegraphics[scale=0.35]{motor_flagella_network.png}
@@ -369,6 +406,10 @@
     \begin{center}
         \includegraphics[scale=0.20]{motor_flagella.png}
     \end{center}
+
+    \begin{footnotesize}
+        Simulation results were obtained using the numerical solver in the OrdinaryDiffEq.jl library for the Julia programming language.
+    \end{footnotesize}
 \end{frame}
 
 
@@ -380,26 +421,31 @@
 
 
 \begin{frame}{Where did all the Category Theory Go?}
+    \begin{large}
+        It's inside the wiring diagrams.
 
-    It's inside the visual formalism of the wiring diagrams.
+        \vspace*{0.25in}
+        Diagrammatic languages are more intellectually tractable.
 
-    \vspace*{0.5in}
-    Diagrammatic languages are more intellectually tractable.
+        \vspace*{0.25in}
+        They are easier to reason about for both the designer or modeler and those they are designing or modeling for.
 
-    \vspace*{0.5in}
-    They are easier to reason about for both the designer or modeler and those they are designing or modeling for.
+    \end{large}
 
 \end{frame}
 
 
 \begin{frame}{What's Next?}
-    Lenses over other cartesian categories: $\textbf{Set}$, $\textbf{Man}$
+    \begin{large}
+        Lenses over other cartesian categories: $\textbf{Set}$, $\textbf{Man}$
 
-    \vspace*{0.5in}
-    Adding monads for nondeterministic systems: MDP, SDE
+        \vspace*{0.25in}
+        Adding monads for nondeterministic systems: MDP, SDE
 
-    \vspace*{0.5in}
-    Using charts and double categories to compose system behavior as well as specification
+        \vspace*{0.25in}
+        Using charts and double categories to compose system behavior as well as specification
+    \end{large}
+
 \end{frame}
 
 
