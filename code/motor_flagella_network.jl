@@ -6,7 +6,7 @@ using LabelledArrays
 using OrdinaryDiffEq, Plots, Plots.PlotMeasures
 
 # Define the primitive systems
-signal(u, x, p, t) = [0.4 * (2 < t < 5) - 0.4 * (8 < t < 9) + 0.4 * (9 < t < 10.1) - 0.4 * (11 < t < 12) + 0.4 * (12 < t < 13.05) - 0.4 * (14 < t < 17)]
+signal(u, x, p, t) = [0.4 * (1 < t < 4) - 0.4 * (7 < t < 8) + 0.4 * (8 < t < 9.1) - 0.4 * (12 < t < 15)]
 flhDC(u, x, p, t) = [p.β1 * (x[1] > p.κ1) - p.α1 * u[1]]
 fliA(u, x, p, t) = [p.β2 * (x[1] > p.κ2) - p.α2 * u[1]]
 fliL(u, x, p, t) = [p.β3 * (x[1] > p.κ3 || x[2] > p.κ4) - p.α3 * u[1]]
@@ -155,7 +155,7 @@ params = LVector(
     β13=1, κ23=a * 12 + b, κ24=a * 2 + b, α13=1,
     β14=1, κ25=a * 13 + b, κ26=a * 1 + b, α14=1
 )
-tspan = (0.0, 25.0)
+tspan = (0.0, 21.0)
 
 # problem = ODEProblem(final system, u0, tspan, params)
 # solution = solve(problem, Tsit5())
@@ -168,9 +168,10 @@ solution = solve(problem, Tsit5())
 #)
 
 plot(solution, system, params,
-    lw=2, title="Motor Flagella Network",
-    xlabel="time", ylabel="Presence of Transcription Factors Z",
-    size=(2000, 1000)
+    lw=2,
+    title="Motor Flagella Network", titlefontsize=18,
+    xlabel="Simulation Time Steps", ylabel="Amount of Transcription Factor",
+    size=(1000, 500), margins=10mm
 )
 
 

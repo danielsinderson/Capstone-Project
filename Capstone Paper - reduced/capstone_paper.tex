@@ -84,7 +84,7 @@ and a general, common language of how things are structured is useful for both o
 
 Because of this generality, category theory also has some potential for reformulating difficult problems in other fields or even opening a broader class of phenomena to mathematical rigor.
 This is an active field of research.
-There are people using the tools of category theory to formalize and investigate everything from quantum mechanics and linguistics to logic and systems theory \cite{asudeh2020enriched, Coecke_Kissinger_2017, ggoldblatt2014topoi, myers2022categorical}.
+There are people using the tools of category theory to formalize and investigate everything from quantum mechanics and linguistics to logic and systems theory \cite{asudeh2020enriched, Coecke_Kissinger_2017, goldblatt2014topoi, myers2022categorical}.
 
 It's this last application to systems theory that we will be looking more deeply at in this paper.
 Though we are merely wandering at the edge of the work being done, we will see how to use category theory to build the specifications for, and simulate the behaviors of, dynamical systems built from the composition of smaller, simpler systems.
@@ -1121,11 +1121,14 @@ By connecting all of these relations together into a graph we get a gene transcr
 
 \subsection*{The \textit{e. coli} Motor Flagella Network}
 The transcription network that we will be modeling is the motor flagella network of \textit{e. coli} bacteria.
-This network is a graph with $14$ nodes and $25$ edges arranged in a common subgraph called a multi-output feed forward loop shown below \cite{alon2019introduction}.
+This network is a graph with $14$ nodes and $25$ edges arranged in a common subgraph called a multi-output feed forward loop shown in figure \ref{fig:FFL} below \cite{alon2019introduction}.
 
-\begin{center}
+\begin{figure}[h]
+    \centering
     \includegraphics*[scale=0.35]{multioutput_FFL.png}
-\end{center}
+    \caption{multi-output feed forward loop}
+    \label{fig:FFL}
+\end{figure}
 
 In this multi-output FFL every edge represents an activator relationship, and all of the activation functions of the output genes $Z1$, $Z2$, \dots, $Z12$ mix their input signals as a logical $\mathsf{OR}$ gate.
 \footnote{In reality they're combined as a weighted sum. We are using $\mathsf{OR}$ gates since they simplify the computations while retaining the underlying behavior.}
@@ -1142,9 +1145,13 @@ To simulate this network we used the excellent AlgebraicDynamics library for the
 Full code for the simulation can be found in the appendix.
 Using the formalism above for wiring open systems together with lenses, we can represent our composed system as the following wiring diagram.
 
-\begin{center}
+\begin{figure}[h]
+    \centering
     \includegraphics*[scale=0.5]{motor_flagella_network.png}
-\end{center}
+    \caption{flagella network wiring diagram}
+    \label{fig:flagella network}
+\end{figure}
+
 
 Here each node is a ``continuous machine''---i.e. a differential system---based on the transcription network dynamics below.
 
@@ -1153,16 +1160,20 @@ $$\text{Gene Y: } \ \ \frac{dY}{dt} = [\beta*P(X > \kappa_X) - \alpha * Y]$$
 $$\text{Output Genes $Z1$ \dots $Z12$: } \ \ \frac{dZ_i}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_i]$$
 
 The signal node, $S$, is a contrived signal used to test the dynamics of the model.
-It's output is included in the graph below of the simulation's results.
-Let's take a look at that now.
+It's output is included in figure \ref{fig:simulation_results} below of the simulation's results.
+For a larger image, see appendix B.
+\begin{figure}[h]
+    \centering
+    \includegraphics*[scale=0.6]{motor_flagella.png}
+    \caption{Results from the motor flagella system simulation}
+    \label{fig:simulation_results}
+\end{figure}
 
-\begin{center}
-    \includegraphics*[scale=0.25]{motor_flagella.png}
-\end{center}
 
-The simulation results above stay true to almost all of the expected dynamics of the network.
+The simulation stays true to almost all of the expected dynamics of the network.
 It's robust to signal noise and, other than a few exceptions, it activates and deactivates the genes in the correct order.
-The reason for the errors in the ordering is the lack of real activation thresholds for the genes: all activation thresholds in the simulation were tuned by hand using only the crude heuristic that $\kappa_{z_n} < \kappa_{z_{n+1}}$ for the $X$ activation and $\kappa_{z_n} > \kappa_{z_{n+1}}$ for the $Y$ activation.
+The reason for the errors in the ordering is the lack of real activation thresholds for the genes.
+All activation thresholds in the simulation were tuned by hand using only the crude heuristic that $\kappa_{z_n} < \kappa_{z_{n+1}}$ for the $X$ activation and $\kappa_{z_n} > \kappa_{z_{n+1}}$ for the $Y$ activation.
 
 In future modeling work it should be possible to find real-world data with more time and journal access for secondary research.
 Or, if none are found, it should also be possible to define a loss function based on the expected dynamics and tune the model's parameters algorithmically using genetic programming or some other form of heuristic search.
@@ -1179,14 +1190,14 @@ This was on purpose.
 
 This pattern repeats in much of applied category theory.
 The category theory itself is used to find the right abstraction over the domain and define what it means to compose whatever the atomic objects end up being (and often what it means to multiply them as well).
-Then on top of this theory is created a visual and diagrammatic language that encapsulates the abstraction.
-This visual language is what we work with \cite{Coecke_Kissinger_2017, fong2019invitation,myers2022categorical}.
+Then on top of this theory is created a visual and diagrammatic language that encapsulates the abstraction \cite{Coecke_Kissinger_2017, fong2019invitation,myers2022categorical}.
+This visual language is what we work with.
 
 The benefits of using the diagrams is that they are often easier to work with and, crucially, are easier to understand; especially for stakeholders that don't have mathematical training.
 The diagram is simultaneously ``the math'' and the visual aid.
 
 
-The ability to model a fairly complex system in the time alotted for this project is evidence of how effective it is.
+The ability to model a fairly complicated system in the time alotted for this project is evidence of how effective it is.
 This was done without background in modeling or gene transcription.
 And because the method is so general thanks to category theory, it's possible to use this same language across a variety of system types.
 
@@ -1211,6 +1222,10 @@ We hope it has also helped us share them.
 \pagebreak
 \section*{Appendix A: Simulation Code}
 \jlinputlisting{motor_flagella_network.jl}
+
+\pagebreak
+\section*{Appendix B: Simulation Results}
+\includegraphics[width=650px, height=400px, angle=270]{motor_flagella.png}
 
 \end{document}
 
