@@ -432,15 +432,13 @@ INPUT ./capstone_paper.bbl
 INPUT ./capstone_paper.bbl
 INPUT capstone_paper.bbl
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/jknappen/ec/eccc1200.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
-INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT ./motor_flagella_network.jl
 INPUT ./motor_flagella_network.jl
 INPUT motor_flagella_network.jl
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrb8t.tfm
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/courier/pcrb8t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrb8r.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/vf/adobe/courier/pcrr8t.vf
 INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/adobe/courier/pcrr8r.tfm
 INPUT capstone_paper.aux
