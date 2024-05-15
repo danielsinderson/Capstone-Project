@@ -1,6 +1,6 @@
 \beamer@sectionintoc {1}{Objective and Scope of the Project}{2}{0}{1}
 \beamer@sectionintoc {2}{Systems}{6}{0}{2}
 \beamer@sectionintoc {3}{Categories}{11}{0}{3}
-\beamer@sectionintoc {4}{Composing Systems}{16}{0}{4}
-\beamer@sectionintoc {5}{Case Study}{21}{0}{5}
-\beamer@sectionintoc {6}{Conclusion}{26}{0}{6}
+\beamer@sectionintoc {4}{Composing Systems}{17}{0}{4}
+\beamer@sectionintoc {5}{Case Study}{22}{0}{5}
+\beamer@sectionintoc {6}{Conclusion}{28}{0}{6}

@@ -15,7 +15,7 @@
 \mode<presentation>
 
 %Information to be included in the title page:
-\title{Modeling Complex Systems \\with Category Theory}
+\title{Modeling Open Systems \\with Category Theory}
 \author{Daniel Sinderson}
 \institute{Southern Oregon University}
 \date{2024}
@@ -39,7 +39,7 @@
 \begin{frame}
     \frametitle{Goal of the Project}
     \begin{large}
-        My objective for this project was to learn about the brand new field of categorical systems theory,
+        My objective for this project was to learn about the field of categorical systems theory,
         which applies the pure math field of category theory to the study of arbitrary systems,
         and then use what I learned to model a real-world system.
     \end{large}
@@ -55,7 +55,6 @@
                   \\(transcription networks)
             \item Learn how to model and numerically solve it
                   \\(Julia language)
-            \item Live to tell you all about it
         \end{enumerate}
     \end{large}
 
@@ -86,7 +85,7 @@
 
 \begin{frame}{What is a System?}
     \begin{large}
-        A system is a thing that changes. At it's simplest, a system consists of the following two things.
+        A system is a thing that changes. At its simplest, a system consists of the following two things.
 
         \begin{enumerate}
             \item A set of states that the system can be in.
@@ -123,7 +122,7 @@
         \[
             \frac{dx}{dt}=\kappa x
         \]
-        Here the set of states is the set of real numbers $\mathbb{R}$ and the update map is the differential equation itself: given the current state, $x$, the differential equation tells us how to change it.
+        Here the set of states is the set of real numbers $\mathbb{R}$ and the update map is the differential equation itself given some initial condition $x_0$.
 
     \end{large}
 
@@ -172,6 +171,8 @@
 
 \begin{frame}{What is a Category?}
     \begin{definition}[Category]
+
+        \vspace*{0.125in}
         A category $\mathcal{C}$ is defined by the following:
         \begin{enumerate}
             \item $\mathcal{C}$ contains a collection of objects $\mathsf{ob}(\mathcal{C})$.
@@ -183,18 +184,37 @@
 \end{frame}
 
 
+
+\begin{frame}[fragile]{What is a Category?}
+    \begin{definition}[Category]
+        \vspace*{0.125in}
+        \[\begin{tikzcd}
+                A && B && C \\
+                \\
+                && X
+                \arrow["{\mathsf{id}_A}", from=1-1, to=1-1, loop, in=55, out=125, distance=10mm]
+                \arrow["f", from=1-1, to=1-3]
+                \arrow["{h \circ f}"', from=1-1, to=3-3]
+                \arrow["{\mathsf{id}_B}", from=1-3, to=1-3, loop, in=55, out=125, distance=10mm]
+                \arrow["h"', from=1-3, to=3-3]
+                \arrow["g"', from=1-5, to=1-3]
+                \arrow["{\mathsf{id}_C}", from=1-5, to=1-5, loop, in=55, out=125, distance=10mm]
+                \arrow["{h \circ g}", from=1-5, to=3-3]
+                \arrow["{\mathsf{id}_X}"', from=3-3, to=3-3, loop, in=305, out=235, distance=10mm]
+            \end{tikzcd}\]
+    \end{definition}
+\end{frame}
+
+
 \begin{frame}[fragile]{What is a Category?}
     These objects and morphisms are then under two constraints: unitality and associativity.
     \begin{definition}[Category cont. Unitality]
         Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ \mathsf{id}_a=\mathsf{id}_b\circ f=f$.
         \[\begin{tikzcd}
-                a && b \\
-                \\
                 a && b
+                \arrow["{\mathsf{id}_a}"', from=1-1, to=1-1, loop, in=215, out=145, distance=10mm]
                 \arrow["f", from=1-1, to=1-3]
-                \arrow["{\mathsf{id}_a}"', from=1-1, to=3-1]
-                \arrow["{\mathsf{id}_b}", from=1-3, to=3-3]
-                \arrow["f"', from=3-1, to=3-3]
+                \arrow["{\mathsf{id}_b}", from=1-3, to=1-3, loop, in=325, out=35, distance=10mm]
             \end{tikzcd}\]
     \end{definition}
 \end{frame}
@@ -215,66 +235,9 @@
     \end{definition}
 \end{frame}
 
-%\begin{frame}{Monoidal Categories}
-%    To build systems compositionally we'll also need a way to place them in parallel.
-%
-%    \vspace*{0.125in}
-%    Similar to a binary operation on a set, we can have a binary operation on a category.
-%
-%    \vspace*{0.125in}
-%    This construction is captured in the notion of a monoidal category.
-%\end{frame}
-%
-%
-%\begin{frame}{Monoidal Categories}
-%    \begin{definition}[Monoidal Categories]
-%        A category $\mathcal{C}$ is monoidal if the following exist.
-%        \begin{enumerate}
-%            \item A functor $\otimes:\mathcal{C}\times\mathcal{C}\rightarrow\mathcal{C}$ called the monoidal product.
-%            \item An object $\mathbbm{1}\in\mathcal{C}$ called the unit.
-%            \item A natural isomorphism $\alpha : (a\otimes b)\otimes c\Rightarrow a\otimes (b\otimes c)$ called the associator, with components $\alpha_{x,y,z}: (x\otimes y)\otimes z\rightarrow x\otimes (y\otimes z)$.
-%            \item A natural isomorphism $\lambda : \mathbbm{1}\otimes a\Rightarrow a$ called the left unitor with components $\lambda_x : \mathbbm{1}\otimes x\rightarrow x$.
-%            \item A natural isomorphism $\rho : a\otimes \mathbbm{1}\Rightarrow a$ called the right unitor with components $\lambda_x : x\otimes \mathbbm{1}\rightarrow x$.
-%        \end{enumerate}
-%    \end{definition}
-%\end{frame}
-%
-%\begin{frame}[fragile]{Monoidal Categories}
-%    \begin{definition}[Monoidal Categories]
-%        All of the above must exist such that the following two diagrams, called the triangle identity and the pentagon identity, commute.
-%
-%        \vspace*{0.5in}
-%        \[\begin{tikzcd}
-%                {(x\otimes\mathbbm{1})\otimes y} && {x\otimes(\mathbbm{1}\otimes y)} \\
-%                \\
-%                && {x\otimes y}
-%                \arrow["{{\rho_x\otimes \mathsf{id}_y}}"', from=1-1, to=3-3]
-%                \arrow["{{\mathsf{id}_x\otimes\lambda_y}}", from=1-3, to=3-3]
-%                \arrow["{{\alpha_{x,y,z}}}", from=1-1, to=1-3]
-%            \end{tikzcd}\]
-%    \end{definition}
-%\end{frame}
-%
-%\begin{frame}[fragile]{Monoidal Categories}
-%    \begin{definition}[Monoidal Categories]
-%        All of the above must exist such that the following two diagrams, called the triangle identity and the pentagon identity, commute.
-%
-%        \vspace*{0.125in}
-%        \[\begin{tikzcd}
-%                {((w\otimes x)\otimes y)\otimes z} && {(w\otimes x)\otimes(y\otimes z)} \\
-%                \\
-%                {(w\otimes (x\otimes y))\otimes z} \\
-%                \\
-%                {w\otimes ((x\otimes y)\otimes z)} && {w\otimes (x\otimes (y\otimes z))}
-%                \arrow["{{\alpha_{w,x,(y\otimes z)}}}", from=1-3, to=5-3]
-%                \arrow["{{\alpha_{(w\otimes x),y,z}}}", from=1-1, to=1-3]
-%                \arrow["{{\alpha_{w,x,y}\otimes \mathsf{id}_z}}"', from=1-1, to=3-1]
-%                \arrow["{{\alpha_{w,(x\otimes y),z}}}"', from=3-1, to=5-1]
-%                \arrow["{{\mathsf{id}_w\otimes \alpha_{x,y,z}}}"', from=5-1, to=5-3]
-%            \end{tikzcd}\]
-%    \end{definition}
-%\end{frame}
-%
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Composing Systems}
@@ -304,10 +267,12 @@
         An arena is a pair of objects $\begin{pmatrix}A \\ B\end{pmatrix}$ from an underlying category.
     \end{definition}
 
-    \begin{definition}
+    \begin{definition}[Lenses]
+        \vspace*{0.125in}
+
         A lens is a morphism between arenas made from a pair of morphisms from the underlying category
         $$\begin{pmatrix}f \\ g\end{pmatrix}: \begin{pmatrix}A \\ B\end{pmatrix} \leftrightarrows \begin{pmatrix}C \\ D\end{pmatrix}$$
-        where $f:B\rightarrow D$ is the output map and $g:B\times C \rightarrow A$ is the update map.
+        where $g:B\rightarrow D$ is the output map and $f:B\times C \rightarrow A$ is the update map.
     \end{definition}
 \end{frame}
 
@@ -359,11 +324,11 @@
         Gene transcription is the process by which genes in a cell’s DNA produce proteins.
 
         \vspace*{0.125in}
-        The dynamics of this process for a single gene are well modeled by the following differential equation, where $f(X^*)$ is the activation function of the gene.
+        The dynamics of this process for a single gene are well modeled by the following differential equation.
         $$\frac{dY}{dt}=\beta f(X^*) - \alpha Y$$
 
-        $$\text{Activator: } \ f(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
-        $$\text{Repressor: } \ f(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
+        $$\text{Activator: } \ f_A(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
+        $$\text{Repressor: } \ f_R(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
 
     \end{large}
 \end{frame}
@@ -401,10 +366,26 @@
 
 \end{frame}
 
+
+\begin{frame}{Motor Flagella Network Model}
+    %\begin{large}
+    $$\text{Gene X: } \ \ \frac{dX}{dt} = [\beta*P(S > \kappa_S) - \alpha * X]$$
+    $$\text{Gene Y: } \ \ \frac{dY}{dt} = [\beta*P(X > \kappa_X) - \alpha * Y]$$
+    $$\text{Gene $Z1$: } \ \ \frac{dZ_1}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_1]$$
+    $$\text{Gene $Z2$: } \ \ \frac{dZ_2}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_2]$$
+    $$\vdots$$
+    $$\text{Gene $Z11$: } \ \ \frac{dZ_{11}}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_{11}]$$
+    $$\text{Gene $Z12$: } \ \ \frac{dZ_{12}}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_{12}]$$
+    %\end{large}
+
+\end{frame}
+
+
+
 \begin{frame}{Motor Flagella Network Simulation Results}
 
     \begin{center}
-        \includegraphics[scale=0.20]{motor_flagella.png}
+        \includegraphics[scale=0.40]{motor_flagella.png}
     \end{center}
 
     \begin{footnotesize}

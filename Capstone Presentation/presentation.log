@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  7 MAY 2024 07:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  14 MAY 2024 21:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -855,7 +855,7 @@ File: ot1mathkerncmss.fd 2020/01/31 Fontinst v1.933 font definitions for OT1/mat
 <system_diagram_closed.png, id=52, 379.4175pt x 258.9675pt>
 File: system_diagram_closed.png Graphic file (type png)
 <use system_diagram_closed.png>
-Package pdftex.def Info: system_diagram_closed.png  used on input line 102.
+Package pdftex.def Info: system_diagram_closed.png  used on input line 101.
 (pdftex.def)             Requested size: 132.79811pt x 90.63997pt.
  [7
 
@@ -881,101 +881,108 @@ Package pdftex.def Info: system_diagram_closed.png  used on input line 102.
 
  (./presentation.vrb) [15
 
-] [16
+]
+\openout4 = `presentation.vrb'.
+
+ (./presentation.vrb) [16
+
+] [17
 
 ]
-<system_diagram_open.png, id=119, 594.22pt x 258.9675pt>
+<system_diagram_open.png, id=124, 594.22pt x 258.9675pt>
 File: system_diagram_open.png Graphic file (type png)
 <use system_diagram_open.png>
-Package pdftex.def Info: system_diagram_open.png  used on input line 293.
+Package pdftex.def Info: system_diagram_open.png  used on input line 256.
 (pdftex.def)             Requested size: 207.98012pt x 90.63997pt.
- [17
+ [18
 
  <./system_diagram_open.png>]
-Overfull \vbox (9.20879pt too high) detected at line 312
+Overfull \vbox (23.71753pt too high) detected at line 277
  []
 
-[18
+[19
 
-] [19
+] [20
 
 ]
-<Systems_Series.png, id=139, 444.66125pt x 92.345pt>
+<Systems_Series.png, id=144, 444.66125pt x 92.345pt>
 File: Systems_Series.png Graphic file (type png)
 <use Systems_Series.png>
-Package pdftex.def Info: Systems_Series.png  used on input line 349.
+Package pdftex.def Info: Systems_Series.png  used on input line 314.
 (pdftex.def)             Requested size: 111.16504pt x 23.08618pt.
-<Systems_Parallel.png, id=140, 260.975pt x 228.855pt>
+<Systems_Parallel.png, id=145, 260.975pt x 228.855pt>
 File: Systems_Parallel.png Graphic file (type png)
 <use Systems_Parallel.png>
-Package pdftex.def Info: Systems_Parallel.png  used on input line 349.
+Package pdftex.def Info: Systems_Parallel.png  used on input line 314.
 (pdftex.def)             Requested size: 65.24359pt x 57.21361pt.
- [20
+ [21
 
- <./Systems_Series.png> <./Systems_Parallel.png>] [21
+ <./Systems_Series.png> <./Systems_Parallel.png>] [22
 
-] [22
+] [23
 
 ]
-<multioutput_FFL_color.png, id=162, 408.52625pt x 435.6275pt>
+<multioutput_FFL_color.png, id=167, 408.52625pt x 435.6275pt>
 File: multioutput_FFL_color.png Graphic file (type png)
 <use multioutput_FFL_color.png>
-Package pdftex.def Info: multioutput_FFL_color.png  used on input line 389.
+Package pdftex.def Info: multioutput_FFL_color.png  used on input line 354.
 (pdftex.def)             Requested size: 102.1313pt x 108.9066pt.
-<Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg, id=163, 321.2pt x 321.2pt>
+<Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg, id=168, 321.2pt x 321.2pt>
 File: Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg Graphic file (type jpg)
 <use Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg>
-Package pdftex.def Info: Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg  used on input line 389.
+Package pdftex.def Info: Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg  used on input line 354.
 (pdftex.def)             Requested size: 112.42168pt x 112.42168pt.
 
-Overfull \vbox (1.69751pt too high) detected at line 389
+Overfull \vbox (1.69751pt too high) detected at line 354
  []
 
-[23
+[24
 
  <./multioutput_FFL_color.png> <./Flagella-of-E-coli-observed-in-transmission-electron-microscope-Bar-1mm_Q320-2724765803.jpg>]
-<motor_flagella_network.png, id=173, 819.863pt x 253.748pt>
+<motor_flagella_network.png, id=178, 819.863pt x 253.748pt>
 File: motor_flagella_network.png Graphic file (type png)
 <use motor_flagella_network.png>
-Package pdftex.def Info: motor_flagella_network.png  used on input line 402.
+Package pdftex.def Info: motor_flagella_network.png  used on input line 367.
 (pdftex.def)             Requested size: 286.95634pt x 88.81311pt.
- [24
+ [25
 
- <./motor_flagella_network.png>]
-<motor_flagella.png, id=180, 1606.0pt x 803.0pt>
+ <./motor_flagella_network.png>] [26
+
+]
+<motor_flagella.png, id=191, 803.0pt x 401.5pt>
 File: motor_flagella.png Graphic file (type png)
 <use motor_flagella.png>
-Package pdftex.def Info: motor_flagella.png  used on input line 413.
-(pdftex.def)             Requested size: 321.19432pt x 160.59715pt.
+Package pdftex.def Info: motor_flagella.png  used on input line 394.
+(pdftex.def)             Requested size: 321.1943pt x 160.59715pt.
 
-Overfull \hbox (13.90445pt too wide) in paragraph at lines 413--413
+Overfull \hbox (13.90443pt too wide) in paragraph at lines 394--394
  [] 
  []
 
 
-Overfull \vbox (10.99602pt too high) detected at line 413
+Overfull \vbox (10.99602pt too high) detected at line 394
  []
 
-[25
+[27
 
- <./motor_flagella.png>] [26
-
-] [27
-
-] [28
+ <./motor_flagella.png>] [28
 
 ] [29
+
+] [30
+
+] [31
 
 ]
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/sc' in size <10.95> not available
-(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 481.
+(Font)              Font shape `OT1/cmr/m/sc' tried instead on input line 462.
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/bx/it' undefined
-(Font)              using `OT1/cmss/bx/n' instead on input line 481.
+(Font)              using `OT1/cmss/bx/n' instead on input line 462.
 
-[30
+[32
 
  </usr/local/texlive/2023/texmf-dist/tex/latex/beamer/beamericonarticle.pdf>]
 \tf@nav=\write5
@@ -998,18 +1005,18 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 27672 strings out of 474142
- 574755 string characters out of 5744617
- 1939995 words of memory out of 5000000
- 49372 multiletter control sequences out of 15000+600000
- 570536 words of font info for 79 fonts, out of 8000000 for 9000
+ 27750 strings out of 474142
+ 576396 string characters out of 5744617
+ 1941995 words of memory out of 5000000
+ 49442 multiletter control sequences out of 15000+600000
+ 571876 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,18n,123p,1946b,1361s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,18n,123p,1946b,1364s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi9.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on presentation.pdf (30 pages, 596237 bytes).
+Output written on presentation.pdf (32 pages, 439191 bytes).
 PDF statistics:
- 347 PDF objects out of 1000 (max. 8388607)
- 248 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
+ 360 PDF objects out of 1000 (max. 8388607)
+ 259 compressed objects within 3 object streams
+ 74 named destinations out of 1000 (max. 500000)
  131 words of extra memory for PDF output out of 10000 (max. 10000000)
 

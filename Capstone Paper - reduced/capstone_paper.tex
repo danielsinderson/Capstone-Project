@@ -23,7 +23,9 @@
 
 
 
-
+\raggedbottom
+\def\footnoterule{\vfill % added this
+   \kern-3pt\hrule width 2truein \kern 2.6pt} % the \hrule is .4pt high
 
 
 
@@ -128,16 +130,13 @@ This will seem like a lot.
 \begin{definition*}{Category, cont.}{}
     These objects and morphisms are further constrained by the following properties:
     \begin{enumerate}
-        \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ \mathsf{id}_a=\mathsf{id}_b\circ f=f$. This makes the following diagram commute. What this means is that both paths from $a$ to $b$ here are equal.
+        \item (Unitality) Any morphism $f:a\rightarrow b$ can be composed with the identity morphisms of $a$ and $b$ such that $f\circ \mathsf{id}_a=\mathsf{id}_b\circ f=f$.
 
               \[\begin{tikzcd}
-                      a && b \\
-                      \\
                       a && b
+                      \arrow["{\mathsf{id}_a}"', from=1-1, to=1-1, loop, in=215, out=145, distance=10mm]
                       \arrow["f", from=1-1, to=1-3]
-                      \arrow["{\mathsf{id}_a}"', from=1-1, to=3-1]
-                      \arrow["{\mathsf{id}_b}", from=1-3, to=3-3]
-                      \arrow["f"', from=3-1, to=3-3]
+                      \arrow["{\mathsf{id}_b}", from=1-3, to=1-3, loop, in=325, out=35, distance=10mm]
                   \end{tikzcd}\]
 
         \item (Associativity) For any morphisms $f:a\rightarrow b$, $g:b\rightarrow c$, and $h:c\rightarrow d$, $h\circ (g\circ f)=(h\circ g)\circ f$. Since it doesn't matter what order we apply the morphisms, we write this $h\circ g \circ f$.
@@ -307,6 +306,7 @@ Let's get a better idea of what this definition captures by using a picture.\\
         \arrow[shift right, curve={height=24pt}, dashed, from=6-1, to=4-4]
     \end{tikzcd}\]
 
+\vspace*{0.25in}
 Here we see two simple categories, $\mathcal{C}$ and $\mathcal{D}$, and two functors $F$ (the dashed lines) and $G$ (the dotted lines) between them.
 Let's dig into this picture a bit and pick apart the functors and the natural transformation.
 
@@ -531,6 +531,8 @@ Let's try to get a handle on what this means by looking at the image we used to 
         \arrow[curve={height=6pt}, dotted, from=6-1, to=4-4]
         \arrow[shift right, curve={height=24pt}, dashed, from=6-1, to=4-4]
     \end{tikzcd}\]
+
+\vspace*{0.25in}
 As before, the components of $\alpha$ are the following:
 $$\alpha_a = \mathsf{id}_x$$
 $$\alpha_b = k$$
@@ -561,6 +563,8 @@ Let's make a small addition and try again.
         \arrow[curve={height=6pt}, dotted, from=6-1, to=4-4]
         \arrow[shift right, curve={height=24pt}, dashed, from=6-1, to=4-4]
     \end{tikzcd}\]
+
+\vspace*{0.25in}
 With this new diagram we've explicitly added an inverse of $k$, making it an isomorphism.
 Since every component morphism of $\alpha$ is now an isomorphism, $\alpha$ itself is now a natural isomorphism.
 With natural isomorphisms in hand we can define an equivalence between categories.

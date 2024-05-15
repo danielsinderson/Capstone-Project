@@ -443,6 +443,10 @@ OUTPUT presentation.vrb
 INPUT ./presentation.vrb
 INPUT ./presentation.vrb
 INPUT presentation.vrb
+OUTPUT presentation.vrb
+INPUT ./presentation.vrb
+INPUT ./presentation.vrb
+INPUT presentation.vrb
 INPUT ./system_diagram_open.png
 INPUT ./system_diagram_open.png
 INPUT ./system_diagram_open.png
@@ -476,6 +480,11 @@ INPUT ./motor_flagella_network.png
 INPUT ./motor_flagella_network.png
 INPUT ./motor_flagella_network.png
 INPUT ./motor_flagella_network.png
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
+INPUT /usr/local/texlive/2023/texmf-dist/fonts/tfm/public/sansmathaccent/mathkerncmssi8.tfm
 INPUT ./motor_flagella.png
 INPUT ./motor_flagella.png
 INPUT ./motor_flagella.png
