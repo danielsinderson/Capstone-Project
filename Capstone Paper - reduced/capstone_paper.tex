@@ -173,7 +173,7 @@ When thinking about whether two objects in a category are meaningfully ``the sam
 An isomorphism between objects means that, while they may not be exactly the same, as in equality, there exists a way to move between the two objects without losing any information.
 
 \begin{definition}{Isomorphism}{}
-    Two objects in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $f^{-1}\circ f=\mathsf{id}_a$ and $f\circ f^{-1}=\mathsf{id}_b$.
+    Two objects $a, b$ in a category are isomorphic if there exists a morphism $f:a\rightarrow b$ for which there is another morphism $f^{-1}:b\rightarrow a$ such that $f^{-1}\circ f=\mathsf{id}_a$ and $f\circ f^{-1}=\mathsf{id}_b$.
     Such a morphism is called an isomorphism.
     \[\begin{tikzcd}
             a && b
@@ -241,6 +241,7 @@ Now let's check that associativity is preserved.
 \end{proofbox}
 
 With functors in our toolbox, it's now possible to construct a category where the objects themselves are categories and the morphism between them are functors.
+We call this category $\mathbf{Cat}$.
 This, along with our next step, will prove to be extremely powerful.
 
 \subsubsection*{A Quick Note on Avoiding Paradox}
@@ -248,7 +249,7 @@ For anyone who has taken a course in logic or set theory, that last paragraph mi
 Whenever we have recursion in our structure like this, there's the opportunity for paradox to sneak in.
 The category of categories is no exception.
 
-To avoid the paradox of whether the category of categories contains itself, category theorists employ formal notions of ``size'' to differentiate distinct universes of categories or by invoking a seperation between sets and classes \cite{goldblatt2014topoi, riehl2017category}.
+To avoid the paradox of whether $\mathbf{Cat}$ contains itself, category theorists employ formal notions of ``size'' to differentiate distinct universes of categories or by invoking a seperation between sets and classes \cite{goldblatt2014topoi, riehl2017category}.
 These formalisms can get pretty technical though, so we will be ignoring them in this paper.
 For us it will be enough to assume that whenenever we talk about a category whose objects are also categories, our object categories are in some way ``smaller'' than the category that they're a part of, and thus of a different type.\footnote{In general, this ``smallness'' will be that the category's collection of objects forms a set, or that the homset between any two objects forms a set.}
 
@@ -280,6 +281,15 @@ We need to see what natural transformations do to functors, but also what they d
             \arrow["{\alpha_a}", from=1-1, to=1-3]
         \end{tikzcd}\]
 
+    We can represent $\alpha$ diagramatically in the following condensed form.
+    \[\begin{tikzcd}
+            {\mathcal{C}} && {\mathcal{D}}
+            \arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-18pt}, from=1-1, to=1-3]
+            \arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=18pt}, from=1-1, to=1-3]
+            \arrow["\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
+        \end{tikzcd}\]
+
+
 \end{definition}
 
 This definition is short but there's a whole extra layer of stuff to keep track of since we added a layer of abstraction.
@@ -290,24 +300,27 @@ Let's get a better idea of what this definition captures by using a picture.\\
 %\includegraphics*[scale=0.75]{NT2.png}\\
 \[\begin{tikzcd}
         {\mathcal{C}} &&& {\mathcal{D}} \\
-        c &&& y && {F:\mathcal{C} \rightarrow \mathcal{D} } \\
-        &&&&& {G: \mathcal{C} \rightarrow \mathcal{D}} \\
-        b &&& x && {\alpha:F \Rightarrow G } \\
+        c &&& y \\
+        &&&&& {\mathcal{C}} && {\mathcal{D}} \\
+        b \\
         \\
-        a
-        \arrow[shift left, curve={height=-6pt}, dotted, from=2-1, to=2-4]
-        \arrow[shift right, dashed, from=2-1, to=2-4]
+        a &&& x
+        \arrow[shift left, curve={height=-12pt}, dotted, from=2-1, to=2-4]
+        \arrow[dashed, from=2-1, to=2-4]
+        \arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-18pt}, from=3-6, to=3-8]
+        \arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=18pt}, from=3-6, to=3-8]
         \arrow["g", from=4-1, to=2-1]
-        \arrow[curve={height=6pt}, dotted, from=4-1, to=2-4]
-        \arrow[dashed, from=4-1, to=4-4]
-        \arrow["k"', from=4-4, to=2-4]
+        \arrow[dotted, from=4-1, to=2-4]
+        \arrow[dashed, from=4-1, to=6-4]
         \arrow["f", from=6-1, to=4-1]
-        \arrow[curve={height=6pt}, dotted, from=6-1, to=4-4]
-        \arrow[shift right, curve={height=24pt}, dashed, from=6-1, to=4-4]
+        \arrow[dotted, from=6-1, to=6-4]
+        \arrow[shift right, curve={height=12pt}, dashed, from=6-1, to=6-4]
+        \arrow["k"', shift right, from=6-4, to=2-4]
+        \arrow["\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
     \end{tikzcd}\]
 
 \vspace*{0.25in}
-Here we see two simple categories, $\mathcal{C}$ and $\mathcal{D}$, and two functors $F$ (the dashed lines) and $G$ (the dotted lines) between them.
+Here we see two simple categories, $\mathcal{C}$ and $\mathcal{D}$, two functors $F$ (the dashed lines) and $G$ (the dotted lines) between them, and a natural transformation $\alpha$ that deforms $F$ into $G$.
 Let's dig into this picture a bit and pick apart the functors and the natural transformation.
 
 First, let's note all the important mappings of the functors and the component morphisms of the natural transformation.
@@ -337,13 +350,7 @@ $$\alpha_c \circ Fg = \mathsf{id}_y \circ k = Gg \circ \alpha_b \ \ \ \ \checkma
 Everything is working as expected.
 Hopefully this helped to unpack some of the complexity behind the natural transformation definition.
 In a real example, our functors would be defined equationally and we'd prove these properties for arbitrary morphisms instead of proving them for each morphism individually like we did here.
-We'd also represent $\alpha$ diagramatically in the following condensed form.
-\[\begin{tikzcd}
-        {\mathcal{C}} && {\mathcal{D}}
-        \arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-18pt}, from=1-1, to=1-3]
-        \arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=18pt}, from=1-1, to=1-3]
-        \arrow["\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
-    \end{tikzcd}\]
+
 
 \subsection*{Duality}
 The last thing we will cover in this section is the very simple, and very powerful, property of duality.
@@ -396,7 +403,7 @@ Duality also plays an important role in representability and the Yoneda lemma wh
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 A category in isolation, like a set in isolation, doesn't give us much.
 It's only when we begin adding relations and mappings between categories that the theory comes into its own.
-These will include categorical versions of some familiar structures, like embeddings, equivalence relations, and isomorphism.
+These will include categorical versions of some familiar structures, like embeddings, equivalence relations, and isomorphisms.
 But it will also include some structures that might seem strange and perplexing at first, like adjunctions and monads.
 
 
@@ -430,21 +437,22 @@ With these two conditions we can define our subcategory relation.
 Let's take a look at this using the two small categories below with a functor $F$ between them.
 
 \[\begin{tikzcd}
-        & {\mathcal{C}} && {F:\mathcal{C}\rightarrow\mathcal{D}} && {\mathcal{D}} \\
-        a & b &&& Fa & Fb \\
-        & c & d &&& Fc & Fd & y
+        & {\mathcal{C}} &&& {\mathcal{D}} \\
+        a & b && Fa & Fb \\
+        & c & d && Fc & Fd & y
+        \arrow["F", from=1-2, to=1-5]
         \arrow[from=2-1, to=2-2]
         \arrow[from=2-2, to=3-2]
-        \arrow[from=3-2, to=3-3]
         \arrow[from=2-2, to=3-3]
-        \arrow[shift left, from=2-5, to=2-6]
-        \arrow[shift left=2, from=2-6, to=3-6]
-        \arrow[from=2-6, to=3-7]
+        \arrow[shift left, from=2-4, to=2-5]
+        \arrow[shift right, from=2-4, to=2-5]
+        \arrow[shift left=2, from=2-5, to=3-5]
+        \arrow[shift right=2, from=2-5, to=3-5]
+        \arrow[from=2-5, to=3-5]
+        \arrow[from=2-5, to=3-6]
+        \arrow[from=3-2, to=3-3]
+        \arrow[from=3-5, to=3-6]
         \arrow[from=3-6, to=3-7]
-        \arrow[shift right, from=2-5, to=2-6]
-        \arrow[shift right=2, from=2-6, to=3-6]
-        \arrow[from=2-6, to=3-6]
-        \arrow[from=3-7, to=3-8]
     \end{tikzcd}\]
 
 You should be able to convince yourself that $\mathcal{C}$ is a subcategory of $\mathcal{D}$ using the definitions of subcategory and functor above.
@@ -465,18 +473,19 @@ This gives us a stronger version of the subcategory relation called a full subca
 
 Let's take a look at an example by paring down our category $D$ from the previous example.
 \[\begin{tikzcd}
-        & {\mathcal{C}} && {F:\mathcal{C}\rightarrow\mathcal{D}} && {\mathcal{D}} \\
-        a & b &&& Fa & Fb \\
-        & c & d &&& Fc & Fd & y
+        & {\mathcal{C}} &&& {\mathcal{D}} \\
+        a & b && Fa & Fb \\
+        & c & d && Fc & Fd & y
+        \arrow["F", from=1-2, to=1-5]
         \arrow[from=2-1, to=2-2]
         \arrow[from=2-2, to=3-2]
-        \arrow[from=3-2, to=3-3]
         \arrow[from=2-2, to=3-3]
-        \arrow[from=2-5, to=2-6]
-        \arrow[from=2-6, to=3-7]
+        \arrow[from=2-4, to=2-5]
+        \arrow[from=2-5, to=3-5]
+        \arrow[from=2-5, to=3-6]
+        \arrow[from=3-2, to=3-3]
+        \arrow[from=3-5, to=3-6]
         \arrow[from=3-6, to=3-7]
-        \arrow[from=2-6, to=3-6]
-        \arrow[from=3-7, to=3-8]
     \end{tikzcd}\]
 
 Again, convince yourself that this is indeed a full embedding.
@@ -516,20 +525,23 @@ More useful than these is the notion of categorical equivalence and the notion o
 Let's try to get a handle on what this means by looking at the image we used to explore natural transformations.
 \[\begin{tikzcd}
         {\mathcal{C}} &&& {\mathcal{D}} \\
-        c &&& y && {F:\mathcal{C} \rightarrow \mathcal{D} } \\
-        &&&&& {G: \mathcal{C} \rightarrow \mathcal{D}} \\
-        b &&& x && {\alpha:F \Rightarrow G } \\
+        c &&& y \\
+        &&&&& {\mathcal{C}} && {\mathcal{D}} \\
+        b \\
         \\
-        a
-        \arrow[shift left, curve={height=-6pt}, dotted, from=2-1, to=2-4]
-        \arrow[shift right, dashed, from=2-1, to=2-4]
+        a &&& x
+        \arrow[shift left, curve={height=-12pt}, dotted, from=2-1, to=2-4]
+        \arrow[dashed, from=2-1, to=2-4]
+        \arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-18pt}, from=3-6, to=3-8]
+        \arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=18pt}, from=3-6, to=3-8]
         \arrow["g", from=4-1, to=2-1]
-        \arrow[curve={height=6pt}, dotted, from=4-1, to=2-4]
-        \arrow[dashed, from=4-1, to=4-4]
-        \arrow["k"', from=4-4, to=2-4]
+        \arrow[dotted, from=4-1, to=2-4]
+        \arrow[dashed, from=4-1, to=6-4]
         \arrow["f", from=6-1, to=4-1]
-        \arrow[curve={height=6pt}, dotted, from=6-1, to=4-4]
-        \arrow[shift right, curve={height=24pt}, dashed, from=6-1, to=4-4]
+        \arrow[dotted, from=6-1, to=6-4]
+        \arrow[shift right, curve={height=12pt}, dashed, from=6-1, to=6-4]
+        \arrow["k"', shift right, from=6-4, to=2-4]
+        \arrow["\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
     \end{tikzcd}\]
 
 \vspace*{0.25in}
@@ -547,21 +559,24 @@ This means our natural transformation $\alpha$ is not a natural isomorphism.
 Let's make a small addition and try again.
 \[\begin{tikzcd}
         {\mathcal{C}} &&& {\mathcal{D}} \\
-        c &&& y && {F:\mathcal{C} \rightarrow \mathcal{D} } \\
-        &&&&& {G: \mathcal{C} \rightarrow \mathcal{D}} \\
-        b &&& x && {\alpha:F \Rightarrow G } \\
+        c &&& y \\
+        &&&&& {\mathcal{C}} && {\mathcal{D}} \\
+        b \\
         \\
-        a
-        \arrow[shift left, curve={height=-6pt}, dotted, from=2-1, to=2-4]
-        \arrow[shift right, dashed, from=2-1, to=2-4]
-        \arrow["{k^{-1}}"', shift right, from=2-4, to=4-4]
+        a &&& x
+        \arrow[shift left, curve={height=-12pt}, dotted, from=2-1, to=2-4]
+        \arrow[dashed, from=2-1, to=2-4]
+        \arrow["{{k^{-1}}}"', shift right, from=2-4, to=6-4]
+        \arrow[""{name=0, anchor=center, inner sep=0}, "F", curve={height=-18pt}, from=3-6, to=3-8]
+        \arrow[""{name=1, anchor=center, inner sep=0}, "G"', curve={height=18pt}, from=3-6, to=3-8]
         \arrow["g", from=4-1, to=2-1]
-        \arrow[curve={height=6pt}, dotted, from=4-1, to=2-4]
-        \arrow[dashed, from=4-1, to=4-4]
-        \arrow["k"', shift right, from=4-4, to=2-4]
+        \arrow[dotted, from=4-1, to=2-4]
+        \arrow[dashed, from=4-1, to=6-4]
         \arrow["f", from=6-1, to=4-1]
-        \arrow[curve={height=6pt}, dotted, from=6-1, to=4-4]
-        \arrow[shift right, curve={height=24pt}, dashed, from=6-1, to=4-4]
+        \arrow[dotted, from=6-1, to=6-4]
+        \arrow[shift right, curve={height=12pt}, dashed, from=6-1, to=6-4]
+        \arrow["k"', shift right, from=6-4, to=2-4]
+        \arrow["\alpha", shorten <=5pt, shorten >=5pt, Rightarrow, from=0, to=1]
     \end{tikzcd}\]
 
 \vspace*{0.25in}
@@ -588,36 +603,38 @@ The combination of a full and faithful functor guarantees that for every set of 
 In other words, we have an isomorphism between morphisms and a surjection between objects (up to isomorphism).
 If we look at our full subcategory example from above, are $\mathcal{C}$ and $\mathcal{D}$ equivalent?
 \[\begin{tikzcd}
-        & {\mathcal{C}} && {F:\mathcal{C}\rightarrow\mathcal{D}} && {\mathcal{D}} \\
-        a & b &&& Fa & Fb \\
-        & c & d &&& Fc & Fd & y
+        & {\mathcal{C}} &&& {\mathcal{D}} \\
+        a & b && Fa & Fb \\
+        & c & d && Fc & Fd & y
+        \arrow["F", from=1-2, to=1-5]
         \arrow[from=2-1, to=2-2]
         \arrow[from=2-2, to=3-2]
-        \arrow[from=3-2, to=3-3]
         \arrow[from=2-2, to=3-3]
-        \arrow[from=2-5, to=2-6]
-        \arrow[from=2-6, to=3-7]
+        \arrow[from=2-4, to=2-5]
+        \arrow[from=2-5, to=3-5]
+        \arrow[from=2-5, to=3-6]
+        \arrow[from=3-2, to=3-3]
+        \arrow[from=3-5, to=3-6]
         \arrow[from=3-6, to=3-7]
-        \arrow[from=2-6, to=3-6]
-        \arrow[from=3-7, to=3-8]
     \end{tikzcd}\]
 We know that $F$ is full and faithful by definition of a full subcategory.
 But it's not surjective on objects since there's no object in $\mathcal{C}$ that maps to $y$, or anything isomorphic to $y$, in $\mathcal{D}$.
 Let's make a quick modification so that our two categories can be equivalent.
 \[\begin{tikzcd}
-        & {\mathcal{C}} && {F:\mathcal{C}\rightarrow\mathcal{D}} && {\mathcal{D}} \\
-        a & b &&& Fa & Fb \\
-        & c & d &&& Fc & Fd & y
+        & {\mathcal{C}} &&& {\mathcal{D}} \\
+        a & b && Fa & Fb \\
+        & c & d && Fc & Fd & y
+        \arrow["F", from=1-2, to=1-5]
         \arrow[from=2-1, to=2-2]
         \arrow[from=2-2, to=3-2]
-        \arrow[from=3-2, to=3-3]
         \arrow[from=2-2, to=3-3]
-        \arrow[from=2-5, to=2-6]
-        \arrow[from=2-6, to=3-7]
-        \arrow[from=3-6, to=3-7]
-        \arrow[from=2-6, to=3-6]
-        \arrow[shift left, from=3-7, to=3-8]
-        \arrow[shift left, from=3-8, to=3-7]
+        \arrow[from=2-4, to=2-5]
+        \arrow[from=2-5, to=3-5]
+        \arrow[from=2-5, to=3-6]
+        \arrow[from=3-2, to=3-3]
+        \arrow[from=3-5, to=3-6]
+        \arrow[shift left, from=3-6, to=3-7]
+        \arrow[shift left, from=3-7, to=3-6]
     \end{tikzcd}\]
 Our collections of objects are now surjective up to isomorphism, so our functor is full, faithful, and essentially surjective and our two categories are equivalent.
 Since categorical equivalence is an equivalence relation we know that the relation must be reflexive, symmetric, and transitive.
@@ -625,19 +642,20 @@ It's trivial to see that the relation is reflexive since the identity functor on
 But how about symmetry?
 Let's look at this using our example categories above and introduce a new functor $G$.
 \[\begin{tikzcd}
-        & {\mathcal{D}} && {G:\mathcal{D}\rightarrow\mathcal{C}} && {\mathcal{C}} \\
+        & {\mathcal{D}} &&& {\mathcal{C}} \\
         u & w &&& Gu & Gw \\
         & x & z & y && Gx & {Gy=Gz}
+        \arrow["G", from=1-2, to=1-5]
         \arrow[from=2-1, to=2-2]
         \arrow[from=2-2, to=3-2]
-        \arrow[from=3-2, to=3-3]
         \arrow[from=2-2, to=3-3]
         \arrow[from=2-5, to=2-6]
         \arrow[from=2-6, to=3-6]
         \arrow[from=2-6, to=3-7]
-        \arrow[from=3-6, to=3-7]
+        \arrow[from=3-2, to=3-3]
         \arrow[shift left, from=3-3, to=3-4]
         \arrow[shift left, from=3-4, to=3-3]
+        \arrow[from=3-6, to=3-7]
     \end{tikzcd}\]
 We can map $y$ and $z$ onto the same object $G$ and keep the functor essentially surjective.
 But is it still full and faithful?
@@ -658,21 +676,22 @@ Double checking that this is the case is a great opportunity to see why full and
 So we now know that categorical equivalence is reflexive and symmetric, but is it transitive?
 To test this we will need another small category and another functor.
 \[\begin{tikzcd}
-        & {\mathcal{D}} && {H:\mathcal{D}\rightarrow\mathcal{E}} && {\mathcal{E}} \\
+        & {\mathcal{D}} &&& {\mathcal{E}} \\
         u & w &&& Gu & Gw & m \\
         & x & z & y && Gx & Gz & Gy
-        \arrow[from=2-6, to=3-6]
+        \arrow["H", from=1-2, to=1-5]
         \arrow[from=2-1, to=2-2]
         \arrow[from=2-2, to=3-2]
-        \arrow[from=3-2, to=3-3]
         \arrow[from=2-2, to=3-3]
-        \arrow[shift left, from=3-3, to=3-4]
-        \arrow[shift left, from=3-4, to=3-3]
-        \arrow[from=2-6, to=3-7]
-        \arrow[from=3-6, to=3-7]
         \arrow[from=2-5, to=2-6]
         \arrow[shift left, from=2-6, to=2-7]
+        \arrow[from=2-6, to=3-6]
+        \arrow[from=2-6, to=3-7]
         \arrow[shift left, from=2-7, to=2-6]
+        \arrow[from=3-2, to=3-3]
+        \arrow[shift left, from=3-3, to=3-4]
+        \arrow[shift left, from=3-4, to=3-3]
+        \arrow[from=3-6, to=3-7]
         \arrow[shift left, from=3-7, to=3-8]
         \arrow[shift left, from=3-8, to=3-7]
     \end{tikzcd}\]
@@ -777,7 +796,7 @@ Given functors $F: \mathcal{C} \rightarrow \mathcal{D}$ and $G,H:\mathcal{D} \ri
 But we don't have this in an adjunction.
 Instead we have the natural transformations $\eta : \mathsf{id}_\mathcal{C} \Rightarrow G \circ F$ and $\epsilon: F \circ G \Rightarrow \mathsf{id}_\mathcal{D}$ and the triangle identities above.
 At a high level, these tell us that--while the compositions don't equal the identities--there is still a way to travel from the identities on our categories to our compositions of functors.
-This traveling accrues an error now though: it's no longer lossless.
+This traveling accrues an error now though: it's no longer reversible.
 
 %\begin{definition}[Adjunctions]
 %    An adjunction between two categories $\mathcal{C}$ and $\mathcal{D}$ exists, written $\mathcal{C} \dashv \mathcal{D}$, if there exist two functors $F:\mathcal{C}\rightarrow\mathcal{D}$, the left adjoint functor, and $G:\mathcal{D}\rightarrow\mathcal{C}$, the right adjoint functor, such that for any object $c\in\mathcal{C}$ and any object $d\in\mathcal{D}$ there is a natural isomorphism $\mathcal{C}(c,Gd)\cong\mathcal{D}(Fc,d)$.
@@ -916,9 +935,9 @@ Now let's make this precise in the general case.
             \arrow["g"', from=1-2, to=2-3]
         \end{tikzcd}\]
     The object $v$ is a product of $a$ and $b$ if the following holds:
-    \begin{enumerate}
+    \begin{itemize}
         \item For any other object $x$ with morphisms $f':x\rightarrow a$ and $g':x\rightarrow b$, there is a unique morphism $k:x\rightarrow v$ such that $f\circ k=f'$ and $g\circ k=g'$.
-    \end{enumerate}
+    \end{itemize}
 
     This means the following diagram commutes:
     \[\begin{tikzcd}
@@ -1134,8 +1153,7 @@ This network is a graph with $14$ nodes and $25$ edges arranged in a common subg
     \label{fig:FFL}
 \end{figure}
 
-In this multi-output FFL every edge represents an activator relationship, and all of the activation functions of the output genes $Z1$, $Z2$, \dots, $Z12$ mix their input signals as a logical $\mathsf{OR}$ gate.
-\footnote{In reality they're combined as a weighted sum. We are using $\mathsf{OR}$ gates since they simplify the computations while retaining the underlying behavior.}
+In this multi-output FFL every edge represents an activator relationship, and all of the activation functions of the output genes $Z1$, $Z2$, \dots, $Z12$ mix their input signals as a logical $\mathsf{OR}$ gate.\footnote{In reality they're combined as a weighted sum. We are using $\mathsf{OR}$ gates since they simplify the computations while retaining the underlying behavior.}
 
 This subgraph architecture has several features that are very important to the purpose it serves.
 First, the feed forward relation between genes $X$ and $Y$ and the $\mathsf{OR}$ gate mixing in the output genes' activation functions create a sign-sensitive filter to short fluctuations in the input signal.
