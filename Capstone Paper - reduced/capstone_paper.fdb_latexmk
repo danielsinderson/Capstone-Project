@@ -1,15 +1,15 @@
 # Fdb version 4
-["bibtex capstone_paper"] 1716483027.3914 "capstone_paper.aux" "capstone_paper.bbl" "capstone_paper" 1716483639.62151 0
+["bibtex capstone_paper"] 1716483027.3914 "capstone_paper.aux" "capstone_paper.bbl" "capstone_paper" 1716948554.80528 0
   "./references.bib" 1715131103.33011 1854 7302a9615c99b7a6e27712407d49c671 ""
   "/usr/local/texlive/2023/texmf-dist/bibtex/bst/base/acm.bst" 1292289607 21064 c61a48664f3c347ce7f73c1a6a530506 ""
-  "capstone_paper.aux" 1716483638.98583 2093 ff6b7ad618a9d612897cf95915402594 "pdflatex"
+  "capstone_paper.aux" 1716948553.92926 2093 ff6b7ad618a9d612897cf95915402594 "pdflatex"
   (generated)
   "capstone_paper.bbl"
   "capstone_paper.blg"
   (rewritten before read)
-["pdflatex"] 1716483631.24983 "/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex" "capstone_paper.pdf" "capstone_paper" 1716483639.62175 0
+["pdflatex"] 1716948542.02081 "/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex" "capstone_paper.pdf" "capstone_paper" 1716948554.80627 0
   "/home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk" 1712102205.09019 8424 6cf4df07c4abd034dbcd5a24c834b030 ""
-  "/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex" 1716483630.93748 75240 3f88d8d861f5ec29454eb37762307bd1 ""
+  "/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex" 1716947053.34243 75442 d6abfcda3f57a6ae22650e5a453dbf6a ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc" 1165713224 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -283,13 +283,13 @@
   "/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1708220011.18237 5472569 99e72973af7bd41132687409b8c9c95e ""
   "/usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt" 1708220214 8219562 be5e5260b50c82eafa7627dc9446a448 ""
   "/usr/local/texlive/2023/texmf.cnf" 1708220003.31006 455 5b996dcaa0eb4ef14a83b026bc0a008c ""
-  "capstone_paper.aux" 1716483638.98583 2093 ff6b7ad618a9d612897cf95915402594 "pdflatex"
+  "capstone_paper.aux" 1716948553.92926 2093 ff6b7ad618a9d612897cf95915402594 "pdflatex"
   "capstone_paper.bbl" 1716483027.64953 1554 5c2acdffa4b2cba77cda981bf68a72cc "bibtex capstone_paper"
-  "capstone_paper.out" 1716483633.25758 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "capstone_paper.tex" 1716483630.93748 75240 3f88d8d861f5ec29454eb37762307bd1 ""
+  "capstone_paper.out" 1716948544.0089 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "capstone_paper.tex" 1716947053.34243 75442 d6abfcda3f57a6ae22650e5a453dbf6a ""
   "jlcode.sty" 1713882960.6031 115672 aae696b101c4b8ebcd2a666ec91ed127 ""
   "motor_flagella.png" 1715133490.72253 119505 eade9516802bfa6744d5d28c2f6ba706 ""
-  "motor_flagella_network.jl" 1713809372.6598 7232 29c5b330d43d288e3c651c13ee584e99 ""
+  "motor_flagella_network.jl" 1716948541.4168 7093 e72badd34b8c3d869f4a738292db9310 ""
   "motor_flagella_network.png" 1713905869.14933 64370 5531ac33e3630cc20daa1f2381b28d0b ""
   "multioutput_FFL.png" 1713668852.07076 32675 56f1204d549511e942a13402505eb39c ""
   (generated)

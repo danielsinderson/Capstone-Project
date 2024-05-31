@@ -159,10 +159,7 @@ tspan = (0.0, 25.0)
 problem = ODEProblem(system, u0, tspan, params)
 solution = solve(problem, Tsit5())
 
-#plot(sol, rabbitfox_system, params,
-#    lw=2, title="Lotka-Volterra Predator-Prey Model",
-#    xlabel="time", ylabel="population size"
-#)
+
 
 plot(solution, system, params,
     lw=2, title="Motor Flagella Network",

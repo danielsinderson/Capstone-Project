@@ -327,8 +327,8 @@
         The dynamics of this process for a single gene are well modeled by the following differential equation.
         $$\frac{dY}{dt}=\beta f(X^*) - \alpha Y$$
 
-        $$\text{Activator: } \ f_A(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
-        $$\text{Repressor: } \ f_R(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
+        $$\text{Activator: } \ f_A(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * L(X^* > K)$$
+        $$\text{Repressor: } \ f_R(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * L(X^* < K)$$
 
     \end{large}
 \end{frame}
@@ -369,13 +369,13 @@
 
 \begin{frame}{Motor Flagella Network Model}
     %\begin{large}
-    $$\text{Gene X: } \ \ \frac{dX}{dt} = [\beta*P(S > \kappa_S) - \alpha * X]$$
-    $$\text{Gene Y: } \ \ \frac{dY}{dt} = [\beta*P(X > \kappa_X) - \alpha * Y]$$
-    $$\text{Gene $Z1$: } \ \ \frac{dZ_1}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_1]$$
-    $$\text{Gene $Z2$: } \ \ \frac{dZ_2}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_2]$$
+    $$\text{Gene X: } \ \ \frac{dX}{dt} = [\beta*L(S > \kappa_S) - \alpha * X]$$
+    $$\text{Gene Y: } \ \ \frac{dY}{dt} = [\beta*L(X > \kappa_X) - \alpha * Y]$$
+    $$\text{Gene $Z1$: } \ \ \frac{dZ_1}{dt} = [\beta*L(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_1]$$
+    $$\text{Gene $Z2$: } \ \ \frac{dZ_2}{dt} = [\beta*L(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_2]$$
     $$\vdots$$
-    $$\text{Gene $Z11$: } \ \ \frac{dZ_{11}}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_{11}]$$
-    $$\text{Gene $Z12$: } \ \ \frac{dZ_{12}}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_{12}]$$
+    $$\text{Gene $Z11$: } \ \ \frac{dZ_{11}}{dt} = [\beta*L(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_{11}]$$
+    $$\text{Gene $Z12$: } \ \ \frac{dZ_{12}}{dt} = [\beta*L(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_{12}]$$
     %\end{large}
 
 \end{frame}

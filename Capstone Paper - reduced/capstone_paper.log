@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  23 MAY 2024 10:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  28 MAY 2024 19:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -882,43 +882,43 @@ LaTeX Font Info:    Trying to load font information for U+stmry on input line 70
  (/usr/local/texlive/2023/texmf-dist/tex/latex/stmaryrd/Ustmry.fd) [1
 
 {/usr/local/texlive/2023/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [2] [3] [4] [5] [6]
-Underfull \hbox (badness 10000) in paragraph at lines 295--297
+Underfull \hbox (badness 10000) in paragraph at lines 297--299
 
  []
 
 [7] [8]
-Underfull \hbox (badness 10000) in paragraph at lines 356--361
+Underfull \hbox (badness 10000) in paragraph at lines 358--363
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 372--374
+Underfull \hbox (badness 10000) in paragraph at lines 374--376
 
  []
 
 [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-LaTeX Font Info:    Trying to load font information for U+bbm on input line 1006.
+LaTeX Font Info:    Trying to load font information for U+bbm on input line 1008.
  (/usr/local/texlive/2023/texmf-dist/tex/latex/bbm-macros/ubbm.fd
 File: ubbm.fd 1999/03/15 V 1.2 Font definition for bbm font - TH
 ) [24] [25] [26] [27] [28] [29]
 <multioutput_FFL.png, id=279, 408.52625pt x 435.6275pt>
 File: multioutput_FFL.png Graphic file (type png)
 <use multioutput_FFL.png>
-Package pdftex.def Info: multioutput_FFL.png  used on input line 1151.
+Package pdftex.def Info: multioutput_FFL.png  used on input line 1153.
 (pdftex.def)             Requested size: 142.98633pt x 152.47191pt.
  [30 <./multioutput_FFL.png>]
 <motor_flagella_network.png, id=298, 819.863pt x 253.748pt>
 File: motor_flagella_network.png Graphic file (type png)
 <use motor_flagella_network.png>
-Package pdftex.def Info: motor_flagella_network.png  used on input line 1172.
+Package pdftex.def Info: motor_flagella_network.png  used on input line 1174.
 (pdftex.def)             Requested size: 409.9305pt x 126.87367pt.
 <motor_flagella.png, id=301, 803.0pt x 401.5pt>
 File: motor_flagella.png Graphic file (type png)
 <use motor_flagella.png>
-Package pdftex.def Info: motor_flagella.png  used on input line 1189.
+Package pdftex.def Info: motor_flagella.png  used on input line 1191.
 (pdftex.def)             Requested size: 481.80373pt x 240.90184pt.
 
-Overfull \hbox (12.0487pt too wide) in paragraph at lines 1189--1190
+Overfull \hbox (12.0487pt too wide) in paragraph at lines 1191--1192
  [][] 
  []
 
@@ -926,11 +926,11 @@ Overfull \hbox (12.0487pt too wide) in paragraph at lines 1189--1190
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 [31 <./motor_flagella_network.png>] [32 <./motor_flagella.png>] [33] (./capstone_paper.bbl) [34]
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1246.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 1248.
  (./motor_flagella_network.jl [35{/usr/local/texlive/2023/texmf-dist/fonts/enc/dvips/base/8r.enc}] [36] [37]) [38]
 File: motor_flagella.png Graphic file (type png)
 <use motor_flagella.png>
-Package pdftex.def Info: motor_flagella.png  used on input line 1250.
+Package pdftex.def Info: motor_flagella.png  used on input line 1252.
 (pdftex.def)             Requested size: 652.48491pt x 401.52963pt.
 
 Overfull \vbox (40.23526pt too high) has occurred while \output is active []
@@ -944,18 +944,18 @@ Package rerunfilecheck Info: File `capstone_paper.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 36107 strings out of 474142
- 700051 string characters out of 5744617
+ 36104 strings out of 474142
+ 700003 string characters out of 5744617
  2999995 words of memory out of 5000000
  57567 multiletter control sequences out of 15000+600000
  589497 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  116i,19n,121p,621b,5286s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on capstone_paper.pdf (39 pages, 725694 bytes).
+Output written on capstone_paper.pdf (39 pages, 725681 bytes).
 PDF statistics:
- 755 PDF objects out of 1000 (max. 8388607)
- 628 compressed objects within 7 object streams
- 321 named destinations out of 1000 (max. 500000)
+ 751 PDF objects out of 1000 (max. 8388607)
+ 624 compressed objects within 7 object streams
+ 318 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

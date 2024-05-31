@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1715746004.12574 "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" "presentation.pdf" "presentation" 1715746007.09047 0
-  "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" 1715746000.68587 15791 9ce128d39e357ade5a54eb14410cac8d ""
+["pdflatex"] 1717125831.02254 "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" "presentation.pdf" "presentation" 1717125834.47894 0
+  "/home/daniel/Documents/School/2024 MTH_490/Capstone Presentation/presentation.tex" 1717125830.76841 15791 b1ef1970704f977fada1fe40a2c1eeb9 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2023/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -255,10 +255,10 @@
   "motor_flagella.png" 1715133490.72253 119505 eade9516802bfa6744d5d28c2f6ba706 ""
   "motor_flagella_network.png" 1713905869.14933 64370 5531ac33e3630cc20daa1f2381b28d0b ""
   "multioutput_FFL_color.png" 1713670782.72825 33509 6414a9a6dec55ae657e41140e26f8732 ""
-  "presentation.aux" 1715746006.9261 7938 72b8c508ad19fd38d17fca6e95369792 "pdflatex"
-  "presentation.nav" 1715746006.9301 4120 20dbce2098e63a08e53a5462bbbd9915 "pdflatex"
-  "presentation.tex" 1715746000.68587 15791 9ce128d39e357ade5a54eb14410cac8d ""
-  "presentation.vrb" 1715746006.13007 799 f4d2d476e76f6b612c17c0639276eabb "pdflatex"
+  "presentation.aux" 1717125834.30454 7938 72b8c508ad19fd38d17fca6e95369792 "pdflatex"
+  "presentation.nav" 1717125834.30454 4120 20dbce2098e63a08e53a5462bbbd9915 "pdflatex"
+  "presentation.tex" 1717125830.76841 15791 b1ef1970704f977fada1fe40a2c1eeb9 ""
+  "presentation.vrb" 1717125833.36051 799 f4d2d476e76f6b612c17c0639276eabb "pdflatex"
   "system_diagram_closed.png" 1712940076.08533 15992 11da209b3087e6da07433baf59773c69 ""
   "system_diagram_open.png" 1712941487.29413 20855 ae286901bc9043ef2fc16d762ab1409d ""
   (generated)
