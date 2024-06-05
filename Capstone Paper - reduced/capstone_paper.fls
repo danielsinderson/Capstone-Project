@@ -1,8 +1,8 @@
-PWD /home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced
+PWD /home/daniel/Documents/School/SOU Mathematics/2024 MTH_490/Capstone Paper - reduced
 INPUT /usr/local/texlive/2023/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-dist/web2c/texmf.cnf
 INPUT /usr/local/texlive/2023/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT /home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex
+INPUT /home/daniel/Documents/School/SOU Mathematics/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex
 OUTPUT capstone_paper.log
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
 INPUT /usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls

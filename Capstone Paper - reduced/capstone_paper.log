@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  28 MAY 2024 19:09
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023) (preloaded format=pdflatex 2024.2.17)  5 JUN 2024 06:11
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex"
-(/home/daniel/Documents/School/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex
+**"/home/daniel/Documents/School/SOU Mathematics/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex"
+(/home/daniel/Documents/School/SOU Mathematics/2024 MTH_490/Capstone Paper - reduced/capstone_paper.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-13>
 (/usr/local/texlive/2023/texmf-dist/tex/latex/base/article.cls
@@ -945,14 +945,14 @@ Package rerunfilecheck Info: File `capstone_paper.out' has not changed.
  ) 
 Here is how much of TeX's memory you used:
  36104 strings out of 474142
- 700003 string characters out of 5744617
+ 700051 string characters out of 5744617
  2999995 words of memory out of 5000000
  57567 multiletter control sequences out of 15000+600000
  589497 words of font info for 122 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 116i,19n,121p,621b,5286s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 116i,19n,121p,637b,5286s stack positions out of 10000i,1000n,20000p,200000b,200000s
  </home/daniel/.texlive2023/texmf-var/fonts/pk/ljfour/public/bbm/bbm12.600pk></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/latxfont/lcircle1.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbi1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfcc1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm1440.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfrm2074.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0700.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti0800.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/local/texlive/2023/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb>
-Output written on capstone_paper.pdf (39 pages, 725681 bytes).
+Output written on capstone_paper.pdf (39 pages, 725694 bytes).
 PDF statistics:
  751 PDF objects out of 1000 (max. 8388607)
  624 compressed objects within 7 object streams
