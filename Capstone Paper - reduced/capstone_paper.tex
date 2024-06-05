@@ -1127,17 +1127,17 @@ This activation or repression then leads to the increased or decreased productio
 
 The activation or repression curve of the interaction of a transcription factor and the promoter region of a gene can be modeled by either a Hill function (sigmoidal curve ranging from $\beta_0$ to $\beta$) or, more simply, as a logic step function.
 This is how we will model them in this case study.
-$$\text{Activator: } \ f(X^*)=\frac{\beta X^{*n}}{K^n + X^{*n}} \ \text{ or } \ \beta * P(X^* > K)$$
-$$\text{Repressor: } \ f(X^*)=\frac{\beta}{1 + \left(\frac{X^*}{K}\right)^n} \ \text{ or } \ \beta * P(X^* < K)$$
+$$\text{Activator: } \ f(X)=\frac{\beta X^{n}}{K^n + X^{n}} \ \text{ or } \ \beta * L(X > K)$$
+$$\text{Repressor: } \ f(X)=\frac{\beta}{1 + \left(\frac{X}{K}\right)^n} \ \text{ or } \ \beta * L(X < K)$$
 
 Activation functions can also be multivariate, with a promoter responding to multiple transcription factors.
 These multivariate functions can take many forms, with some acting similar to logic gates or behaving additively.
-$$f(X^*, Y^*)=\beta*P(X^* > K_x \land Y^* > K_y)$$
-$$f(X^*, Y^*)=\beta*P(X^* > K_x \lor Y^* > K_y)$$
-$$f(X^*, Y^*)=\beta_x X^* + \beta_y Y^*$$
+$$f(X, Y)=\beta*L(X > K_x \ \mathsf{AND} \  Y > K_y)$$
+$$f(X, Y)=\beta*L(X > K_x \ \mathsf{OR}  \ Y > K_y)$$
+$$f(X, Y)=\beta_x X + \beta_y Y$$
 
 The dynamics of transcription networks, the way that the system responds to input signals, are well modeled by the following differential equation, where $Y$ is the resulting protein concentration, $\beta$ is the maximal activity, and $\alpha=\alpha_{\text{deg}} + \alpha_{\text{dil}}$ is the combined protein degradation and dilution rates \cite{alon2019introduction}.
-$$\frac{dY}{dt}=\beta f(X^*) - \alpha Y$$
+$$\frac{dY}{dt}=\beta f(X) - \alpha Y$$
 
 It's common for the product of a gene to be a transcription factor for other genes.
 By connecting all of these relations together into a graph we get a gene transcription network.
@@ -1179,9 +1179,9 @@ Using the formalism above for wiring open systems together with lenses, we can r
 
 Here each node is a ``continuous machine''---i.e. a differential system---based on the transcription network dynamics below.
 
-$$\text{Gene X: } \ \ \frac{dX}{dt} = [\beta*P(S > \kappa_S) - \alpha * X]$$
-$$\text{Gene Y: } \ \ \frac{dY}{dt} = [\beta*P(X > \kappa_X) - \alpha * Y]$$
-$$\text{Output Genes $Z1$ \dots $Z12$: } \ \ \frac{dZ_i}{dt} = [\beta*P(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_i]$$
+$$\text{Gene X: } \ \ \frac{dX}{dt} = [\beta*L(S > \kappa_S) - \alpha * X]$$
+$$\text{Gene Y: } \ \ \frac{dY}{dt} = [\beta*L(X > \kappa_X) - \alpha * Y]$$
+$$\text{Output Genes $Z1$ \dots $Z12$: } \ \ \frac{dZ_i}{dt} = [\beta*L(X > \kappa_X \ \mathsf{OR} \ Y > \kappa_Y) - \alpha * Z_i]$$
 
 The signal node, $S$, is a contrived signal used to test the dynamics of the model.
 It's output is included in figure \ref{fig:simulation_results} below of the simulation's results.
